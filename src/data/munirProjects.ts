@@ -196,6 +196,29 @@ export const munirProjects: Project[] = [
     status: 'completed'
   },
   {
+    id: 'munir-demo-chat',
+    title: 'Munir Demo Chat (React Native + Expo)',
+    description: 'Cross-platform chat app with modern UI, media sharing, and voice/video call interfaces. Single TypeScript codebase for iOS, Android, and Web.',
+    longDescription: 'A portfolio-ready chat application built with React Native and Expo, showcasing clean dark-theme UI, chat list and conversation screens, media sharing flows, and calling interfaces. The same TypeScript code runs on iOS, Android, and Web (PWA-ready). Deployed live on Netlify with a short demo video on YouTube.',
+    image: '/images/projects/portfolio.png',
+    technologies: ['React Native', 'Expo', 'TypeScript', 'React', 'React Native Web', 'React Navigation', 'Expo Router', 'Netlify'],
+    category: 'mobile',
+    liveUrl: 'https://munir-demo-chat.netlify.app',
+    githubUrl: 'https://github.com/black12-ag/munir-demo-chat',
+    videoUrl: 'https://youtube.com/shorts/C48THcA7eXY?si=aB6YVB3zIWzuDQHL',
+    featured: true,
+    completedDate: 'Sep 2025',
+    keyFeatures: [
+      'Chat list and conversation UI with message bubbles',
+      'Media sharing (camera/gallery) demo flows',
+      'Voice and video call interfaces with controls',
+      'Dark theme and responsive layouts',
+      'Single codebase running on iOS, Android, and Web',
+      'PWA-capable web build deployed to Netlify'
+    ],
+    status: 'completed'
+  },
+  {
     id: 'portfolio-website',
     title: 'Personal Portfolio Website',
     description: 'Modern portfolio website showcasing projects and technical skills.',
