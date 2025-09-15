@@ -25,6 +25,27 @@ import {
 // All project data - expanded from Portfolio.tsx
 const allProjects: Project[] = [
   {
+    id: '11',
+    title: 'Munir Demo Chat (React Native + Expo)',
+    description: 'Cross-platform chat app with modern UI, media sharing, and voice/video call interfaces. One TypeScript codebase for iOS, Android, and Web.',
+    image: '/images/projects/portfolio.png',
+    technologies: ['React Native', 'Expo', 'TypeScript', 'React', 'React Native Web', 'Netlify', 'PWA'],
+    category: 'mobile',
+    liveUrl: 'https://munir-demo-chat.netlify.app',
+    githubUrl: 'https://github.com/black12-ag/munir-demo-chat',
+    featured: true,
+    completedDate: '2025-09',
+    status: 'completed',
+    keyFeatures: [
+      'Chat list and conversation UI',
+      'Media sharing (camera/gallery) demo',
+      'Voice and video call interfaces',
+      'Dark theme and responsive design',
+      'Deployed as a PWA on Netlify'
+    ],
+    videoUrl: 'https://youtube.com/shorts/C48THcA7eXY?si=aB6YVB3zIWzuDQHL'
+  },
+  {
     id: '1',
     title: 'Hotel Booking Website',
     description: 'Complete hotel booking platform with user authentication, advanced search filters, real-time availability, payment integration (Stripe), and comprehensive admin dashboard. Features include booking management, user profiles, review system, and multi-language support.',
