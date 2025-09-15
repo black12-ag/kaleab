@@ -52,6 +52,27 @@ const videoProjects: VideoProject[] = [
 // Sample project data - Diverse and impressive portfolio
 const sampleProjects: Project[] = [
   {
+    id: 'munir-demo-chat',
+    title: 'Munir Demo Chat (React Native + Expo)',
+    description: 'Cross-platform chat app with modern UI, media sharing, and voice/video call interfaces. One TypeScript codebase for iOS, Android, and Web.',
+    image: '/images/projects/portfolio.png',
+    technologies: ['React Native', 'Expo', 'TypeScript', 'React', 'React Native Web', 'Netlify', 'PWA'],
+    category: 'mobile',
+    liveUrl: 'https://munir-demo-chat.netlify.app',
+    githubUrl: 'https://github.com/black12-ag/munir-demo-chat',
+    featured: true,
+    completedDate: '2025-09',
+    status: 'completed',
+    keyFeatures: [
+      'Chat list and conversation UI',
+      'Media sharing (camera/gallery) demo',
+      'Voice and video call interfaces',
+      'Dark theme and responsive design',
+      'Deployed as a PWA on Netlify'
+    ],
+    videoUrl: 'https://youtube.com/shorts/C48THcA7eXY?si=aB6YVB3zIWzuDQHL'
+  },
+  {
     id: '1',
     title: 'Hotel Booking Platform',
     description: 'Complete hotel booking system with real-time availability, payment processing, admin dashboard, and multi-language support.',
