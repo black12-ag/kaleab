@@ -39,7 +39,6 @@ export default function Footer() {
     { name: 'Portfolio', href: '/portfolio' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
-    { name: 'Admin', href: '/admin', icon: Settings },
   ];
 
   const skills = [

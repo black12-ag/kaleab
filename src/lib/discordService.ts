@@ -108,15 +108,12 @@ class DiscordService {
       });
 
       if (response.ok) {
-        console.log('✅ Message sent to Discord successfully');
         return true;
       } else {
-        console.error('❌ Discord webhook error:', response.status);
         this.storeFallbackMessage(messageData);
         return false;
       }
     } catch (error) {
-      console.error('❌ Failed to send Discord message:', error);
       this.storeFallbackMessage(messageData);
       return false;
     }
@@ -131,7 +128,6 @@ class DiscordService {
       status: 'pending'
     });
     localStorage.setItem('discord_fallback', JSON.stringify(fallbackMessages));
-    console.log('📧 Message stored for manual processing');
   }
 
   getFallbackMessages(): any[] {

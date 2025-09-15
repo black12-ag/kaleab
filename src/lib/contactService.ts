@@ -53,7 +53,7 @@ class ContactService {
           };
         }
       } catch (error) {
-        console.log('Telegram failed, trying next method...');
+        // Telegram failed, trying next method
       }
     }
 
@@ -70,7 +70,7 @@ class ContactService {
           };
         }
       } catch (error) {
-        console.log('Discord failed, trying next method...');
+        // Discord failed, trying next method
       }
     }
 
@@ -87,7 +87,7 @@ class ContactService {
           };
         }
       } catch (error) {
-        console.log('Email failed, trying next method...');
+        // Email failed, trying next method
       }
     }
 

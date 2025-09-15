@@ -18,10 +18,7 @@ class TelegramService {
     this.botToken = import.meta.env.VITE_TELEGRAM_BOT_TOKEN || '';
     this.chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID || '';
     
-    // Debug logging
-    console.log('🤖 Telegram Service Initialized:');
-    console.log('   Bot Token:', this.botToken ? `${this.botToken.substring(0, 10)}...` : 'NOT SET');
-    console.log('   Chat ID:', this.chatId || 'NOT SET');
+    // Telegram service initialized silently for security
   }
 
   private formatMessage(data: TelegramMessage): string {
@@ -99,15 +96,12 @@ class TelegramService {
       const result = await response.json();
       
       if (result.ok) {
-        console.log('✅ Message sent to Telegram successfully');
         return true;
       } else {
-        console.error('❌ Telegram API error:', result);
         this.storeFallbackMessage(messageData);
         return false;
       }
     } catch (error) {
-      console.error('❌ Failed to send Telegram message:', error);
       this.storeFallbackMessage(messageData);
       return false;
     }
@@ -122,7 +116,6 @@ class TelegramService {
       status: 'pending'
     });
     localStorage.setItem('telegram_fallback', JSON.stringify(fallbackMessages));
-    console.log('📧 Message stored for manual processing');
   }
 
   // For admin panel - retrieve fallback messages

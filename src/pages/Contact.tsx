@@ -234,7 +234,6 @@ export default function Contact() {
         });
       }
     } catch (error) {
-      console.error('Contact form error:', error);
       toast({
         title: 'Error',
         description: 'Failed to send message. Please try the direct contact methods above.',
@@ -593,7 +592,7 @@ export default function Contact() {
                         variant="outline"
                         size="sm"
                         onClick={() => window.open(social.href, '_blank')}
-                        className="border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
+                        className="border-blue-300 dark:border-blue-600 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20"
                       >
                         Visit
                       </Button>
