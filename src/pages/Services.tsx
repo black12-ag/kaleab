@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { useServices } from '@/contexts/ServiceContext';
 import { 
   Code, 
   Smartphone, 
@@ -34,127 +35,6 @@ import {
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-// Main services data - redesigned with cleaner structure
-const mainServices = [
-  {
-    id: 'web-apps',
-    icon: '💻',
-    lucideIcon: Laptop,
-    title: 'Web Apps',
-    shortDescription: 'Modern responsive websites and web applications.',
-    description: 'Custom web applications built with React, Next.js, and modern technologies for optimal performance and user experience.',
-    technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
-    startingPrice: '$2,500',
-    timeline: '4-8 weeks',
-    color: 'from-blue-500 to-blue-600',
-    borderColor: 'border-blue-200',
-    bgColor: 'bg-blue-50',
-    popular: true
-  },
-  {
-    id: 'mobile-apps',
-    icon: '📱',
-    lucideIcon: Smartphone,
-    title: 'Mobile Apps',
-    shortDescription: 'Cross-platform iOS and Android applications.',
-    description: 'Native-quality mobile apps using React Native and Flutter that work seamlessly across all platforms.',
-    technologies: ['React Native', 'Flutter', 'Expo', 'Firebase'],
-    startingPrice: '$5,000',
-    timeline: '6-12 weeks',
-    color: 'from-blue-600 to-blue-700',
-    borderColor: 'border-blue-300',
-    bgColor: 'bg-blue-50',
-    popular: false
-  },
-  {
-    id: 'automation',
-    icon: '⚡',
-    lucideIcon: Zap,
-    title: 'Automation',
-    shortDescription: 'Streamline workflows and automate repetitive tasks.',
-    description: 'Custom automation solutions to boost productivity and eliminate manual processes using modern tools and APIs.',
-    technologies: ['Python', 'Node.js', 'APIs', 'Webhooks'],
-    startingPrice: '$1,500',
-    timeline: '2-4 weeks',
-    color: 'from-purple-500 to-purple-600',
-    borderColor: 'border-purple-200',
-    bgColor: 'bg-purple-50',
-    popular: true
-  },
-  {
-    id: 'bots',
-    icon: '🤖',
-    lucideIcon: Bot,
-    title: 'Bots',
-    shortDescription: 'Intelligent chatbots and automated assistants.',
-    description: 'AI-powered bots for customer support, lead generation, and task automation across multiple platforms.',
-    technologies: ['OpenAI', 'Telegram API', 'Discord.js', 'NLP'],
-    startingPrice: '$2,000',
-    timeline: '3-6 weeks',
-    color: 'from-purple-600 to-purple-700',
-    borderColor: 'border-purple-300',
-    bgColor: 'bg-purple-50',
-    popular: true
-  },
-  {
-    id: 'backend-apis',
-    icon: '🔧',
-    lucideIcon: Settings2,
-    title: 'Backend & APIs',
-    shortDescription: 'Robust server infrastructure and API development.',
-    description: 'Scalable backend systems with secure APIs, database optimization, and cloud deployment solutions.',
-    technologies: ['Node.js', 'PostgreSQL', 'MongoDB', 'AWS'],
-    startingPrice: '$3,000',
-    timeline: '3-6 weeks',
-    color: 'from-slate-500 to-slate-600',
-    borderColor: 'border-slate-200',
-    bgColor: 'bg-slate-50',
-    popular: false
-  },
-  {
-    id: 'ai-tools',
-    icon: '✨',
-    lucideIcon: Sparkles,
-    title: 'AI Tools',
-    shortDescription: 'Custom AI solutions and intelligent applications.',
-    description: 'Leverage AI and machine learning to build smart tools that enhance productivity and user experience.',
-    technologies: ['OpenAI', 'TensorFlow', 'Python', 'LangChain'],
-    startingPrice: '$4,000',
-    timeline: '4-8 weeks',
-    color: 'from-blue-700 to-purple-600',
-    borderColor: 'border-blue-200',
-    bgColor: 'bg-blue-50',
-    popular: true
-  }
-];
-
-// Additional services
-const additionalServices = [
-  {
-    icon: Shield,
-    title: 'Security Audits',
-    description: 'Comprehensive security reviews and vulnerability assessments for your applications.',
-    price: '$1,000+'
-  },
-  {
-    icon: TrendingUp,
-    title: 'Performance Optimization',
-    description: 'Speed up your existing applications and improve user experience.',
-    price: '$800+'
-  },
-  {
-    icon: Server,
-    title: 'DevOps & Deployment',
-    description: 'Set up CI/CD pipelines, cloud infrastructure, and monitoring systems.',
-    price: '$1,200+'
-  },
-  {
-    icon: Users,
-    title: 'Team Training',
-    description: 'Train your development team on modern technologies and best practices.',
-    price: '$500/day'
-  }
-];
 
 // Process steps
 const processSteps = [
@@ -193,8 +73,17 @@ const processSteps = [
 export default function Services() {
   const navigate = useNavigate();
   const [selectedService, setSelectedService] = useState<string | null>(null);
+  const { getMainServices, getAdditionalServices, services } = useServices();
 
+  const mainServices = getMainServices(); // Only returns visible services by default
+  const additionalServices = getAdditionalServices(); // Only returns visible services by default
   const popularServices = mainServices.filter(service => service.popular);
+  
+  // Debug logging
+  console.log('Services page - Total services:', services.length);
+  console.log('Services page - Main services:', mainServices.length);
+  console.log('Services page - Additional services:', additionalServices.length);
+  console.log('Services page - Popular services:', popularServices.length);
 
   return (
     <div className="min-h-screen bg-background">
@@ -332,9 +221,8 @@ export default function Services() {
                           </div>
                           
                           <Button 
-                            variant="outline" 
                             size="sm" 
-                            className="w-full group-hover:bg-gray-50 dark:group-hover:bg-gray-800 transition-colors"
+                            className="w-full bg-blue-600 hover:bg-blue-700 text-white transition-colors"
                           >
                             View Details <ArrowRight className="w-3 h-3 ml-2" />
                           </Button>
@@ -355,16 +243,20 @@ export default function Services() {
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Additional Services</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {additionalServices.map((service, index) => (
-                <Card key={index} className="border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6 text-center">
-                    <service.icon className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                    <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">{service.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">{service.description}</p>
-                    <p className="text-blue-600 font-semibold">{service.price}</p>
-                  </CardContent>
-                </Card>
-              ))}
+              {additionalServices.map((service, index) => {
+                return (
+                  <Card key={service.id || index} className="border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow">
+                    <CardContent className="p-6 text-center">
+                      <div className="w-12 h-12 text-2xl flex items-center justify-center mx-auto mb-4">
+                        {service.icon}
+                      </div>
+                      <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">{service.title}</h3>
+                      <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">{service.shortDescription}</p>
+                      <p className="text-blue-600 font-semibold">{service.price || service.startingPrice}</p>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -443,8 +335,7 @@ export default function Services() {
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-              {popularServices.map((service) => {
-                const LucideIcon = service.lucideIcon;
+            {popularServices.map((service) => {
                 return (
                   <Card key={service.id} className={`border-2 ${service.borderColor} ${service.bgColor} dark:bg-opacity-20 hover:shadow-lg transition-shadow`}>
                     <CardContent className="p-6 text-center">

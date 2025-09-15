@@ -7,6 +7,9 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
+import ProjectTypeSelector from '@/components/ui/project-type-selector';
+import BudgetRangeSelector from '@/components/ui/budget-range-selector';
+import contactService from '@/lib/contactService';
 import { 
   Mail, 
   Phone, 
@@ -35,6 +38,65 @@ interface ContactForm {
   projectType?: string;
   budget?: string;
 }
+
+// Function to format the WhatsApp message
+const formatWhatsAppMessage = (data: ContactForm) => {
+  const currentDate = new Date().toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit'
+  });
+
+  let message = `🌟 *New Project Inquiry from Portfolio Website* 🌟\n\n`;
+  message += `📅 *Date:* ${currentDate}\n\n`;
+  message += `👤 *Name:* ${data.name}\n`;
+  message += `📧 *Email:* ${data.email}\n\n`;
+  
+  if (data.projectType) {
+    // Map the project type ID to a readable format
+    const projectTypeMap: { [key: string]: string } = {
+      'web-application': '🌐 Web Application',
+      'mobile-app': '📱 Mobile App',
+      'ecommerce-platform': '🛒 E-commerce Platform',
+      'booking-system': '📅 Booking System',
+      'dashboard-admin': '📊 Dashboard/Admin Panel',
+      'api-development': '🔗 API Development',
+      'enterprise-solution': '🏢 Enterprise Solution',
+      'ui-ux-design': '🎨 UI/UX Design',
+      'consulting': '💡 Technical Consulting',
+      'performance-optimization': '⚡ Performance Optimization',
+      'security-audit': '🔒 Security Audit',
+      'other': '⚙️ Other/Custom Project'
+    };
+    message += `💼 *Project Type:* ${projectTypeMap[data.projectType] || data.projectType}\n`;
+  }
+  
+  if (data.budget) {
+    // Map the budget ID to a readable format
+    const budgetMap: { [key: string]: string } = {
+      'under-5k': '💰 Under $5,000',
+      '5k-10k': '💰 $5,000 - $10,000',
+      '10k-25k': '💰 $10,000 - $25,000',
+      '25k-50k': '💰 $25,000 - $50,000',
+      '50k-plus': '💰 $50,000+',
+      'hourly-rate': '⏰ Hourly Rate',
+      'lets-discuss': '💬 Let\'s Discuss',
+      'custom-quote': '📋 Custom Quote'
+    };
+    message += `💵 *Budget Range:* ${budgetMap[data.budget] || data.budget}\n`;
+  }
+  
+  message += `\n📝 *Project Details:*\n${data.message}\n\n`;
+  message += `---\n`;
+  message += `✨ *Thank you for considering my services!*\n`;
+  message += `🚀 I'll review your requirements and get back to you with a detailed proposal.\n\n`;
+  message += `Best regards,\n`;
+  message += `*Munir Ayub* - Full Stack Developer`;
+  
+  return message;
+};
 
 export default function Contact() {
   const { toast } = useToast();
@@ -105,27 +167,6 @@ export default function Contact() {
     }
   ];
 
-  const projectTypes = [
-    'Web Application',
-    'Mobile App',
-    'E-commerce Platform',
-    'Booking System',
-    'Dashboard/Admin Panel',
-    'API Development',
-    'UI/UX Design',
-    'Consulting',
-    'Other'
-  ];
-
-  const budgetRanges = [
-    'Under $5,000',
-    '$5,000 - $10,000',
-    '$10,000 - $25,000',
-    '$25,000 - $50,000',
-    '$50,000+',
-    'Hourly Rate',
-    'Let\'s Discuss'
-  ];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -154,27 +195,49 @@ export default function Contact() {
       return;
     }
 
-    // Simulate form submission
+    // Submit using new contact service
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      const result = await contactService.submitContactForm(formData);
       
-      toast({
-        title: 'Message Sent Successfully!',
-        description: 'Thank you for reaching out. I\'ll get back to you within 24 hours.',
-      });
-
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        message: '',
-        projectType: '',
-        budget: ''
-      });
+      if (result.success) {
+        // Success - message delivered automatically
+        toast({
+          title: `Message Sent via ${result.method}!`,
+          description: result.message,
+        });
+        
+        // Reset form after successful submission
+        setFormData({
+          name: '',
+          email: '',
+          message: '',
+          projectType: '',
+          budget: ''
+        });
+        
+        // If using WhatsApp fallback, still open WhatsApp
+        if (result.method === 'WhatsApp (Manual)') {
+          const whatsappMessage = formatWhatsAppMessage(formData);
+          const whatsappURL = `https://wa.me/251907806267?text=${encodeURIComponent(whatsappMessage)}`;
+          window.open(whatsappURL, '_blank');
+        }
+      } else {
+        // All methods failed - fallback to manual WhatsApp
+        const whatsappMessage = formatWhatsAppMessage(formData);
+        const whatsappURL = `https://wa.me/251907806267?text=${encodeURIComponent(whatsappMessage)}`;
+        window.open(whatsappURL, '_blank');
+        
+        toast({
+          title: 'Opening WhatsApp',
+          description: 'Automatic delivery failed. Please send via WhatsApp manually.',
+          variant: 'destructive'
+        });
+      }
     } catch (error) {
+      console.error('Contact form error:', error);
       toast({
         title: 'Error',
-        description: 'Something went wrong. Please try again.',
+        description: 'Failed to send message. Please try the direct contact methods above.',
         variant: 'destructive'
       });
     } finally {
@@ -276,12 +339,25 @@ export default function Contact() {
               <Card className="border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <CardTitle className="text-2xl text-gray-900 dark:text-white flex items-center gap-2">
-                    <Mail className="w-6 h-6 text-blue-600" />
+                    <FaWhatsapp className="w-6 h-6 text-green-600" />
                     Send Direct Message
                   </CardTitle>
                   <p className="text-gray-600 dark:text-gray-300">
-                    Fill out this simple form and I'll get back to you within 24 hours.
+                    Fill out this form and click submit to send your inquiry directly via WhatsApp with all your details pre-filled.
                   </p>
+                  
+                  {/* Telegram Integration Notice */}
+                  <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 rounded-lg p-3 mt-4">
+                    <div className="flex items-center gap-2">
+                      <FaTelegram className="w-4 h-4 text-blue-600" />
+                      <span className="text-sm font-medium text-blue-800 dark:text-blue-300">
+                        Telegram Integration Enabled
+                      </span>
+                    </div>
+                    <p className="text-xs text-blue-700 dark:text-blue-400 mt-1">
+                      When you submit this form, your message will be sent instantly to Telegram with automatic delivery confirmation!
+                    </p>
+                  </div>
                 </CardHeader>
                 <CardContent>
                   <form onSubmit={handleSubmit} className="space-y-6">
@@ -342,36 +418,16 @@ export default function Contact() {
                       <div className="mt-4 space-y-4 pt-4 border-t border-gray-200 dark:border-gray-600">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <div>
-                            <label htmlFor="projectType" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                              Project Type
-                            </label>
-                            <select
-                              id="projectType"
+                            <ProjectTypeSelector
                               value={formData.projectType}
-                              onChange={(e) => handleInputChange('projectType', e.target.value)}
-                              className="w-full h-12 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            >
-                              <option value="">Select project type</option>
-                              {projectTypes.map((type) => (
-                                <option key={type} value={type}>{type}</option>
-                              ))}
-                            </select>
+                              onChange={(value) => handleInputChange('projectType', value)}
+                            />
                           </div>
                           <div>
-                            <label htmlFor="budget" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                              Budget Range
-                            </label>
-                            <select
-                              id="budget"
+                            <BudgetRangeSelector
                               value={formData.budget}
-                              onChange={(e) => handleInputChange('budget', e.target.value)}
-                              className="w-full h-12 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            >
-                              <option value="">Select budget range</option>
-                              {budgetRanges.map((budget) => (
-                                <option key={budget} value={budget}>{budget}</option>
-                              ))}
-                            </select>
+                              onChange={(value) => handleInputChange('budget', value)}
+                            />
                           </div>
                         </div>
                       </div>
@@ -390,14 +446,14 @@ export default function Contact() {
                         </>
                       ) : (
                         <>
-                          <Send className="w-5 h-5 mr-2" />
-                          Send Message
+                          <FaTelegram className="w-5 h-5 mr-2" />
+                          Send Message Instantly
                         </>
                       )}
                     </Button>
                     
                     <p className="text-xs text-center text-gray-500 dark:text-gray-400">
-                      I'll respond within 24 hours • All information is confidential
+                      Instant Telegram delivery • Push notifications enabled • Quick response guaranteed • All information is confidential
                     </p>
                   </form>
                 </CardContent>

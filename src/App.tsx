@@ -1,15 +1,27 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { CurrencyProvider } from "@/contexts/CurrencyContext";
 import { AdminSettingsProvider } from "@/contexts/AdminSettingsContext";
+import { ServiceProvider } from "@/contexts/ServiceContext";
 import { ErrorBoundary } from "react-error-boundary";
 import "./i18n";
+
+// ScrollToTop component to reset scroll position on route change
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 // Lazy load pages
 const Home = React.lazy(() => import('./pages/Home'));
@@ -56,9 +68,10 @@ const App = () => {
     <ThemeProvider defaultTheme="system" storageKey="portfolio-ui-theme">
       <AuthProvider>
         <AdminSettingsProvider>
-          <LanguageProvider>
-            <CurrencyProvider>
-              <TooltipProvider>
+          <ServiceProvider>
+            <LanguageProvider>
+              <CurrencyProvider>
+                <TooltipProvider>
             <Toaster />
             <Sonner />
             <BrowserRouter basename={import.meta.env.BASE_URL} future={{
@@ -66,6 +79,7 @@ const App = () => {
               v7_relativeSplatPath: true
             }}>
               <ErrorBoundary FallbackComponent={ErrorFallback}>
+                <ScrollToTop />
                 <Suspense fallback={<LoadingFallback />}>
                   <Routes>
                     <Route path="/" element={<Home />} />
@@ -83,9 +97,10 @@ const App = () => {
                 </Suspense>
               </ErrorBoundary>
             </BrowserRouter>
-              </TooltipProvider>
-            </CurrencyProvider>
-          </LanguageProvider>
+                </TooltipProvider>
+              </CurrencyProvider>
+            </LanguageProvider>
+          </ServiceProvider>
         </AdminSettingsProvider>
       </AuthProvider>
     </ThemeProvider>

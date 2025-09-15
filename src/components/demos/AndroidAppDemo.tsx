@@ -14,7 +14,9 @@ import {
   MoreVertical,
   Wifi,
   Battery,
-  Radio
+  Radio,
+  Github,
+  ExternalLink
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -318,7 +320,7 @@ export const AndroidAppDemo: React.FC<AndroidAppDemoProps> = ({
                         This showcases native Android development with Material Design 3, 
                         adaptive theming, and modern Kotlin architecture patterns.
                       </p>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-2 mb-3">
                         <Badge className="bg-green-600 text-white text-xs">
                           Kotlin
                         </Badge>
@@ -331,6 +333,23 @@ export const AndroidAppDemo: React.FC<AndroidAppDemoProps> = ({
                         <Badge className="bg-green-600 text-white text-xs">
                           4,430 Files
                         </Badge>
+                      </div>
+                      <div className="flex gap-2">
+                        <Button
+                          onClick={() => window.open('https://github.com/black12-ag/chat-andorid-app.git', '_blank')}
+                          className="bg-green-600 hover:bg-green-700 text-white text-xs px-3 py-1 h-7 flex items-center gap-1"
+                        >
+                          <Github className="w-3 h-3" />
+                          View Source
+                        </Button>
+                        <Button
+                          onClick={() => window.open('https://github.com/black12-ag/chat-andorid-app.git', '_blank')}
+                          variant="outline"
+                          className="text-green-600 border-green-600 hover:bg-green-50 text-xs px-3 py-1 h-7 flex items-center gap-1"
+                        >
+                          <ExternalLink className="w-3 h-3" />
+                          Repository
+                        </Button>
                       </div>
                     </div>
                   </div>

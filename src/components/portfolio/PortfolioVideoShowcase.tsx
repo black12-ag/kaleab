@@ -1,51 +1,45 @@
 import { VideoPlayer } from '@/components/ui/video-thumbnail-player';
 import { motion } from 'framer-motion';
+import { parseVideoUrl } from '@/utils/videoUtils';
 
 export default function PortfolioVideoShowcase() {
-  const projectVideos = [
+  // Real project videos - Your actual project demonstrations
+  const rawProjectVideos = [
     {
-      title: "Hotel Booking System",
-      description: "Complete hotel reservation platform with real-time availability, payment integration, and admin dashboard.",
-      thumbnailUrl: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop&crop=center",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1", // Replace with your actual video URL
-      tags: ["React", "Node.js", "MongoDB", "Stripe"]
+      title: "Munir Demo Chat - Short Demo",
+      description: "Quick showcase of cross-platform chat app built with React Native and Expo. Features modern UI, media sharing demos, and responsive design.",
+      videoUrl: "https://youtube.com/shorts/C48THcA7eXY?si=1NiAibFxLW0Gfz1V",
+      tags: ["React Native", "Expo", "TypeScript", "PWA"]
     },
     {
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with product management, shopping cart, and secure payment processing.",
-      thumbnailUrl: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&crop=center",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1", // Replace with your actual video URL
-      tags: ["React", "TypeScript", "PostgreSQL", "Tailwind"]
+      title: "Project Demo - Full Walkthrough",
+      description: "Complete demonstration of project features, functionality, and user interface. Watch the full development process and final result.",
+      videoUrl: "https://youtu.be/SwsIXmBqdAA",
+      tags: ["Full Demo", "React", "TypeScript", "Development"]
     },
     {
-      title: "Mobile Fitness App",
-      description: "React Native fitness tracking app with workout plans, progress tracking, and social features.",
-      thumbnailUrl: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop&crop=center",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1", // Replace with your actual video URL
-      tags: ["React Native", "Firebase", "TypeScript", "Expo"]
+      title: "Portfolio Project Showcase",
+      description: "Detailed showcase of portfolio projects with live demonstrations, code explanations, and technical implementation details.",
+      videoUrl: "https://youtu.be/mJqAAGYGUDk",
+      tags: ["Portfolio", "Showcase", "Web Development", "Projects"]
     },
     {
-      title: "Real Estate Dashboard",
-      description: "Property management dashboard with analytics, listings management, and client communication tools.",
-      thumbnailUrl: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop&crop=center",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1", // Replace with your actual video URL
-      tags: ["Next.js", "Prisma", "Chart.js", "AWS"]
-    },
-    {
-      title: "Task Management System",
-      description: "Collaborative project management tool with team features, time tracking, and progress analytics.",
-      thumbnailUrl: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop&crop=center",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1", // Replace with your actual video URL
-      tags: ["Vue.js", "Express", "Socket.io", "Redis"]
-    },
-    {
-      title: "AI Chat Interface",
-      description: "Modern chat application with AI integration, real-time messaging, and smart suggestions.",
-      thumbnailUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop&crop=center",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1", // Replace with your actual video URL
-      tags: ["React", "OpenAI", "WebSocket", "Python"]
+      title: "SMM Service Seller Bot Demo",
+      description: "Live demonstration of automated SMM service selling bot (Ethio Viral). Watch how the bot handles orders, payments, and service delivery automatically.",
+      videoUrl: "https://youtube.com/shorts/ufyfoqJa04U?feature=share",
+      tags: ["Telegram Bot", "SMM Services", "Automation", "Python"]
     }
   ];
+
+  // Process videos to get proper embed URLs and thumbnails
+  const projectVideos = rawProjectVideos.map(video => {
+    const videoInfo = parseVideoUrl(video.videoUrl);
+    return {
+      ...video,
+      videoUrl: videoInfo.embedUrl,
+      thumbnailUrl: videoInfo.thumbnailUrl || "/images/projects/portfolio.png"
+    };
+  });
 
   return (
     <section className="py-20 bg-white dark:bg-neutral-950">
@@ -62,7 +56,7 @@ export default function PortfolioVideoShowcase() {
             Project Demos
           </h2>
           <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
-            Watch live demonstrations of my projects in action. See the features, functionality, and user experience firsthand.
+            Watch real demonstrations of my projects in action. See the actual features, functionality, and user experience.
           </p>
         </motion.div>
 

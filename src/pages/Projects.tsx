@@ -22,178 +22,149 @@ import {
   User
 } from 'lucide-react';
 
-// All project data - expanded from Portfolio.tsx
+// All project data - Using the same projects as Portfolio page
 const allProjects: Project[] = [
   {
-    id: '11',
-    title: 'Munir Demo Chat (React Native + Expo)',
-    description: 'Cross-platform chat app with modern UI, media sharing, and voice/video call interfaces. One TypeScript codebase for iOS, Android, and Web.',
-    image: '/images/projects/portfolio.png',
-    technologies: ['React Native', 'Expo', 'TypeScript', 'React', 'React Native Web', 'Netlify', 'PWA'],
-    category: 'mobile',
-    liveUrl: 'https://munir-demo-chat.netlify.app',
-    githubUrl: 'https://github.com/black12-ag/munir-demo-chat',
-    featured: true,
-    completedDate: '2025-09',
-    status: 'completed',
-    keyFeatures: [
-      'Chat list and conversation UI',
-      'Media sharing (camera/gallery) demo',
-      'Voice and video call interfaces',
-      'Dark theme and responsive design',
-      'Deployed as a PWA on Netlify'
-    ],
-    videoUrl: 'https://youtube.com/shorts/C48THcA7eXY?si=aB6YVB3zIWzuDQHL'
-  },
-  {
-    id: '1',
-    title: 'Hotel Booking Website',
-    description: 'Complete hotel booking platform with user authentication, advanced search filters, real-time availability, payment integration (Stripe), and comprehensive admin dashboard. Features include booking management, user profiles, review system, and multi-language support.',
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop',
-    technologies: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'Stripe', 'JWT', 'Express', 'Tailwind CSS'],
-    category: 'fullstack',
-    liveUrl: 'https://hotel-booking-demo.netlify.app',
-    githubUrl: 'https://github.com/munir-ayub/hotel-booking-website',
-    featured: true,
-    completedDate: '2024-12',
-    client: 'Tourism Business',
-    status: 'completed',
-    testimonial: {
-      text: 'Outstanding booking system that streamlined our entire reservation process. Customer satisfaction increased significantly!',
-      author: 'Ahmed Hassan, Hotel Manager',
-      rating: 5
-    },
-    keyFeatures: [
-      'Real-time booking system',
-      'Payment processing with Stripe',
-      'Advanced search and filtering',
-      'Admin dashboard and analytics',
-      'Multi-language support',
-      'Review and rating system'
-    ]
-  },
-  {
-    id: '2',
-    title: 'E-Commerce Platform',
-    description: 'Full-stack e-commerce solution with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, inventory management, and comprehensive admin dashboard.',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
-    technologies: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Stripe', 'Tailwind CSS'],
-    category: 'fullstack',
-    githubUrl: 'https://github.com/yourusername/ecommerce-platform',
-    featured: true,
-    completedDate: '2024-08',
-    client: 'Local Business Owner',
-    status: 'completed',
-    testimonial: {
-      text: 'Amazing work! The platform exceeded our expectations and increased our sales by 40%.',
-      author: 'Sarah Johnson, CEO',
-      rating: 5
-    },
-    keyFeatures: [
-      'User authentication and authorization',
-      'Shopping cart and checkout process',
-      'Payment integration with Stripe',
-      'Admin dashboard for inventory management',
-      'Responsive design for all devices'
-    ]
-  },
-  {
-    id: '3',
-    title: 'Mobile Fitness App',
-    description: 'React Native fitness tracking app with workout plans, progress tracking, and social features.',
+    id: 'fitness-workout-app',
+    title: 'Fitness Workout Tracker',
+    description: 'Comprehensive fitness tracking application with workout plans, progress monitoring, and health analytics. Still under development with advanced features being added.',
     image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop',
-    technologies: ['React Native', 'TypeScript', 'Firebase', 'Redux'],
+    technologies: ['React Native', 'Firebase', 'Health APIs', 'Chart.js', 'TypeScript'],
     category: 'mobile',
-    githubUrl: 'https://github.com/yourusername/fitness-app',
     featured: true,
-    completedDate: '2024-07',
-    status: 'completed',
+    completedDate: 'In Progress',
+    status: 'in-progress',
     keyFeatures: [
-      'Workout tracking and planning',
-      'Progress visualization',
+      'Workout plan creation and tracking',
+      'Progress visualization charts',
+      'Health data integration',
       'Social sharing features',
-      'Offline data synchronization'
+      'Custom exercise library'
     ]
   },
   {
-    id: '4',
-    title: 'Portfolio Website Design',
-    description: 'Modern portfolio website design for a creative agency with animations and responsive layout.',
-    image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop',
-    technologies: ['Figma', 'HTML', 'CSS', 'JavaScript', 'GSAP'],
-    category: 'design',
-    completedDate: '2024-06',
-    client: 'Creative Agency',
+    id: 'hotel-booking-platform',
+    title: 'Hotel Booking Platform',
+    description: 'Advanced hotel reservation system with real-time availability, payment processing, and comprehensive admin dashboard. 90% complete with final testing phase.',
+    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop',
+    technologies: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'Stripe', 'JWT', 'Express'],
+    category: 'fullstack',
+    featured: true,
+    completedDate: '90% Complete',
+    status: 'in-progress',
+    keyFeatures: [
+      'Real-time room availability system',
+      'Secure payment processing with Stripe',
+      'Multi-language support (5+ languages)',
+      'Advanced search and filtering',
+      'Comprehensive admin dashboard'
+    ]
+  },
+  {
+    id: 'web-development-service',
+    title: 'Web Development Service Platform',
+    description: 'Professional web development service platform showcasing portfolio, client management, and project delivery system. Currently in development phase.',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+    technologies: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Tailwind CSS', 'Stripe'],
+    category: 'web',
+    featured: true,
+    completedDate: 'In Progress',
+    status: 'in-progress',
+    keyFeatures: [
+      'Dynamic portfolio showcase',
+      'Client project management',
+      'Service booking system',
+      'Payment integration',
+      'Responsive design'
+    ]
+  },
+  {
+    id: 'smm-service-platform',
+    title: 'SMM Service Management Platform',
+    description: 'Social Media Marketing service platform with client management, campaign tracking, and analytics dashboard. 90% development complete.',
+    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop',
+    technologies: ['React', 'Node.js', 'MongoDB', 'Social APIs', 'Analytics', 'Dashboard'],
+    category: 'web',
+    featured: true,
+    completedDate: '90% Complete',
+    status: 'in-progress',
+    keyFeatures: [
+      'Campaign management system',
+      'Social media analytics',
+      'Client dashboard',
+      'Performance tracking',
+      'Automated reporting'
+    ]
+  },
+  {
+    id: 'ios-chat-app',
+    title: 'iOS Chat Application',
+    description: 'Native iOS chat application built with SwiftUI, featuring real-time messaging, media sharing, and push notifications. Complete source code available on GitHub.',
+    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop',
+    technologies: ['SwiftUI', 'Swift', 'Firebase', 'Core Data', 'Push Notifications', 'CloudKit'],
+    category: 'mobile',
+    githubUrl: 'https://github.com/black12-ag/chat-ios-app-.git',
+    featured: true,
+    completedDate: '2025-01',
     status: 'completed',
-    testimonial: {
-      text: 'The design perfectly captured our brand identity. We\'ve received numerous compliments!',
-      author: 'Mike Chen, Creative Director',
-      rating: 5
+    keyFeatures: [
+      'Real-time messaging with Firebase',
+      'Media sharing (photos, videos)',
+      'Push notifications',
+      'SwiftUI modern interface',
+      'Core Data local storage',
+      'Open source on GitHub'
+    ]
+  },
+  {
+    id: 'android-chat-app',
+    title: 'Android Chat Application',
+    description: 'Native Android chat application built with Kotlin and Material Design 3, featuring modern UI and seamless messaging experience. Full source code available.',
+    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop',
+    technologies: ['Kotlin', 'Material Design 3', 'Firebase', 'Room Database', 'Jetpack Compose'],
+    category: 'mobile',
+    githubUrl: 'https://github.com/black12-ag/chat-andorid-app.git',
+    featured: true,
+    completedDate: '2025-01',
+    status: 'completed',
+    keyFeatures: [
+      'Material Design 3 interface',
+      'Real-time messaging',
+      'Jetpack Compose UI',
+      'Room database integration',
+      'Firebase backend',
+      'Open source on GitHub'
+    ]
+  },
+  {
+    id: 'smm-service-seller-bot',
+    title: 'SMM Service Seller Bot (Ethio Viral)',
+    description: 'Automated SMM (Social Media Marketing) service selling bot for Telegram. Complete automation for social media services with payment integration and order management. Fully functional and live.',
+    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop',
+    technologies: ['Python', 'Telegram Bot API', 'SQLite', 'Payments API', 'Automation', 'SMM Services'],
+    category: 'bot',
+    liveUrl: 'https://t.me/Ethio_viral_bot',
+    videoUrl: 'https://youtube.com/shorts/ufyfoqJa04U?feature=share',
+    featured: true,
+    completedDate: '2025-01',
+    status: 'completed',
+    keyFeatures: [
+      'Automated SMM service selling',
+      'Payment processing integration',
+      'Order management system',
+      'Real-time service delivery',
+      'User-friendly Telegram interface',
+      'Multi-service support'
+    ],
+    telegramAccess: {
+      botUsername: 'Ethio_viral_bot',
+      startCommand: '/start',
+      demoPrompts: ['/services', '/help', '/order', '/balance'],
+      liveDemoAvailable: true,
+      requiresAuthentication: false,
+      responseTime: '< 1 second',
+      availablePlugins: ['Payment Gateway', 'Service API', 'Order Tracking', 'User Management']
     }
-  },
-  {
-    id: '5',
-    title: 'Task Management Dashboard',
-    description: 'Web-based task management system with team collaboration features and real-time updates.',
-    image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop',
-    technologies: ['Vue.js', 'Node.js', 'Socket.io', 'MongoDB'],
-    category: 'web',
-    githubUrl: 'https://github.com/yourusername/task-manager',
-    completedDate: '2024-05',
-    status: 'completed'
-  },
-  {
-    id: '6',
-    title: 'AI-Powered Chat Application',
-    description: 'Modern chat application with AI integration, real-time messaging, and file sharing capabilities.',
-    image: 'https://images.unsplash.com/photo-1587560699334-cc4ff634909a?w=800&h=600&fit=crop',
-    technologies: ['React', 'TypeScript', 'OpenAI API', 'Socket.io', 'AWS'],
-    category: 'fullstack',
-    githubUrl: 'https://github.com/yourusername/ai-chat-app',
-    completedDate: '2024-09',
-    status: 'in-progress'
-  },
-  {
-    id: '7',
-    title: 'Restaurant Booking System',
-    description: 'Complete restaurant management system with online reservations, menu management, and POS integration.',
-    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&h=600&fit=crop',
-    technologies: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL'],
-    category: 'fullstack',
-    completedDate: '2024-12',
-    status: 'coming-soon'
-  },
-  {
-    id: '8',
-    title: 'Real Estate Platform',
-    description: 'Property listing platform with advanced search, virtual tours, and agent dashboard.',
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop',
-    technologies: ['React', 'TypeScript', 'Express', 'MongoDB', 'Mapbox'],
-    category: 'fullstack',
-    githubUrl: 'https://github.com/yourusername/real-estate-platform',
-    completedDate: '2024-04',
-    status: 'completed'
-  },
-  {
-    id: '9',
-    title: 'Learning Management System',
-    description: 'Educational platform with course management, video streaming, and progress tracking.',
-    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop',
-    technologies: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Stripe'],
-    category: 'web',
-    completedDate: '2024-03',
-    status: 'completed'
-  },
-  {
-    id: '10',
-    title: 'Cryptocurrency Dashboard',
-    description: 'Real-time crypto tracking dashboard with portfolio management and trading insights.',
-    image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop',
-    technologies: ['React', 'TypeScript', 'Chart.js', 'WebSocket', 'CoinGecko API'],
-    category: 'web',
-    githubUrl: 'https://github.com/yourusername/crypto-dashboard',
-    completedDate: '2024-02',
-    status: 'completed'
   }
 ];
 
@@ -212,6 +183,7 @@ export default function Projects() {
     { id: 'fullstack', name: 'Full Stack', count: allProjects.filter(p => p.category === 'fullstack').length },
     { id: 'web', name: 'Web Apps', count: allProjects.filter(p => p.category === 'web').length },
     { id: 'mobile', name: 'Mobile Apps', count: allProjects.filter(p => p.category === 'mobile').length },
+    { id: 'bot', name: 'Telegram Bots', count: allProjects.filter(p => p.category === 'bot').length },
     { id: 'design', name: 'Design', count: allProjects.filter(p => p.category === 'design').length }
   ];
 

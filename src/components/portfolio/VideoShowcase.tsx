@@ -1,19 +1,14 @@
-import { useState, useRef } from 'react';
+import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { 
-  Play, 
-  Pause, 
-  Download, 
-  Maximize, 
-  Volume2, 
-  VolumeX,
-  ExternalLink,
   Calendar,
   Clock,
   Eye,
-  Star
+  Star,
+  Github,
+  Lock
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -31,6 +26,7 @@ interface VideoProject {
   featured?: boolean;
   githubUrl?: string;
   liveUrl?: string;
+  isPrivate?: boolean;
 }
 
 interface VideoShowcaseProps {
@@ -39,88 +35,6 @@ interface VideoShowcaseProps {
 }
 
 export default function VideoShowcase({ project, className }: VideoShowcaseProps) {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [showControls, setShowControls] = useState(false);
-  const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  const handlePlayPause = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
-
-  const handleMuteToggle = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !isMuted;
-      setIsMuted(!isMuted);
-    }
-  };
-
-  const handleDownload = () => {
-    // Check if video exists, otherwise show message
-    fetch(project.videoUrl, { method: 'HEAD' })
-      .then(response => {
-        if (response.ok) {
-          const link = document.createElement('a');
-          link.href = project.videoUrl;
-          const ext = project.videoUrl.split('.').pop() || 'mp4';
-          link.download = `${project.title.replace(/\s+/g, '_')}_demo.${ext}`;
-          link.target = '_blank';
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-        } else {
-          alert('Video not yet available. Please compress and upload your large source video to a smaller web-friendly format.');
-        }
-      })
-      .catch(() => {
-        alert('Video not yet available. Please add your demo video to the public/videos folder.');
-      });
-  };
-
-  const handleFullscreen = () => {
-    if (videoRef.current) {
-      if (videoRef.current.requestFullscreen) {
-        videoRef.current.requestFullscreen();
-      }
-    }
-  };
-
-  const handleTimeUpdate = () => {
-    if (videoRef.current) {
-      setCurrentTime(videoRef.current.currentTime);
-    }
-  };
-
-  const handleLoadedMetadata = () => {
-    if (videoRef.current) {
-      setDuration(videoRef.current.duration);
-    }
-  };
-
-  const handleSeek = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const percent = (e.clientX - rect.left) / rect.width;
-    const newTime = percent * duration;
-    if (videoRef.current) {
-      videoRef.current.currentTime = newTime;
-    }
-  };
-
-  const formatTime = (time: number) => {
-    const minutes = Math.floor(time / 60);
-    const seconds = Math.floor(time % 60);
-    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
-  };
 
   const getTechColor = (tech: string) => {
     const colors: Record<string, string> = {
@@ -140,119 +54,19 @@ export default function VideoShowcase({ project, className }: VideoShowcaseProps
   return (
     <Card className={cn("group hover:shadow-2xl transition-all duration-300", className)}>
       <div className="relative">
-        {/* Video Player */}
+        {/* Video Player - YouTube Embed */}
         <div 
-          className="relative aspect-video bg-black rounded-t-lg overflow-hidden cursor-pointer"
-          onMouseEnter={() => setShowControls(true)}
-          onMouseLeave={() => setShowControls(false)}
-          onClick={handlePlayPause}
+          className="relative aspect-video bg-black rounded-t-lg overflow-hidden"
         >
-          <video
-            ref={videoRef}
-            className="w-full h-full object-cover"
-            poster={project.thumbnailUrl}
-            muted={isMuted}
-            onTimeUpdate={handleTimeUpdate}
-            onLoadedMetadata={handleLoadedMetadata}
-            onPlay={() => setIsPlaying(true)}
-            onPause={() => setIsPlaying(false)}
-            onLoadStart={() => setIsLoading(true)}
-            onLoadedData={() => setIsLoading(false)}
-          >
-            {/* Try to infer the correct MIME type from the file extension */}
-            {(() => {
-              const ext = project.videoUrl.split('.').pop()?.toLowerCase();
-              const mime = ext === 'mp4' ? 'video/mp4' : ext === 'webm' ? 'video/webm' : ext === 'mov' ? 'video/quicktime' : 'video/mp4';
-              return <source src={project.videoUrl} type={mime} />;
-            })()}
-            Your browser does not support the video tag.
-          </video>
+          <iframe
+            src={project.videoUrl}
+            title={project.title}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            className="w-full h-full"
+          />
 
-          {/* Loading indicator */}
-          {isLoading && (
-            <div className="absolute inset-0 flex items-center justify-center bg-black/50">
-              <div className="animate-spin rounded-full h-12 w-12 border-4 border-white border-t-transparent"></div>
-            </div>
-          )}
-
-          {/* Play/Pause Overlay */}
-          {!isPlaying && !isLoading && (
-            <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
-              <Button
-                size="lg"
-                className="bg-white/20 hover:bg-white/30 text-white border-0 rounded-full w-16 h-16"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handlePlayPause();
-                }}
-              >
-                <Play className="w-8 h-8 ml-1" />
-              </Button>
-            </div>
-          )}
-
-          {/* Video Controls */}
-          {showControls && (
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-              {/* Progress Bar */}
-              <div 
-                className="w-full h-1 bg-white/30 rounded-full cursor-pointer mb-3"
-                onClick={handleSeek}
-              >
-                <div 
-                  className="h-full bg-white rounded-full transition-all"
-                  style={{ width: `${duration ? (currentTime / duration) * 100 : 0}%` }}
-                />
-              </div>
-
-              {/* Control Buttons */}
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-2">
-                  <Button
-                    size="sm"
-                    variant="ghost"
-                    className="text-white hover:bg-white/20 p-1"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handlePlayPause();
-                    }}
-                  >
-                    {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
-                  </Button>
-                  
-                  <Button
-                    size="sm"
-                    variant="ghost"
-                    className="text-white hover:bg-white/20 p-1"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleMuteToggle();
-                    }}
-                  >
-                    {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
-                  </Button>
-
-                  <span className="text-white text-sm">
-                    {formatTime(currentTime)} / {formatTime(duration)}
-                  </span>
-                </div>
-
-                <div className="flex items-center space-x-2">
-                  <Button
-                    size="sm"
-                    variant="ghost"
-                    className="text-white hover:bg-white/20 p-1"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleFullscreen();
-                    }}
-                  >
-                    <Maximize className="w-4 h-4" />
-                  </Button>
-                </div>
-              </div>
-            </div>
-          )}
 
           {/* Featured Badge */}
           {project.featured && (
@@ -314,41 +128,39 @@ export default function VideoShowcase({ project, className }: VideoShowcaseProps
               <span>Video Demo</span>
             </div>
             <div className="flex items-center gap-1">
-              <Download className="w-4 h-4" />
+              <Clock className="w-3 h-3" />
               <span>{project.fileSize}</span>
             </div>
           </div>
 
           {/* Action Buttons */}
           <div className="flex gap-2">
-            <Button
-              variant="default"
-              className="flex-1"
-              onClick={handleDownload}
-            >
-              <Download className="w-4 h-4 mr-2" />
-              Download Video
-            </Button>
-            
-            {project.githubUrl && (
+            {project.isPrivate ? (
               <Button
                 variant="outline"
-                className="flex-1"
+                className="w-full cursor-not-allowed opacity-60"
+                disabled
+              >
+                <Lock className="w-4 h-4 mr-2" />
+                Private Project - No Source Code
+              </Button>
+            ) : project.githubUrl ? (
+              <Button
+                variant="default"
+                className="w-full"
                 onClick={() => window.open(project.githubUrl, '_blank')}
               >
-                <ExternalLink className="w-4 h-4 mr-2" />
-                Source Code
+                <Github className="w-4 h-4 mr-2" />
+                View Source Code
               </Button>
-            )}
-
-            {project.liveUrl && (
+            ) : (
               <Button
                 variant="outline"
-                className="flex-1"
-                onClick={() => window.open(project.liveUrl, '_blank')}
+                className="w-full cursor-not-allowed opacity-60"
+                disabled
               >
-                <ExternalLink className="w-4 h-4 mr-2" />
-                Live Demo
+                <Github className="w-4 h-4 mr-2" />
+                No Source Available
               </Button>
             )}
           </div>

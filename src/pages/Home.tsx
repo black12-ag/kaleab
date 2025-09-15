@@ -23,44 +23,42 @@ import {
   Heart
 } from 'lucide-react';
 
-// Featured projects for home page
+// Featured projects for home page - Using the same projects as Portfolio page
 const featuredProjects: Project[] = [
   {
-    id: '1',
-    title: 'Hotel Booking Website',
-    description: 'Complete hotel booking platform with user authentication, search filters, payment integration, and admin dashboard.',
+    id: 'ios-chat-app',
+    title: 'iOS Chat Application',
+    description: 'Native iOS chat application built with SwiftUI, featuring real-time messaging, media sharing, and push notifications. Fully completed and deployed.',
+    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop',
+    technologies: ['SwiftUI', 'Swift', 'Firebase', 'Core Data', 'Push Notifications'],
+    category: 'mobile',
+    githubUrl: 'https://github.com/black12-ag/ios-chat-app',
+    featured: true,
+    completedDate: '2025-01',
+    status: 'completed'
+  },
+  {
+    id: 'android-chat-app',
+    title: 'Android Chat Application',
+    description: 'Native Android chat application built with Kotlin and Material Design 3, featuring modern UI and seamless messaging experience. Fully completed.',
+    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop',
+    technologies: ['Kotlin', 'Material Design 3', 'Firebase', 'Room Database'],
+    category: 'mobile',
+    githubUrl: 'https://github.com/black12-ag/android-chat-app',
+    featured: true,
+    completedDate: '2025-01',
+    status: 'completed'
+  },
+  {
+    id: 'hotel-booking-platform',
+    title: 'Hotel Booking Platform',
+    description: 'Advanced hotel reservation system with real-time availability, payment processing, and comprehensive admin dashboard. 90% complete with final testing phase.',
     image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop',
     technologies: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'Stripe'],
     category: 'fullstack',
-    githubUrl: 'https://github.com/munir-ayub/hotel-booking-website',
-    liveUrl: 'https://hotel-booking-demo.netlify.app',
     featured: true,
-    completedDate: '2024-12',
-    status: 'completed'
-  },
-  {
-    id: '2',
-    title: 'E-Commerce Platform',
-    description: 'Full-stack e-commerce solution with React, Node.js, and PostgreSQL. Features include user authentication and payment processing.',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
-    technologies: ['React', 'TypeScript', 'Node.js', 'PostgreSQL'],
-    category: 'fullstack',
-    githubUrl: 'https://github.com/yourusername/ecommerce-platform',
-    featured: true,
-    completedDate: '2024-08',
-    status: 'completed'
-  },
-  {
-    id: '3',
-    title: 'Mobile Fitness App',
-    description: 'React Native fitness tracking app with workout plans, progress tracking, and social features.',
-    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop',
-    technologies: ['React Native', 'TypeScript', 'Firebase'],
-    category: 'mobile',
-    githubUrl: 'https://github.com/yourusername/fitness-app',
-    featured: true,
-    completedDate: '2024-07',
-    status: 'completed'
+    completedDate: '90% Complete',
+    status: 'in-progress'
   }
 ];
 

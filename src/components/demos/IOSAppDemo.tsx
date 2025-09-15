@@ -11,7 +11,9 @@ import {
   Search,
   Plus,
   ArrowLeft,
-  MoreHorizontal
+  MoreHorizontal,
+  Github,
+  ExternalLink
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -306,7 +308,7 @@ export const IOSAppDemo: React.FC<IOSAppDemoProps> = ({
                         This demonstrates native iOS chat interface with SwiftUI components, 
                         smooth animations, and iOS Human Interface Guidelines compliance.
                       </p>
-                      <div className="flex flex-wrap gap-1 mt-2">
+                      <div className="flex flex-wrap gap-1 mt-2 mb-3">
                         <Badge variant="secondary" className="text-xs bg-gray-800 text-gray-300">
                           SwiftUI
                         </Badge>
@@ -316,6 +318,23 @@ export const IOSAppDemo: React.FC<IOSAppDemoProps> = ({
                         <Badge variant="secondary" className="text-xs bg-gray-800 text-gray-300">
                           iOS 14.0+
                         </Badge>
+                      </div>
+                      <div className="flex gap-2">
+                        <Button
+                          onClick={() => window.open('https://github.com/black12-ag/chat-ios-app-.git', '_blank')}
+                          className="bg-blue-500 hover:bg-blue-600 text-white text-xs px-2 py-1 h-6 flex items-center gap-1"
+                        >
+                          <Github className="w-3 h-3" />
+                          Source
+                        </Button>
+                        <Button
+                          onClick={() => window.open('https://github.com/black12-ag/chat-ios-app-.git', '_blank')}
+                          variant="outline"
+                          className="text-blue-400 border-blue-400 hover:bg-blue-900/20 text-xs px-2 py-1 h-6 flex items-center gap-1"
+                        >
+                          <ExternalLink className="w-3 h-3" />
+                          Repo
+                        </Button>
                       </div>
                     </div>
                   </div>

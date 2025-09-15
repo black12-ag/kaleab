@@ -24,8 +24,11 @@ import {
   EyeOff,
   LogOut,
   FileText,
-  Download
+  Download,
+  Settings,
+  Briefcase
 } from 'lucide-react';
+import ServiceAdmin from '@/components/admin/ServiceAdmin';
 
 interface Project {
   id: string;
@@ -86,6 +89,7 @@ export default function AdminPanel() {
   const [profilePhoto, setProfilePhoto] = useState<string>('/images/profile-photo.jpg');
   const [videoUploadProgress, setVideoUploadProgress] = useState<number>(0);
   const [isVideoUploading, setIsVideoUploading] = useState<boolean>(false);
+  const [activeTab, setActiveTab] = useState<'projects' | 'services' | 'media' | 'settings'>('projects');
   
   // Form state for new/edit project
   const [formData, setFormData] = useState<Partial<Project>>({
@@ -645,11 +649,53 @@ export default function AdminPanel() {
               </Button>
             </div>
           </div>
+          
+          {/* Navigation Tabs */}
+          <div className="flex gap-2 mt-4 border-t pt-4">
+            <Button
+              variant={activeTab === 'projects' ? 'default' : 'ghost'}
+              onClick={() => setActiveTab('projects')}
+              className="flex items-center gap-2"
+            >
+              <Code className="w-4 h-4" />
+              Projects
+            </Button>
+            <Button
+              variant={activeTab === 'services' ? 'default' : 'ghost'}
+              onClick={() => setActiveTab('services')}
+              className="flex items-center gap-2"
+            >
+              <Briefcase className="w-4 h-4" />
+              Services
+            </Button>
+            <Button
+              variant={activeTab === 'media' ? 'default' : 'ghost'}
+              onClick={() => setActiveTab('media')}
+              className="flex items-center gap-2"
+            >
+              <Image className="w-4 h-4" />
+              Media
+            </Button>
+            <Button
+              variant={activeTab === 'settings' ? 'default' : 'ghost'}
+              onClick={() => setActiveTab('settings')}
+              className="flex items-center gap-2"
+            >
+              <Settings className="w-4 h-4" />
+              Settings
+            </Button>
+          </div>
         </div>
       </div>
 
       <div className="container mx-auto px-4 py-8">
-        {/* Profile Photo Management Section */}
+        {activeTab === 'services' && (
+          <ServiceAdmin />
+        )}
+        
+        {activeTab === 'media' && (
+          <div className="space-y-8">
+            {/* Profile Photo Management Section */}
         <Card className="mb-8">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -1010,8 +1056,13 @@ export default function AdminPanel() {
           </CardContent>
         </Card>
 
-        {/* Create/Edit Form */}
-        {isCreating ? (
+          </div>
+        )}
+        
+        {activeTab === 'projects' && (
+          <div className="space-y-8">
+            {/* Create/Edit Form */}
+            {isCreating ? (
           <Card className="mb-8">
             <CardHeader>
               <CardTitle>
@@ -1313,20 +1364,113 @@ export default function AdminPanel() {
           ))}
         </div>
 
-        {projects.length === 0 && !isCreating && (
-          <Card className="p-12 text-center">
-            <div className="flex justify-center mb-4">
-              <Video className="w-12 h-12 text-muted-foreground" />
-            </div>
-            <h3 className="text-lg font-semibold mb-2">No Projects Yet</h3>
-            <p className="text-muted-foreground mb-4">
-              Start by adding your first project with videos and demos.
-            </p>
-            <Button onClick={() => setIsCreating(true)}>
-              <Plus className="w-4 h-4 mr-2" />
-              Add First Project
-            </Button>
-          </Card>
+            {projects.length === 0 && !isCreating && (
+              <Card className="p-12 text-center">
+                <div className="flex justify-center mb-4">
+                  <Video className="w-12 h-12 text-muted-foreground" />
+                </div>
+                <h3 className="text-lg font-semibold mb-2">No Projects Yet</h3>
+                <p className="text-muted-foreground mb-4">
+                  Start by adding your first project with videos and demos.
+                </p>
+                <Button onClick={() => setIsCreating(true)}>
+                  <Plus className="w-4 h-4 mr-2" />
+                  Add First Project
+                </Button>
+              </Card>
+            )}
+          </div>
+        )}
+        
+        {activeTab === 'settings' && (
+          <div className="space-y-8">
+            {/* CV Management Section */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <FileText className="w-5 h-5" />
+                  CV/Resume Management
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Upload CV */}
+                  <div>
+                    <Label htmlFor="cv-upload">Upload New CV (PDF)</Label>
+                    <Input
+                      id="cv-upload"
+                      type="file"
+                      accept=".pdf"
+                      onChange={handleCVUpload}
+                      className="mt-2"
+                    />
+                    <p className="text-xs text-muted-foreground mt-1">
+                      Upload your CV as a PDF file
+                    </p>
+                  </div>
+                  
+                  {/* CV URL */}
+                  <div>
+                    <Label htmlFor="cv-url">Or Use External CV URL</Label>
+                    <div className="flex gap-2 mt-2">
+                      <Input
+                        id="cv-url"
+                        type="url"
+                        placeholder="https://example.com/your-cv.pdf"
+                        defaultValue={cvUrl && !cvUrl.startsWith('data:') ? cvUrl : ''}
+                        onBlur={(e) => {
+                          if (e.target.value) {
+                            handleCVUrlUpdate(e.target.value);
+                          }
+                        }}
+                      />
+                      <Button
+                        variant="outline"
+                        onClick={() => {
+                          const input = document.getElementById('cv-url') as HTMLInputElement;
+                          if (input?.value) {
+                            handleCVUrlUpdate(input.value);
+                          }
+                        }}
+                      >
+                        Save
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Current CV Preview */}
+                {cvUrl && (
+                  <div className="mt-6 pt-4 border-t">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <h4 className="font-medium">Current CV</h4>
+                        <p className="text-sm text-muted-foreground">
+                          {cvUrl.startsWith('data:') ? 'Uploaded file' : 'External URL'}
+                        </p>
+                      </div>
+                      <Button
+                        variant="outline"
+                        onClick={() => {
+                          if (cvUrl.startsWith('data:')) {
+                            const link = document.createElement('a');
+                            link.href = cvUrl;
+                            link.download = 'CV.pdf';
+                            link.click();
+                          } else {
+                            window.open(cvUrl, '_blank');
+                          }
+                        }}
+                      >
+                        <Download className="w-4 h-4 mr-2" />
+                        Preview CV
+                      </Button>
+                    </div>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          </div>
         )}
       </div>
     </div>

@@ -24,169 +24,203 @@ import {
   ExternalLink,
   TrendingUp,
   CheckCircle2,
-  Rocket
+  Rocket,
+  Bot
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Database, Server, Smartphone } from 'lucide-react';
 
-// Experience data
+// Experience data - Realistic 3-year journey
 const experience = [
   {
     id: '1',
-    title: 'Senior Full Stack Developer',
+    title: 'Full Stack Developer & Freelancer',
     company: 'Freelance',
-    location: 'Remote',
-    period: '2022 - Present',
-    description: 'Building custom web and mobile applications for clients worldwide. Specializing in React, Node.js, and modern web technologies.',
+    location: 'Remote / Ethiopia',
+    period: '2023 - Present',
+    description: 'Building custom web and mobile applications for international clients. Specializing in modern web technologies, automation tools, and AI-powered solutions.',
     achievements: [
-      'Delivered 50+ successful projects',
-      'Maintained 100% client satisfaction rate',
-      'Reduced client development costs by 30% on average',
-      'Built scalable applications serving 10,000+ users'
+      'Successfully delivered 15+ projects across different industries',
+      'Built e-commerce platforms, booking systems, and business tools',
+      'Developed Telegram bots and automation solutions',
+      'Maintained excellent client relationships with repeat business'
     ],
-    technologies: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'PostgreSQL', 'AWS']
+    technologies: ['React', 'Next.js', 'Node.js', 'TypeScript', 'MongoDB', 'PostgreSQL', 'Python']
   },
   {
     id: '2',
     title: 'Full Stack Developer',
-    company: 'Tech Solutions Inc.',
-    location: 'New York, NY',
-    period: '2021 - 2022',
-    description: 'Developed and maintained web applications for enterprise clients. Collaborated with cross-functional teams to deliver high-quality software solutions.',
+    company: 'Local Tech Agency',
+    location: 'Addis Ababa, Ethiopia',
+    period: '2022 - 2023',
+    description: 'Worked on various web development projects for local businesses and startups. Gained experience in full-stack development and client communication.',
     achievements: [
-      'Led development of 3 major client projects',
-      'Improved application performance by 40%',
-      'Mentored 2 junior developers',
-      'Implemented CI/CD pipelines reducing deployment time by 60%'
+      'Developed responsive websites for 8+ local businesses',
+      'Built custom CMS solutions and admin dashboards',
+      'Collaborated with design team to implement pixel-perfect UIs',
+      'Learned modern deployment and hosting solutions'
     ],
-    technologies: ['React', 'Vue.js', 'Express', 'MySQL', 'Docker', 'Jenkins']
+    technologies: ['React', 'JavaScript', 'Node.js', 'Express', 'MySQL', 'HTML/CSS']
   },
   {
     id: '3',
-    title: 'Frontend Developer',
-    company: 'StartupX',
-    location: 'San Francisco, CA',
-    period: '2020 - 2021',
-    description: 'Built responsive user interfaces and implemented modern frontend architectures. Worked closely with designers to create pixel-perfect implementations.',
+    title: 'Self-Taught Developer & Student',
+    company: 'Personal Learning Journey',
+    location: 'Ethiopia',
+    period: '2022 - 2022',
+    description: 'Started my coding journey with online courses and tutorials. Built personal projects and learned the fundamentals of web development.',
     achievements: [
-      'Increased user engagement by 25%',
-      'Reduced page load times by 50%',
-      'Implemented design system used across 5 products',
-      'Led frontend architecture migration to TypeScript'
+      'Completed comprehensive web development courses',
+      'Built first portfolio website and personal projects',
+      'Learned HTML, CSS, JavaScript, and React fundamentals',
+      'Created first full-stack application with database integration'
     ],
-    technologies: ['React', 'TypeScript', 'Sass', 'Redux', 'Jest', 'Webpack']
+    technologies: ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js', 'MongoDB']
   }
 ];
 
-// Education data
+// Education data - Realistic self-taught journey
 const education = [
   {
     id: '1',
-    degree: 'Bachelor of Science in Computer Science',
-    institution: 'University of Technology',
-    location: 'California, USA',
-    period: '2016 - 2020',
-    gpa: '3.8/4.0',
-    description: 'Focused on software engineering, algorithms, and database systems. Graduated Magna Cum Laude.',
+    degree: 'Self-Taught Full Stack Developer',
+    institution: 'Online Learning Platforms',
+    location: 'Remote Learning',
+    period: '2022 - 2024',
+    description: 'Comprehensive self-study through various online platforms including FreeCodeCamp, YouTube, Udemy, and official documentation. Focused on practical project-based learning.',
     courses: [
-      'Data Structures & Algorithms',
-      'Database Management Systems',
-      'Software Engineering',
-      'Web Development',
-      'Mobile App Development',
-      'Computer Networks'
+      'JavaScript Fundamentals & ES6+',
+      'React.js & Next.js Development',
+      'Node.js & Express Backend',
+      'Database Design (MongoDB, PostgreSQL)',
+      'Version Control with Git & GitHub',
+      'Deployment & Hosting Solutions'
     ]
   },
   {
     id: '2',
-    degree: 'Full Stack Web Development Bootcamp',
-    institution: 'Code Academy Pro',
+    degree: 'Modern Web Development',
+    institution: 'FreeCodeCamp & YouTube University',
     location: 'Online',
-    period: '2020',
-    description: 'Intensive 6-month program covering modern web development technologies and practices.',
+    period: '2022 - 2023',
+    description: 'Completed comprehensive web development curriculum with focus on responsive design, modern JavaScript, and full-stack development.',
     courses: [
-      'React & Redux',
-      'Node.js & Express',
-      'MongoDB & PostgreSQL',
-      'REST APIs & GraphQL',
-      'DevOps & Deployment',
-      'Testing & Quality Assurance'
+      'Responsive Web Design',
+      'JavaScript Algorithms & Data Structures',
+      'Frontend Libraries (React)',
+      'APIs & Microservices',
+      'Python & Automation',
+      'Project Portfolio Development'
+    ]
+  },
+  {
+    id: '3',
+    degree: 'Continuous Learning & Specialization',
+    institution: 'Various Online Platforms',
+    location: 'Online',
+    period: '2023 - Present',
+    description: 'Ongoing learning in advanced topics including TypeScript, cloud services, mobile development, and AI integration.',
+    courses: [
+      'TypeScript Advanced Patterns',
+      'React Native Mobile Development',
+      'Cloud Services (AWS, Vercel)',
+      'AI Integration (OpenAI APIs)',
+      'Telegram Bot Development',
+      'Business Automation Tools'
     ]
   }
 ];
 
-// Certifications
+// Certifications - Realistic online achievements
 const certifications = [
-  { name: 'AWS Certified Solutions Architect', issuer: 'Amazon Web Services', year: '2023' },
-  { name: 'React Developer Certification', issuer: 'Meta', year: '2022' },
-  { name: 'Node.js Application Developer', issuer: 'OpenJS Foundation', year: '2022' },
-  { name: 'Google Analytics Certified', issuer: 'Google', year: '2021' }
+  { name: 'Responsive Web Design', issuer: 'FreeCodeCamp', year: '2022' },
+  { name: 'JavaScript Algorithms and Data Structures', issuer: 'FreeCodeCamp', year: '2022' },
+  { name: 'Frontend Development Libraries', issuer: 'FreeCodeCamp', year: '2023' },
+  { name: 'APIs and Microservices', issuer: 'FreeCodeCamp', year: '2023' },
+  { name: 'React - The Complete Guide', issuer: 'Udemy', year: '2023' },
+  { name: 'Node.js - The Complete Guide', issuer: 'Udemy', year: '2024' }
 ];
 
-// Journey timeline data
+// Journey timeline data - Realistic 3-year journey
 const journeyMilestones = [
   {
-    year: '2016',
-    title: 'Started Computer Science',
-    description: 'Began my journey in Computer Science at University of Technology',
+    year: '2022',
+    title: 'Started Coding Journey',
+    description: 'Began self-teaching web development through online resources, started with HTML, CSS, and JavaScript basics',
     type: 'education',
     icon: GraduationCap,
     color: 'bg-blue-500'
   },
   {
-    year: '2018',
-    title: 'First Web Project',
-    description: 'Built my first full-stack web application using React and Node.js',
+    year: '2022',
+    title: 'First React Project',
+    description: 'Built my first React application and discovered my passion for modern web development',
     type: 'milestone',
     icon: Code2,
-    color: 'bg-blue-600'
+    color: 'bg-green-500'
   },
   {
-    year: '2020',
-    title: 'Frontend Developer',
-    description: 'Started professional career at StartupX, focusing on React and TypeScript',
+    year: '2022',
+    title: 'First Paid Project',
+    description: 'Completed first freelance project - a simple business website, marking the start of my career',
     type: 'career',
     icon: Briefcase,
     color: 'bg-purple-500'
   },
   {
-    year: '2021',
-    title: 'Full Stack Developer',
-    description: 'Joined Tech Solutions Inc., expanded to backend development',
+    year: '2023',
+    title: 'Full Stack Development',
+    description: 'Mastered backend development with Node.js and databases, became a complete full-stack developer',
+    type: 'milestone',
+    icon: Server,
+    color: 'bg-indigo-600'
+  },
+  {
+    year: '2023',
+    title: 'Local Agency Experience',
+    description: 'Joined a local tech agency, gained experience working with teams and larger projects',
     type: 'career',
-    icon: TrendingUp,
+    icon: Users,
     color: 'bg-purple-600'
   },
   {
-    year: '2022',
-    title: 'Senior Full Stack Developer',
-    description: 'Became freelance developer, serving clients worldwide',
+    year: '2024',
+    title: 'Freelance Success',
+    description: 'Became full-time freelancer, built reputation for quality work and client satisfaction',
     type: 'career',
     icon: Rocket,
     color: 'bg-slate-600'
   },
   {
     year: '2024',
-    title: '50+ Projects Completed',
-    description: 'Reached major milestone with 100% client satisfaction rate',
+    title: 'AI & Automation Specialist',
+    description: 'Expanded into AI integration and automation tools, including Telegram bots and business automation',
+    type: 'achievement',
+    icon: Bot,
+    color: 'bg-blue-700'
+  },
+  {
+    year: '2025',
+    title: '15+ Projects Delivered',
+    description: 'Successfully delivered diverse projects from e-commerce to automation tools with excellent client feedback',
     type: 'achievement',
     icon: Award,
-    color: 'bg-blue-700'
+    color: 'bg-green-700'
   }
 ];
 
-// Skills categories with enhanced data
+// Skills categories - Realistic levels for 3-year self-taught developer
 const skillCategories = [
   {
     category: 'Frontend Development',
     icon: Code2,
     color: 'text-blue-600',
     skills: [
-      { name: 'React/Next.js', level: 95, color: 'bg-blue-500' },
-      { name: 'TypeScript', level: 90, color: 'bg-blue-400' },
-      { name: 'Vue.js', level: 85, color: 'bg-blue-600' },
-      { name: 'HTML/CSS', level: 95, color: 'bg-purple-500' },
-      { name: 'Tailwind CSS', level: 90, color: 'bg-purple-400' }
+      { name: 'React/Next.js', level: 85, color: 'bg-blue-500' },
+      { name: 'JavaScript/ES6+', level: 88, color: 'bg-yellow-500' },
+      { name: 'TypeScript', level: 75, color: 'bg-blue-400' },
+      { name: 'HTML/CSS', level: 90, color: 'bg-purple-500' },
+      { name: 'Tailwind CSS', level: 85, color: 'bg-purple-400' }
     ]
   },
   {
@@ -194,11 +228,11 @@ const skillCategories = [
     icon: Server,
     color: 'text-purple-600',
     skills: [
-      { name: 'Node.js', level: 90, color: 'bg-purple-600' },
-      { name: 'Express.js', level: 85, color: 'bg-slate-600' },
-      { name: 'Python', level: 75, color: 'bg-blue-700' },
-      { name: 'REST APIs', level: 90, color: 'bg-purple-500' },
-      { name: 'GraphQL', level: 70, color: 'bg-slate-500' }
+      { name: 'Node.js', level: 80, color: 'bg-purple-600' },
+      { name: 'Express.js', level: 78, color: 'bg-slate-600' },
+      { name: 'Python', level: 70, color: 'bg-blue-700' },
+      { name: 'REST APIs', level: 82, color: 'bg-purple-500' },
+      { name: 'Authentication', level: 75, color: 'bg-slate-500' }
     ]
   },
   {
@@ -206,23 +240,23 @@ const skillCategories = [
     icon: Database,
     color: 'text-purple-600',
     skills: [
-      { name: 'PostgreSQL', level: 85, color: 'bg-blue-700' },
-      { name: 'MongoDB', level: 80, color: 'bg-purple-700' },
-      { name: 'AWS/Cloud', level: 75, color: 'bg-slate-600' },
-      { name: 'Docker', level: 70, color: 'bg-blue-400' },
-      { name: 'Redis', level: 70, color: 'bg-slate-500' }
+      { name: 'MongoDB', level: 78, color: 'bg-purple-700' },
+      { name: 'PostgreSQL', level: 72, color: 'bg-blue-700' },
+      { name: 'Firebase', level: 75, color: 'bg-orange-500' },
+      { name: 'Vercel/Netlify', level: 80, color: 'bg-slate-600' },
+      { name: 'Basic AWS', level: 60, color: 'bg-blue-400' }
     ]
   },
   {
-    category: 'Mobile & Tools',
+    category: 'Tools & Others',
     icon: Smartphone,
     color: 'text-blue-600',
     skills: [
-      { name: 'React Native', level: 80, color: 'bg-blue-600' },
-      { name: 'Flutter', level: 65, color: 'bg-blue-500' },
-      { name: 'Git/GitHub', level: 95, color: 'bg-slate-800' },
-      { name: 'Figma/Design', level: 75, color: 'bg-purple-600' },
-      { name: 'DevOps', level: 70, color: 'bg-purple-500' }
+      { name: 'Git/GitHub', level: 85, color: 'bg-slate-800' },
+      { name: 'VS Code', level: 90, color: 'bg-blue-600' },
+      { name: 'React Native', level: 65, color: 'bg-blue-500' },
+      { name: 'Telegram Bots', level: 80, color: 'bg-blue-400' },
+      { name: 'UI/UX Basics', level: 70, color: 'bg-purple-600' }
     ]
   }
 ];
@@ -337,13 +371,13 @@ export default function About() {
   const personalInfo = {
     name: 'Munir Ayub',
     title: 'Full Stack Developer & Digital Solutions Expert',
-    location: 'San Francisco, CA',
-    email: 'munir.ayub@example.com',
-    phone: '+1 (555) 123-4567',
-    website: 'https://munir-ayub.dev',
+    location: 'Ethiopia',
+    email: 'munir.dev@example.com',
+    phone: '+251 90 780 6267',
+    website: 'https://munir-portfolio.dev',
     yearsOfExperience: 3,
-    projectsCompleted: 50,
-    happyClients: 25
+    projectsCompleted: 15,
+    happyClients: 12
   };
 
   const tabs = [
@@ -416,19 +450,25 @@ export default function About() {
             <h2 className="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-white">My Story</h2>
             <div className="prose prose-lg max-w-none text-gray-700 dark:text-gray-300">
               <p className="mb-6">
-                I'm a passionate full-stack developer with over 3 years of experience creating digital solutions 
-                that make a real impact. My journey began with a Computer Science degree, but my love for coding 
-                and problem-solving drives me to continuously learn and adapt to new technologies.
+                I'm a passionate self-taught full-stack developer from Ethiopia with 3 years of hands-on experience 
+                creating digital solutions for clients worldwide. My journey began in 2022 when I discovered the 
+                world of programming through online resources and fell in love with building things that solve real problems.
               </p>
               <p className="mb-6">
-                I specialize in building comprehensive web applications, mobile apps, and automation tools. 
-                From e-commerce platforms to booking systems, I enjoy transforming complex business requirements 
-                into elegant, scalable solutions that users love.
+                Starting from absolute zero with no formal computer science background, I dedicated myself to learning 
+                web development through platforms like FreeCodeCamp, YouTube, and countless hours of practice. 
+                What began as curiosity quickly turned into a career as I built my first paid website just months after 
+                writing my first line of code.
+              </p>
+              <p className="mb-6">
+                Today, I specialize in building modern web applications, e-commerce platforms, business automation tools, 
+                and AI-powered solutions. I've worked with local businesses in Ethiopia and international clients, 
+                delivering everything from simple business websites to complex booking systems and Telegram bots.
               </p>
               <p>
-                When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, 
-                or sharing knowledge with the developer community. I believe in continuous learning and staying 
-                ahead of industry trends to deliver the best possible solutions for my clients.
+                My journey proves that with determination, consistent learning, and passion for problem-solving, 
+                anyone can build a successful career in tech. I'm always excited to take on new challenges and 
+                help businesses grow through technology.
               </p>
             </div>
           </div>
@@ -452,8 +492,8 @@ export default function About() {
               <div className="text-gray-700 dark:text-gray-300">Happy Clients</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-orange-600 mb-2">100%</div>
-              <div className="text-gray-700 dark:text-gray-300">Satisfaction Rate</div>
+              <div className="text-4xl font-bold text-orange-600 mb-2">95%</div>
+              <div className="text-gray-700 dark:text-gray-300">Client Satisfaction</div>
             </div>
           </div>
         </div>
@@ -649,24 +689,27 @@ export default function About() {
             <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Beyond Coding</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
-                <Coffee className="w-12 h-12 text-orange-500 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Coffee Enthusiast</h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  I believe the best code is written with great coffee. Always exploring new brewing methods and coffee origins.
-                </p>
-              </div>
-              <div className="text-center">
                 <BookOpen className="w-12 h-12 text-blue-500 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Continuous Learner</h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Always learning new technologies and frameworks. Currently exploring AI/ML and Web3 development.
+                  Always exploring new technologies and frameworks. Currently diving deep into AI integration, 
+                  TypeScript patterns, and mobile development.
                 </p>
               </div>
               <div className="text-center">
-                <Users className="w-12 h-12 text-green-500 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Community Builder</h3>
+                <Code2 className="w-12 h-12 text-purple-500 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Problem Solver</h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Active in developer communities, mentoring junior developers, and contributing to open-source projects.
+                  I love turning complex business problems into elegant technical solutions. 
+                  Each project is a new puzzle to solve creatively.
+                </p>
+              </div>
+              <div className="text-center">
+                <Heart className="w-12 h-12 text-red-500 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Helping Businesses Grow</h3>
+                <p className="text-gray-600 dark:text-gray-300">
+                  Passionate about helping small businesses and entrepreneurs leverage technology 
+                  to reach their goals and serve their customers better.
                 </p>
               </div>
             </div>

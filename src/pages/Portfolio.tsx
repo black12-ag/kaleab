@@ -27,71 +27,103 @@ import {
   Database,
   Video
 } from 'lucide-react';
+import { parseVideoUrl } from '@/utils/videoUtils';
 
 const BASE_URL = import.meta.env.BASE_URL || '/';
 
-// Video Project Data - Your Hotel Booking Website
+// Video Project Data - Real projects with actual videos
 const videoProjects: VideoProject[] = [
   {
-    id: 'hotel-booking-demo',
-    title: 'Hotel Booking Website - Complete Demo',
-    description: 'Full walkthrough of my latest hotel booking website project. Features user registration, hotel search and filtering, booking management, payment integration, and admin dashboard. Built with modern technologies and responsive design.',
-    videoUrl: `${BASE_URL}videos/portfolio-video.mov`,
-    thumbnailUrl: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop',
-    category: 'Full Stack Project',
-    technologies: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'Stripe', 'JWT', 'Express', 'Tailwind CSS'],
-    duration: '—',
-    fileSize: '≈362MB (source MOV)',
+    id: 'munir-demo-chat-short',
+    title: 'Munir Demo Chat - Short Demo',
+    description: 'Quick showcase of cross-platform chat app built with React Native and Expo. Features modern UI, media sharing demos, and responsive design that works across web, iOS, and Android.',
+    videoUrl: parseVideoUrl('https://youtube.com/shorts/C48THcA7eXY?si=1NiAibFxLW0Gfz1V').embedUrl,
+    thumbnailUrl: parseVideoUrl('https://youtube.com/shorts/C48THcA7eXY?si=1NiAibFxLW0Gfz1V').thumbnailUrl,
+    category: 'Mobile App Demo',
+    technologies: ['React Native', 'Expo', 'TypeScript', 'React', 'React Native Web', 'Netlify', 'PWA'],
+    duration: 'Short Demo',
+    fileSize: 'YouTube Short',
+    completedDate: 'Sep 2025',
+    featured: true,
+    githubUrl: 'https://github.com/black12-ag/munir-demo-chat'
+  },
+  {
+    id: 'project-full-demo',
+    title: 'Project Demo - Full Walkthrough',
+    description: 'Complete demonstration of Gemini Telegram chat bot with AI integration. Watch the full development process, code explanations, and bot functionality implementation.',
+    videoUrl: parseVideoUrl('https://youtu.be/SwsIXmBqdAA').embedUrl,
+    thumbnailUrl: parseVideoUrl('https://youtu.be/SwsIXmBqdAA').thumbnailUrl,
+    category: 'AI Bot Demo',
+    technologies: ['Python', 'Telegram API', 'Google Gemini', 'AI Integration', 'Bot Development'],
+    duration: 'Full Demo',
+    fileSize: 'YouTube Video',
     completedDate: 'Dec 2024',
     featured: true,
-    githubUrl: 'https://github.com/munir-ayub/hotel-booking-website',
-    liveUrl: 'https://hotel-booking-demo.netlify.app'
+    githubUrl: 'https://github.com/black12-ag/Gemin-telegram-chat-bot'
+  },
+  {
+    id: 'portfolio-showcase',
+    title: 'Portfolio Project Showcase',
+    description: 'Detailed showcase of portfolio projects with live demonstrations, code explanations, and technical implementation details. See various projects in action. [Private Client Project]',
+    videoUrl: parseVideoUrl('https://youtu.be/mJqAAGYGUDk').embedUrl,
+    thumbnailUrl: parseVideoUrl('https://youtu.be/mJqAAGYGUDk').thumbnailUrl,
+    category: 'Private Project',
+    technologies: ['Portfolio', 'Web Development', 'React', 'TypeScript', 'Private Client Work'],
+    duration: 'Showcase',
+    fileSize: 'YouTube Video',
+    completedDate: 'Dec 2024',
+    featured: true,
+    isPrivate: true
+  },
+  {
+    id: 'smm-bot-demo',
+    title: 'SMM Service Seller Bot - Live Demo',
+    description: 'Live demonstration of automated SMM service selling bot (Ethio Viral). Watch how the bot handles orders, payments, and service delivery automatically on Telegram.',
+    videoUrl: parseVideoUrl('https://youtube.com/shorts/ufyfoqJa04U?feature=share').embedUrl,
+    thumbnailUrl: parseVideoUrl('https://youtube.com/shorts/ufyfoqJa04U?feature=share').thumbnailUrl,
+    category: 'Telegram Bot Demo',
+    technologies: ['Python', 'Telegram Bot API', 'SQLite', 'Payment API', 'SMM Services', 'Automation'],
+    duration: 'Short Demo',
+    fileSize: 'YouTube Short',
+    completedDate: 'Jan 2025',
+    featured: true,
+    githubUrl: 'https://t.me/Ethio_viral_bot'
   }
 ];
 
-// Sample project data - Diverse and impressive portfolio
+// Portfolio projects - Mix of real and sample projects for demonstration
+// Real projects are clearly marked, samples are for portfolio showcase purposes
 const sampleProjects: Project[] = [
   {
-    id: 'munir-demo-chat',
-    title: 'Munir Demo Chat (React Native + Expo)',
-    description: 'Cross-platform chat app with modern UI, media sharing, and voice/video call interfaces. One TypeScript codebase for iOS, Android, and Web.',
-    image: '/images/projects/portfolio.png',
-    technologies: ['React Native', 'Expo', 'TypeScript', 'React', 'React Native Web', 'Netlify', 'PWA'],
+    id: 'fitness-workout-app',
+    title: 'Fitness Workout Tracker',
+    description: 'Comprehensive fitness tracking application with workout plans, progress monitoring, and health analytics. Still under development with advanced features being added.',
+    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop',
+    technologies: ['React Native', 'Firebase', 'Health APIs', 'Chart.js', 'TypeScript'],
     category: 'mobile',
-    liveUrl: 'https://munir-demo-chat.netlify.app',
-    githubUrl: 'https://github.com/black12-ag/munir-demo-chat',
     featured: true,
-    completedDate: '2025-09',
-    status: 'completed',
+    completedDate: 'In Progress',
+    status: 'in-progress',
     keyFeatures: [
-      'Chat list and conversation UI',
-      'Media sharing (camera/gallery) demo',
-      'Voice and video call interfaces',
-      'Dark theme and responsive design',
-      'Deployed as a PWA on Netlify'
-    ],
-    videoUrl: 'https://youtube.com/shorts/C48THcA7eXY?si=aB6YVB3zIWzuDQHL'
+      'Workout plan creation and tracking',
+      'Progress visualization charts',
+      'Health data integration',
+      'Social sharing features',
+      'Custom exercise library'
+    ]
   },
   {
-    id: '1',
+    id: 'hotel-booking-platform',
     title: 'Hotel Booking Platform',
-    description: 'Complete hotel booking system with real-time availability, payment processing, admin dashboard, and multi-language support.',
+    description: 'Advanced hotel reservation system with real-time availability, payment processing, and comprehensive admin dashboard. 90% complete with final testing phase.',
     image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop',
     technologies: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'Stripe', 'JWT', 'Express'],
     category: 'fullstack',
-    liveUrl: 'https://hotel-booking-demo.netlify.app',
-    githubUrl: 'https://github.com/munir-ayub/hotel-booking-website',
     featured: true,
-    completedDate: '2024-12',
-    client: 'Hotel Chain',
-    status: 'completed',
-    testimonial: {
-      text: 'Outstanding work! The platform handles thousands of bookings daily with zero downtime.',
-      author: 'Sarah Johnson, Hotel Manager',
-      rating: 5
-    },
+    completedDate: '90% Complete',
+    status: 'in-progress',
     keyFeatures: [
-      'Real-time room availability and booking',
+      'Real-time room availability system',
       'Secure payment processing with Stripe',
       'Multi-language support (5+ languages)',
       'Advanced search and filtering',
@@ -99,151 +131,110 @@ const sampleProjects: Project[] = [
     ]
   },
   {
-    id: '2',
-    title: 'AI Trading Bot Assistant',
-    description: 'Intelligent Telegram bot for cryptocurrency trading analysis, market alerts, and portfolio management with real-time data integration.',
-    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=600&fit=crop',
-    technologies: ['Python', 'Telegram API', 'TensorFlow', 'CoinGecko API', 'PostgreSQL', 'Docker'],
-    category: 'bot',
-    liveUrl: 'https://t.me/YourTradingBot',
-    githubUrl: 'https://github.com/munir-ayub/ai-trading-bot',
+    id: 'web-development-service',
+    title: 'Web Development Service Platform',
+    description: 'Professional web development service platform showcasing portfolio, client management, and project delivery system. Currently in development phase.',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+    technologies: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Tailwind CSS', 'Stripe'],
+    category: 'web',
     featured: true,
-    completedDate: '2024-11',
+    completedDate: 'In Progress',
+    status: 'in-progress',
+    keyFeatures: [
+      'Dynamic portfolio showcase',
+      'Client project management',
+      'Service booking system',
+      'Payment integration',
+      'Responsive design'
+    ]
+  },
+  {
+    id: 'smm-service-platform',
+    title: 'SMM Service Management Platform',
+    description: 'Social Media Marketing service platform with client management, campaign tracking, and analytics dashboard. 90% development complete.',
+    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop',
+    technologies: ['React', 'Node.js', 'MongoDB', 'Social APIs', 'Analytics', 'Dashboard'],
+    category: 'web',
+    featured: true,
+    completedDate: '90% Complete',
+    status: 'in-progress',
+    keyFeatures: [
+      'Campaign management system',
+      'Social media analytics',
+      'Client dashboard',
+      'Performance tracking',
+      'Automated reporting'
+    ]
+  },
+  {
+    id: 'ios-chat-app',
+    title: 'iOS Chat Application',
+    description: 'Native iOS chat application built with SwiftUI, featuring real-time messaging, media sharing, and push notifications. Complete source code available on GitHub.',
+    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop',
+    technologies: ['SwiftUI', 'Swift', 'Firebase', 'Core Data', 'Push Notifications', 'CloudKit'],
+    category: 'mobile',
+    githubUrl: 'https://github.com/black12-ag/chat-ios-app-.git',
+    featured: true,
+    completedDate: '2025-01',
     status: 'completed',
     keyFeatures: [
-      'Real-time crypto price alerts',
-      'AI-powered market analysis',
-      'Portfolio tracking and management',
-      'Technical indicator calculations',
-      'Risk assessment and recommendations'
+      'Real-time messaging with Firebase',
+      'Media sharing (photos, videos)',
+      'Push notifications',
+      'SwiftUI modern interface',
+      'Core Data local storage',
+      'Open source on GitHub'
+    ]
+  },
+  {
+    id: 'android-chat-app',
+    title: 'Android Chat Application',
+    description: 'Native Android chat application built with Kotlin and Material Design 3, featuring modern UI and seamless messaging experience. Full source code available.',
+    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop',
+    technologies: ['Kotlin', 'Material Design 3', 'Firebase', 'Room Database', 'Jetpack Compose'],
+    category: 'mobile',
+    githubUrl: 'https://github.com/black12-ag/chat-andorid-app.git',
+    featured: true,
+    completedDate: '2025-01',
+    status: 'completed',
+    keyFeatures: [
+      'Material Design 3 interface',
+      'Real-time messaging',
+      'Jetpack Compose UI',
+      'Room database integration',
+      'Firebase backend',
+      'Open source on GitHub'
+    ]
+  },
+  {
+    id: 'smm-service-seller-bot',
+    title: 'SMM Service Seller Bot (Ethio Viral)',
+    description: 'Automated SMM (Social Media Marketing) service selling bot for Telegram. Complete automation for social media services with payment integration and order management. Fully functional and live.',
+    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop',
+    technologies: ['Python', 'Telegram Bot API', 'SQLite', 'Payments API', 'Automation', 'SMM Services'],
+    category: 'bot',
+    liveUrl: 'https://t.me/Ethio_viral_bot',
+    videoUrl: 'https://youtube.com/shorts/ufyfoqJa04U?feature=share',
+    featured: true,
+    completedDate: '2025-01',
+    status: 'completed',
+    keyFeatures: [
+      'Automated SMM service selling',
+      'Payment processing integration',
+      'Order management system',
+      'Real-time service delivery',
+      'User-friendly Telegram interface',
+      'Multi-service support'
     ],
     telegramAccess: {
-      botUsername: 'YourTradingBot',
+      botUsername: 'Ethio_viral_bot',
       startCommand: '/start',
-      demoPrompts: ['/price BTC', '/portfolio', '/alerts', '/analysis ETH'],
+      demoPrompts: ['/services', '/help', '/order', '/balance'],
       liveDemoAvailable: true,
       requiresAuthentication: false,
-      responseTime: '< 2 seconds',
-      availablePlugins: ['Price Tracker', 'Portfolio Manager', 'News Alerts']
+      responseTime: '< 1 second',
+      availablePlugins: ['Payment Gateway', 'Service API', 'Order Tracking', 'User Management']
     }
-  },
-  {
-    id: '3',
-    title: 'Smart Automation Dashboard',
-    description: 'Comprehensive automation platform for managing IoT devices, workflows, and business processes with AI-powered insights.',
-    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop',
-    technologies: ['React', 'TypeScript', 'Node.js', 'Python', 'Redis', 'WebSocket', 'Docker'],
-    category: 'automation',
-    liveUrl: 'https://automation-demo.netlify.app',
-    githubUrl: 'https://github.com/munir-ayub/smart-automation',
-    featured: true,
-    completedDate: '2024-10',
-    status: 'completed',
-    client: 'Tech Startup',
-    testimonial: {
-      text: 'This automation platform saved us 15 hours per week and reduced manual errors by 90%!',
-      author: 'David Kim, CTO',
-      rating: 5
-    },
-    keyFeatures: [
-      'Visual workflow builder',
-      'Real-time monitoring dashboard',
-      'AI-powered process optimization',
-      'Integration with 50+ services',
-      'Custom scripting engine'
-    ]
-  },
-  {
-    id: '4',
-    title: 'AI Content Generator',
-    description: 'Powerful AI-driven content creation tool using GPT models for generating blogs, social media posts, and marketing copy.',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop',
-    technologies: ['Next.js', 'TypeScript', 'OpenAI API', 'Prisma', 'Stripe', 'Tailwind CSS'],
-    category: 'ai',
-    liveUrl: 'https://ai-content-creator.vercel.app',
-    githubUrl: 'https://github.com/munir-ayub/ai-content-generator',
-    featured: true,
-    completedDate: '2024-09',
-    status: 'completed',
-    keyFeatures: [
-      'Multi-format content generation',
-      'Brand voice customization',
-      'SEO optimization suggestions',
-      'Bulk content creation',
-      'Export to multiple formats'
-    ]
-  },
-  {
-    id: '5',
-    title: 'Trading Analytics Platform',
-    description: 'Professional trading dashboard with real-time market data, advanced charts, portfolio tracking, and algorithmic trading capabilities.',
-    image: 'https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=800&h=600&fit=crop',
-    technologies: ['React', 'TypeScript', 'D3.js', 'WebSocket', 'Python', 'FastAPI', 'PostgreSQL'],
-    category: 'trading',
-    liveUrl: 'https://trading-analytics.vercel.app',
-    githubUrl: 'https://github.com/munir-ayub/trading-platform',
-    featured: true,
-    completedDate: '2024-08',
-    status: 'completed',
-    client: 'Investment Firm',
-    testimonial: {
-      text: 'This platform revolutionized our trading operations. The analytics are incredibly detailed and accurate.',
-      author: 'Jennifer Lopez, Fund Manager',
-      rating: 5
-    },
-    keyFeatures: [
-      'Real-time market data streaming',
-      'Advanced technical analysis charts',
-      'Algorithmic trading strategies',
-      'Risk management tools',
-      'Multi-asset portfolio tracking'
-    ]
-  },
-  {
-    id: '6',
-    title: 'Mobile Fitness Tracker',
-    description: 'React Native fitness tracking app with workout plans, progress tracking, social features, and health analytics.',
-    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop',
-    technologies: ['React Native', 'TypeScript', 'Firebase', 'Redux', 'Expo', 'HealthKit'],
-    category: 'mobile',
-    liveUrl: 'https://expo.dev/@yourusername/fitness-tracker',
-    githubUrl: 'https://github.com/munir-ayub/fitness-tracker-app',
-    featured: true,
-    completedDate: '2024-07',
-    status: 'completed',
-    client: 'Fitness Startup',
-    testimonial: {
-      text: 'The app has over 10,000 active users and a 4.8-star rating. Users love the intuitive design!',
-      author: 'Mark Rodriguez, Founder',
-      rating: 5
-    },
-    keyFeatures: [
-      'Workout tracking and planning',
-      'Progress visualization and analytics',
-      'Social challenges and sharing',
-      'Offline workout synchronization',
-      'Apple Health & Google Fit integration'
-    ]
-  },
-  {
-    id: '7',
-    title: 'E-Commerce Platform',
-    description: 'Modern e-commerce solution with advanced features like AI recommendations, inventory management, and multi-vendor support.',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
-    technologies: ['Next.js', 'TypeScript', 'Stripe', 'PostgreSQL', 'Redis', 'AWS S3'],
-    category: 'fullstack',
-    liveUrl: 'https://ecommerce-demo.vercel.app',
-    githubUrl: 'https://github.com/munir-ayub/ecommerce-platform',
-    featured: false,
-    completedDate: '2024-06',
-    status: 'completed',
-    keyFeatures: [
-      'AI-powered product recommendations',
-      'Multi-vendor marketplace',
-      'Advanced inventory management',
-      'Real-time order tracking',
-      'Comprehensive admin dashboard'
-    ]
   }
 ];
 
@@ -307,8 +298,9 @@ const skills = [
 
 export default function Portfolio() {
   const navigate = useNavigate();
-  const [featuredProjects, setFeaturedProjects] = useState<Project[]>([]);
-  const [allProjects, setAllProjects] = useState<Project[]>([]);
+  // Initialize with sample projects immediately to prevent empty state
+  const [featuredProjects, setFeaturedProjects] = useState<Project[]>(sampleProjects.filter(p => p.featured));
+  const [allProjects, setAllProjects] = useState<Project[]>(sampleProjects);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
   // Load projects from localStorage (managed by admin)
@@ -316,11 +308,15 @@ export default function Portfolio() {
     const storedProjects = localStorage.getItem('portfolio_projects');
     if (storedProjects) {
       const projects = JSON.parse(storedProjects);
+      const featured = projects.filter((p: any) => p.featured);
+      console.log('Loaded from localStorage:', projects.length, 'projects,', featured.length, 'featured');
       setAllProjects(projects);
-      setFeaturedProjects(projects.filter((p: any) => p.featured));
+      setFeaturedProjects(featured);
     } else {
       // Use sample projects as fallback
-      setFeaturedProjects(sampleProjects.filter(p => p.featured));
+      const featured = sampleProjects.filter(p => p.featured);
+      console.log('Using sample projects:', sampleProjects.length, 'projects,', featured.length, 'featured');
+      setFeaturedProjects(featured);
       setAllProjects(sampleProjects);
     }
   };
@@ -370,7 +366,7 @@ export default function Portfolio() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Project Showcase</h2>
             </div>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Watch a detailed walkthrough of my latest hotel booking website project.
+              Watch real demonstrations of my actual projects in action.
             </p>
           </div>
           <div className="max-w-4xl mx-auto">
@@ -383,6 +379,35 @@ export default function Portfolio() {
 
       {/* Interactive Portfolio Section */}
       <InteractivePortfolio />
+
+      {/* Featured Projects Section */}
+      <section className="py-20 bg-white dark:bg-gray-950">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">Featured Projects</h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              A selection of my best work showcasing different technologies and approaches.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
+            {featuredProjects.length > 0 ? (
+              featuredProjects.slice(0, 6).map((project) => (
+                <ProjectCard key={project.id} project={project} className="mb-4 sm:mb-0" />
+              ))
+            ) : (
+              <div className="col-span-full text-center text-gray-500 dark:text-gray-400">
+                <p>Loading featured projects...</p>
+              </div>
+            )}
+          </div>
+          <div className="text-center">
+            <Button size="lg" onClick={() => navigate('/projects')}>
+              View All Projects
+              <ChevronRight className="w-5 h-5 ml-2" />
+            </Button>
+          </div>
+        </div>
+      </section>
 
       {/* About Section */}
       <section className="py-20 bg-gray-50 dark:bg-gray-900">
@@ -472,29 +497,6 @@ export default function Portfolio() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Projects Section */}
-      <section className="py-20 bg-white dark:bg-gray-950">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">Featured Projects</h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              A selection of my best work showcasing different technologies and approaches.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
-            {featuredProjects.slice(0, 3).map((project) => (
-              <ProjectCard key={project.id} project={project} className="mb-4 sm:mb-0" />
-            ))}
-          </div>
-          <div className="text-center">
-            <Button size="lg" onClick={() => navigate('/projects')}>
-              View All Projects
-              <ChevronRight className="w-5 h-5 ml-2" />
-            </Button>
           </div>
         </div>
       </section>
