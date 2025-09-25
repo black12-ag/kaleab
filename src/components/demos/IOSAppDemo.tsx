@@ -321,14 +321,14 @@ export const IOSAppDemo: React.FC<IOSAppDemoProps> = ({
                       </div>
                       <div className="flex gap-2">
                         <Button
-                          onClick={() => window.open('https://github.com/black12-ag/chat-ios-app-.git', '_blank')}
+                          onClick={() => window.open('https://github.com/black12-ag/chat-ios-app-', '_blank')}
                           className="bg-blue-500 hover:bg-blue-600 text-white text-xs px-2 py-1 h-6 flex items-center gap-1"
                         >
                           <Github className="w-3 h-3" />
                           Source
                         </Button>
                         <Button
-                          onClick={() => window.open('https://github.com/black12-ag/chat-ios-app-.git', '_blank')}
+                          onClick={() => window.open('https://github.com/black12-ag/chat-ios-app-', '_blank')}
                           variant="outline"
                           className="text-blue-400 border-blue-400 hover:bg-blue-900/20 text-xs px-2 py-1 h-6 flex items-center gap-1"
                         >

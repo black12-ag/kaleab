@@ -76,6 +76,20 @@ const videoProjects: VideoProject[] = [
     isPrivate: true
   },
   {
+    id: 'flutter-movies-app-demo',
+    title: 'Flutter Movies App - Full Demo',
+    description: 'Complete walkthrough of Munir Movies Flutter app featuring movie discovery, clean architecture with BLoC, beautiful Material Design UI, and smooth animations. Built with Flutter 3.0+ and modern development practices.',
+    videoUrl: parseVideoUrl('https://www.youtube.com/watch?v=JlsN8xb195A').embedUrl,
+    thumbnailUrl: parseVideoUrl('https://www.youtube.com/watch?v=JlsN8xb195A').thumbnailUrl,
+    category: 'Flutter Mobile Demo',
+    technologies: ['Flutter', 'Dart', 'BLoC', 'Material Design', 'Clean Architecture', 'GetIt', 'Dio', 'Hive'],
+    duration: 'Full Demo',
+    fileSize: 'YouTube Video',
+    completedDate: 'Jan 2025',
+    featured: true,
+    githubUrl: 'https://github.com/black12-ag/movies-app'
+  },
+  {
     id: 'smm-bot-demo',
     title: 'SMM Service Seller Bot - Live Demo',
     description: 'Live demonstration of automated SMM service selling bot (Ethio Viral). Watch how the bot handles orders, payments, and service delivery automatically on Telegram.',
@@ -173,7 +187,7 @@ const sampleProjects: Project[] = [
     image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop',
     technologies: ['SwiftUI', 'Swift', 'Firebase', 'Core Data', 'Push Notifications', 'CloudKit'],
     category: 'mobile',
-    githubUrl: 'https://github.com/black12-ag/chat-ios-app-.git',
+    githubUrl: 'https://github.com/black12-ag/chat-ios-app-',
     featured: true,
     completedDate: '2025-01',
     status: 'completed',
@@ -193,7 +207,7 @@ const sampleProjects: Project[] = [
     image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop',
     technologies: ['Kotlin', 'Material Design 3', 'Firebase', 'Room Database', 'Jetpack Compose'],
     category: 'mobile',
-    githubUrl: 'https://github.com/black12-ag/chat-andorid-app.git',
+    githubUrl: 'https://github.com/black12-ag/chat-andorid-app',
     featured: true,
     completedDate: '2025-01',
     status: 'completed',
@@ -203,6 +217,28 @@ const sampleProjects: Project[] = [
       'Jetpack Compose UI',
       'Room database integration',
       'Firebase backend',
+      'Open source on GitHub'
+    ]
+  },
+  {
+    id: 'flutter-movies-app',
+    title: 'Munir Movies - Flutter App',
+    description: 'Modern Flutter app for discovering movies and TV shows with clean architecture, beautiful UI, and smooth animations using Material Design.',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+    technologies: ['Flutter', 'Dart', 'BLoC', 'GetIt', 'Dio', 'Hive', 'Material Design'],
+    category: 'mobile',
+    liveUrl: 'https://movies-app-munir.netlify.app/',
+    githubUrl: 'https://github.com/black12-ag/movies-app',
+    videoUrl: 'https://www.youtube.com/watch?v=JlsN8xb195A',
+    featured: true,
+    completedDate: '2025-01',
+    status: 'completed',
+    keyFeatures: [
+      'Modern Material Design UI with smooth animations',
+      'Movie and TV show discovery with TMDB API',
+      'Clean Architecture with BLoC state management',
+      'Offline storage with Hive database',
+      'Advanced search and filtering capabilities',
       'Open source on GitHub'
     ]
   },

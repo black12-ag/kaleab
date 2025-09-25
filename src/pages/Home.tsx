@@ -32,7 +32,7 @@ const featuredProjects: Project[] = [
     image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop',
     technologies: ['SwiftUI', 'Swift', 'Firebase', 'Core Data', 'Push Notifications'],
     category: 'mobile',
-    githubUrl: 'https://github.com/black12-ag/ios-chat-app',
+    githubUrl: 'https://github.com/black12-ag/chat-ios-app-',
     featured: true,
     completedDate: '2025-01',
     status: 'completed'
@@ -44,7 +44,21 @@ const featuredProjects: Project[] = [
     image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop',
     technologies: ['Kotlin', 'Material Design 3', 'Firebase', 'Room Database'],
     category: 'mobile',
-    githubUrl: 'https://github.com/black12-ag/android-chat-app',
+    githubUrl: 'https://github.com/black12-ag/chat-andorid-app',
+    featured: true,
+    completedDate: '2025-01',
+    status: 'completed'
+  },
+  {
+    id: 'flutter-movies-app',
+    title: 'Munir Movies - Flutter App',
+    description: 'Modern Flutter app for discovering movies and TV shows with clean architecture, beautiful UI, and smooth animations using Material Design.',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+    technologies: ['Flutter', 'Dart', 'BLoC', 'Material Design'],
+    category: 'mobile',
+    liveUrl: 'https://movies-app-munir.netlify.app/',
+    githubUrl: 'https://github.com/black12-ag/movies-app',
+    videoUrl: 'https://www.youtube.com/watch?v=JlsN8xb195A',
     featured: true,
     completedDate: '2025-01',
     status: 'completed'

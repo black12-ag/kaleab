@@ -103,7 +103,7 @@ const allProjects: Project[] = [
     image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop',
     technologies: ['SwiftUI', 'Swift', 'Firebase', 'Core Data', 'Push Notifications', 'CloudKit'],
     category: 'mobile',
-    githubUrl: 'https://github.com/black12-ag/chat-ios-app-.git',
+    githubUrl: 'https://github.com/black12-ag/chat-ios-app-',
     featured: true,
     completedDate: '2025-01',
     status: 'completed',
@@ -123,7 +123,7 @@ const allProjects: Project[] = [
     image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop',
     technologies: ['Kotlin', 'Material Design 3', 'Firebase', 'Room Database', 'Jetpack Compose'],
     category: 'mobile',
-    githubUrl: 'https://github.com/black12-ag/chat-andorid-app.git',
+    githubUrl: 'https://github.com/black12-ag/chat-andorid-app',
     featured: true,
     completedDate: '2025-01',
     status: 'completed',
@@ -133,6 +133,28 @@ const allProjects: Project[] = [
       'Jetpack Compose UI',
       'Room database integration',
       'Firebase backend',
+      'Open source on GitHub'
+    ]
+  },
+  {
+    id: 'flutter-movies-app',
+    title: 'Munir Movies - Flutter App',
+    description: 'Modern Flutter app for discovering movies and TV shows with clean architecture, beautiful UI, and smooth animations using Material Design.',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+    technologies: ['Flutter', 'Dart', 'BLoC', 'GetIt', 'Dio', 'Hive', 'Material Design'],
+    category: 'mobile',
+    liveUrl: 'https://movies-app-munir.netlify.app/',
+    githubUrl: 'https://github.com/black12-ag/movies-app',
+    videoUrl: 'https://www.youtube.com/watch?v=JlsN8xb195A',
+    featured: true,
+    completedDate: '2025-01',
+    status: 'completed',
+    keyFeatures: [
+      'Modern Material Design UI with smooth animations',
+      'Movie and TV show discovery with TMDB API',
+      'Clean Architecture with BLoC state management',
+      'Offline storage with Hive database',
+      'Advanced search and filtering capabilities',
       'Open source on GitHub'
     ]
   },

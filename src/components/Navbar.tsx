@@ -49,7 +49,7 @@ export default function Navbar({ className }: NavbarProps) {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
             <img 
-              src="/images/logo.jpeg" 
+              src="/images/profile-photo.jpg" 
               alt="Munir Ayub Logo" 
               className="w-10 h-10 rounded-lg object-cover transition-transform group-hover:scale-110"
             />
@@ -172,7 +172,7 @@ export default function Navbar({ className }: NavbarProps) {
                   {/* Mobile Logo */}
                   <div className="flex items-center space-x-3 p-4 bg-muted rounded-lg">
                     <img 
-                      src="/images/logo.jpeg" 
+                      src="/images/profile-photo.jpg" 
                       alt="Munir Ayub Logo" 
                       className="w-12 h-12 rounded-lg object-cover"
                     />

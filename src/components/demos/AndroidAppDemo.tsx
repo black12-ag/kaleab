@@ -336,14 +336,14 @@ export const AndroidAppDemo: React.FC<AndroidAppDemoProps> = ({
                       </div>
                       <div className="flex gap-2">
                         <Button
-                          onClick={() => window.open('https://github.com/black12-ag/chat-andorid-app.git', '_blank')}
+                          onClick={() => window.open('https://github.com/black12-ag/chat-andorid-app', '_blank')}
                           className="bg-green-600 hover:bg-green-700 text-white text-xs px-3 py-1 h-7 flex items-center gap-1"
                         >
                           <Github className="w-3 h-3" />
                           View Source
                         </Button>
                         <Button
-                          onClick={() => window.open('https://github.com/black12-ag/chat-andorid-app.git', '_blank')}
+                          onClick={() => window.open('https://github.com/black12-ag/chat-andorid-app', '_blank')}
                           variant="outline"
                           className="text-green-600 border-green-600 hover:bg-green-50 text-xs px-3 py-1 h-7 flex items-center gap-1"
                         >

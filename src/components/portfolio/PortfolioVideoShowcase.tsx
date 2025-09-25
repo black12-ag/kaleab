@@ -24,6 +24,12 @@ export default function PortfolioVideoShowcase() {
       tags: ["Portfolio", "Showcase", "Web Development", "Projects"]
     },
     {
+      title: "Flutter Movies App - Full Demo",
+      description: "Complete walkthrough of Munir Movies Flutter app featuring movie discovery, clean architecture with BLoC, beautiful Material Design UI, and smooth animations. Built with Flutter 3.0+ and modern development practices.",
+      videoUrl: "https://www.youtube.com/watch?v=JlsN8xb195A",
+      tags: ["Flutter", "Dart", "BLoC", "Material Design", "Clean Architecture", "Mobile"]
+    },
+    {
       title: "SMM Service Seller Bot Demo",
       description: "Live demonstration of automated SMM service selling bot (Ethio Viral). Watch how the bot handles orders, payments, and service delivery automatically.",
       videoUrl: "https://youtube.com/shorts/ufyfoqJa04U?feature=share",
