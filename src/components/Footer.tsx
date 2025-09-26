@@ -69,7 +69,7 @@ export default function Footer() {
               <div>
                 <div className="flex items-center space-x-3 mb-6">
                   <img 
-                    src="/images/profile-photo.jpg" 
+                    src="/images/logo.jpeg" 
                     alt="Munir Ayub Logo" 
                     className="w-12 h-12 rounded-lg object-cover"
                   />
