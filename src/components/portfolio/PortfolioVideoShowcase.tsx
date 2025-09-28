@@ -6,6 +6,12 @@ export default function PortfolioVideoShowcase() {
   // Real project videos - Your actual project demonstrations
   const rawProjectVideos = [
     {
+      title: "FINDY Navigation - Live Demo",
+      description: "Experience the Netflix-inspired navigation platform with real-time GPS tracking, AI-powered route planning, and beautiful dark UI. See the PWA in action with offline capabilities.",
+      videoUrl: "https://youtu.be/RxOCL3Utcsk",
+      tags: ["React", "TypeScript", "Google Maps", "PWA", "Navigation"]
+    },
+    {
       title: "Munir Demo Chat - Short Demo",
       description: "Quick showcase of cross-platform chat app built with React Native and Expo. Features modern UI, media sharing demos, and responsive design.",
       videoUrl: "https://youtube.com/shorts/C48THcA7eXY?si=1NiAibFxLW0Gfz1V",

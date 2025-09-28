@@ -26,6 +26,19 @@ import {
 // Featured projects for home page - Using the same projects as Portfolio page
 const featuredProjects: Project[] = [
   {
+    id: 'findy-navigation',
+    title: 'FINDY - Advanced Navigation Platform',
+    description: 'Netflix-inspired navigation app with real-time GPS tracking, AI-powered route planning, and beautiful dark-themed UI. Progressive Web App with offline support.',
+    image: 'https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=800&h=600&fit=crop',
+    technologies: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Google Maps API', 'PWA'],
+    category: 'fullstack',
+    liveUrl: 'https://findy-navigation-app.netlify.app/',
+    githubUrl: 'https://github.com/black12-ag/findy',
+    featured: true,
+    completedDate: '2025-01',
+    status: 'completed'
+  },
+  {
     id: 'ios-chat-app',
     title: 'iOS Chat Application',
     description: 'Native iOS chat application built with SwiftUI, featuring real-time messaging, media sharing, and push notifications. Fully completed and deployed.',

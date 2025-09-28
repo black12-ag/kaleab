@@ -34,6 +34,21 @@ const BASE_URL = import.meta.env.BASE_URL || '/';
 // Video Project Data - Real projects with actual videos
 const videoProjects: VideoProject[] = [
   {
+    id: 'findy-navigation-demo',
+    title: 'FINDY Navigation - Live Demo',
+    description: 'Experience the Netflix-inspired navigation platform with real-time GPS tracking, AI-powered route planning, and beautiful dark UI. See the PWA in action with offline capabilities and social features.',
+    videoUrl: parseVideoUrl('https://youtu.be/RxOCL3Utcsk').embedUrl,
+    thumbnailUrl: parseVideoUrl('https://youtu.be/RxOCL3Utcsk').thumbnailUrl,
+    category: 'Navigation Platform Demo',
+    technologies: ['React', 'TypeScript', 'Google Maps API', 'PWA', 'Vite', 'Tailwind CSS'],
+    duration: 'Full Demo',
+    fileSize: 'YouTube Video',
+    completedDate: 'Jan 2025',
+    featured: true,
+    githubUrl: 'https://github.com/black12-ag/findy',
+    liveUrl: 'https://findy-navigation-app.netlify.app/'
+  },
+  {
     id: 'munir-demo-chat-short',
     title: 'Munir Demo Chat - Short Demo',
     description: 'Quick showcase of cross-platform chat app built with React Native and Expo. Features modern UI, media sharing demos, and responsive design that works across web, iOS, and Android.',
@@ -108,6 +123,29 @@ const videoProjects: VideoProject[] = [
 // Portfolio projects - Mix of real and sample projects for demonstration
 // Real projects are clearly marked, samples are for portfolio showcase purposes
 const sampleProjects: Project[] = [
+  {
+    id: 'findy-navigation',
+    title: 'FINDY - Advanced Navigation Platform',
+    description: 'Netflix-inspired navigation app with real-time GPS tracking, AI-powered route planning, and beautiful dark-themed UI. Progressive Web App with offline maps support.',
+    image: 'https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=800&h=600&fit=crop',
+    technologies: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Google Maps API', 'PWA', 'Socket.io'],
+    category: 'fullstack',
+    liveUrl: 'https://findy-navigation-app.netlify.app/',
+    githubUrl: 'https://github.com/black12-ag/findy',
+    featured: true,
+    completedDate: '2025-01',
+    status: 'completed',
+    keyFeatures: [
+      'Real-time GPS navigation with turn-by-turn guidance',
+      'AI-powered route planning with traffic optimization',
+      'Netflix-style dark UI design',
+      'Offline maps for navigation without internet',
+      'Social features - share location and ETA with friends',
+      'PWA - Install as app on any device',
+      'Multi-transport modes (car, walk, bike, transit)',
+      'Voice navigation for hands-free driving'
+    ]
+  },
   {
     id: 'fitness-workout-app',
     title: 'Fitness Workout Tracker',
