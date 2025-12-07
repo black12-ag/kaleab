@@ -3,6 +3,104 @@ import { Project } from '@/components/portfolio/ProjectCard';
 // MunirChat Portfolio Projects
 export const munirProjects: Project[] = [
   {
+    id: 'ethio-viral',
+    title: 'Ethio Viral - Premier SMM Platform',
+    description: 'Ethiopia\'s leading Social Media Marketing platform with 54,000+ active users and automated service delivery.',
+    longDescription: 'The most trusted and active SMM panel in Ethiopia, serving over 54,000 users. Features a robust automated order processing system, diverse payment gateway integrations, and real-time service monitoring. The platform empowers creators and businesses to grow their digital presence efficiently with instant delivery and competitive pricing.',
+    image: '/images/projects/portfolio.png', // Placeholder
+    technologies: ['Web App', 'Payment Gateways', 'Automation', 'Real-time Analytics', 'Secure Auth'],
+    category: 'web',
+    liveUrl: 'https://www.ethio-viral.com/',
+    featured: true,
+    completedDate: 'Dec 2025',
+    keyFeatures: [
+      '54,918+ Active Users',
+      'Automated Order Processing',
+      'Secure Payment Integration',
+      'Real-time Service Status',
+      '24/7 Customer Support System',
+      'Auto-Refill Functionality'
+    ],
+    status: 'completed',
+    testimonial: {
+      text: 'The best SMM panel in Ethiopia. Fast, reliable, and excellent support!',
+      author: 'Verified User',
+      rating: 5
+    }
+  },
+  {
+    id: 'metah-travel-ai',
+    title: 'Metah - AI Travel Hub',
+    description: 'Next-gen hotel booking platform for Addis Ababa featuring natural language AI search.',
+    longDescription: 'A modern travel booking platform revolutionizing how users find accommodations in Addis Ababa. Integrated with LiteAPI for real-time inventory, it features a cutting-edge AI search capability allowing users to find hotels using natural language queries. Includes browsing by property type and trending destination tracking.',
+    image: '/images/projects/portfolio.png', // Placeholder
+    technologies: ['React', 'AI Integration', 'LiteAPI', 'Tailwind CSS', 'Natural Language Processing'],
+    category: 'web',
+    liveUrl: 'https://metah.pages.dev/',
+    featured: true,
+    completedDate: 'Nov 2025',
+    keyFeatures: [
+      'AI-Powered Natural Language Search',
+      'Real-time Hotel Inventory (LiteAPI)',
+      'Addis Ababa Focus',
+      'Trend Tracking',
+      'Property Type Filtering'
+    ],
+    status: 'in-progress'
+  },
+  {
+    id: 'metah-global',
+    title: 'Metah Global App (iOS & Android)',
+    description: 'The official mobile app for Metah Global. seamless hotel booking on iOS and Android devices.',
+    longDescription: 'Experience the full power of Metah Global on your phone. This cross-platform mobile application brings real-time global hotel booking to iOS and Android. Features exclusive mobile-only deals, offline booking access, and push notifications for price drops. Built for performance and native user experience.',
+    image: '/images/projects/portfolio.png', // Placeholder
+    technologies: ['React Native', 'Expo', 'iOS', 'Android', 'Travel APIs'],
+    category: 'mobile',
+    liveUrl: 'https://book-8rv.pages.dev/',
+    featured: true,
+    completedDate: 'Nov 2025',
+    downloadOptions: {
+      appStore: 'https://book-8rv.pages.dev/',
+      googlePlay: 'https://book-8rv.pages.dev/',
+      qrCode: '/images/projects/portfolio.png', // Placeholder
+      minRequirements: 'iOS 15.0+ / Android 8.0+',
+      size: '45 MB',
+      latestVersion: '2.0.1',
+      telegramBot: '@MetahAppBot',
+      telegramCommand: '/get_app'
+    },
+    keyFeatures: [
+      'Native iOS & Android Experience',
+      'Global Hotel Availability',
+      'Mobile-Exclusive Deals',
+      'Offline Booking Access',
+      'Push Notifications',
+      'Secure Mobile Payments'
+    ],
+    status: 'completed'
+  },
+  {
+    id: 'video-downloader-extension',
+    title: 'Video Downloader Pro - Chrome Extension',
+    description: 'Powerful browser extension to detect and download videos from any website (YouTube, Vimeo, etc.) directly.',
+    longDescription: 'A privacy-focused Chrome Extension that automatically detects video content on any webpage. Built with Manifest V3, it enables direct, server-less downloads for various formats including MP4 and M3U8. Users can select from multiple quality options and save files directly to their device. The extension operates entirely locally, ensuring maximum privacy and download speed without relying on external servers.',
+    image: '/images/projects/portfolio.png', // Using a placeholder for now
+    technologies: ['JavaScript', 'Chrome Extension', 'Manifest V3', 'HTML', 'CSS', 'Downloads API'],
+    category: 'web',
+    githubUrl: 'https://github.com/black12-ag/downloader-extension',
+    featured: true,
+    completedDate: 'Dec 2025',
+    keyFeatures: [
+      'Auto-detects videos on any webpage',
+      'Supports MP4, M3U8, and common streaming formats',
+      'Direct client-side downloads (Privacy-focused)',
+      'Multiple quality/resolution options',
+      'Works on YouTube, Vimeo, Twitter/X, Instagram',
+      'No external server dependencies'
+    ],
+    status: 'completed'
+  },
+  {
     id: 'munirchat-ios',
     title: 'MunirChat for iOS',
     description: 'Secure messaging app for iPhone & iPad with end-to-end encryption, voice/video calling, and media sharing.',
@@ -90,7 +188,7 @@ export const munirProjects: Project[] = [
     ],
     status: 'completed',
     testimonial: {
-      text: 'The Android portfolio app perfectly demonstrates Munir's attention to detail and expertise in Material Design. Clean code and smooth performance!',
+      text: 'The Android portfolio app perfectly demonstrates Munir\'s attention to detail and expertise in Material Design. Clean code and smooth performance!',
       author: 'Tech Reviewer',
       rating: 5
     }
@@ -223,7 +321,7 @@ export const munirProjects: Project[] = [
     title: 'Munir Movies - Flutter App',
     description: 'Modern Flutter app for discovering movies and TV shows with clean architecture, beautiful UI, and smooth animations.',
     longDescription: 'A comprehensive movie discovery application built with Flutter 3.0+ using Clean Architecture patterns. Features include movie browsing, search functionality, detailed information pages, and offline storage. Built with BLoC for state management, GetIt for dependency injection, and modern Material Design UI with smooth animations.',
-    image: '/images/profile-photo.jpg',
+    image: '/images/munir-profile.jpg',
     technologies: ['Flutter', 'Dart', 'BLoC', 'GetIt', 'Dio', 'Hive', 'GoRouter', 'Material Design', 'Clean Architecture'],
     category: 'mobile',
     liveUrl: 'https://movies-app-munir.netlify.app/',
