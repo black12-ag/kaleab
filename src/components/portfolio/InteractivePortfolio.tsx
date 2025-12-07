@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  MessageCircle, 
-  Download, 
-  Bot, 
+import {
+  MessageCircle,
+  Download,
+  Bot,
   Smartphone,
   ExternalLink,
   Play,
@@ -97,7 +97,7 @@ export const InteractivePortfolio: React.FC = () => {
             Try My Projects Live
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Don't just read about my projects—interact with them! Chat with my AI bot on Telegram 
+            Don't just read about my projects—interact with them! Chat with my AI bot on Telegram
             or download the Android portfolio app and experience the quality firsthand.
           </p>
         </div>
@@ -108,7 +108,7 @@ export const InteractivePortfolio: React.FC = () => {
           <Card className="relative overflow-hidden bg-gradient-to-br from-blue-500 to-indigo-600 text-white border-0">
             <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
             <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
-            
+
             <CardHeader className="relative z-10">
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-3 bg-white/20 rounded-lg">
@@ -121,7 +121,7 @@ export const InteractivePortfolio: React.FC = () => {
                   </CardDescription>
                 </div>
               </div>
-              
+
               {/* Live Status */}
               <div className="flex items-center gap-4 text-sm">
                 <div className="flex items-center gap-1">
@@ -142,7 +142,7 @@ export const InteractivePortfolio: React.FC = () => {
             <CardContent className="relative z-10">
               <div className="space-y-4">
                 <p className="text-blue-100">
-                  Chat with my AI assistant that showcases natural language processing, 
+                  Chat with my AI assistant that showcases natural language processing,
                   contextual understanding, and integration with 16 specialized plugins.
                 </p>
 
@@ -151,7 +151,7 @@ export const InteractivePortfolio: React.FC = () => {
                   <p className="text-sm font-medium text-blue-200">Try asking:</p>
                   <div className="grid grid-cols-1 gap-2">
                     {demoPrompts.slice(0, 3).map((prompt, index) => (
-                      <div 
+                      <div
                         key={index}
                         className="text-xs bg-white/10 rounded px-3 py-2 cursor-pointer hover:bg-white/20 transition-colors"
                         onClick={() => navigator.clipboard.writeText(prompt)}
@@ -225,7 +225,7 @@ export const InteractivePortfolio: React.FC = () => {
             <CardContent className="relative z-10">
               <div className="space-y-4">
                 <p className="text-purple-100">
-                  Experience native iOS development with SwiftUI, CoreData integration, 
+                  Experience native iOS development with SwiftUI, CoreData integration,
                   and seamless Apple ecosystem features.
                 </p>
 
@@ -327,7 +327,7 @@ export const InteractivePortfolio: React.FC = () => {
             <CardContent className="relative z-10">
               <div className="space-y-4">
                 <p className="text-green-100">
-                  Download the demo app to experience native Android development with 
+                  Download the demo app to experience native Android development with
                   Material Design 3, adaptive theming, and smooth performance.
                 </p>
 
@@ -392,6 +392,110 @@ export const InteractivePortfolio: React.FC = () => {
           </Card>
         </div>
 
+        {/* Live Project Links */}
+        <div className="mb-16">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+              Live Web Projects
+            </h2>
+            <p className="text-gray-600 dark:text-gray-300">
+              Direct access to deployed production applications
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Ethio Viral Card */}
+            <Card className="relative overflow-hidden bg-gradient-to-br from-orange-500 to-red-600 text-white border-0 hover:scale-105 transition-transform duration-300">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
+
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="p-2 bg-white/20 rounded-lg">
+                    <Users className="w-6 h-6" />
+                  </div>
+                  <CardTitle className="text-xl">Ethio Viral</CardTitle>
+                </div>
+                <CardDescription className="text-orange-100">
+                  Premier SMM Platform with 54k+ Users
+                </CardDescription>
+              </CardHeader>
+
+              <CardContent>
+                <p className="text-sm text-orange-50 mb-6">
+                  Ethiopia's leading social media marketing panel featuring automated order processing and secure payments.
+                </p>
+                <Button
+                  className="w-full bg-white text-orange-600 hover:bg-orange-50"
+                  onClick={() => window.open('https://www.ethio-viral.com/', '_blank')}
+                >
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  Visit Platform
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Metah AI Travel Card */}
+            <Card className="relative overflow-hidden bg-gradient-to-br from-cyan-500 to-blue-600 text-white border-0 hover:scale-105 transition-transform duration-300">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
+
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="p-2 bg-white/20 rounded-lg">
+                    <Bot className="w-6 h-6" />
+                  </div>
+                  <CardTitle className="text-xl">Metah AI Travel</CardTitle>
+                </div>
+                <CardDescription className="text-cyan-100">
+                  AI-Powered Hotel Booking
+                </CardDescription>
+              </CardHeader>
+
+              <CardContent>
+                <p className="text-sm text-cyan-50 mb-6">
+                  Travel hub for Addis Ababa featuring natural language search powered by advanced AI integration.
+                </p>
+                <Button
+                  className="w-full bg-white text-blue-600 hover:bg-blue-50"
+                  onClick={() => window.open('https://metah.pages.dev/', '_blank')}
+                >
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  Try AI Search
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Metah Global App Card */}
+            <Card className="relative overflow-hidden bg-gradient-to-br from-violet-500 to-purple-600 text-white border-0 hover:scale-105 transition-transform duration-300">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
+
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="p-2 bg-white/20 rounded-lg">
+                    <Smartphone className="w-6 h-6" />
+                  </div>
+                  <CardTitle className="text-xl">Metah Global App</CardTitle>
+                </div>
+                <CardDescription className="text-purple-100">
+                  Global Booking Engine (iOS/Android)
+                </CardDescription>
+              </CardHeader>
+
+              <CardContent>
+                <p className="text-sm text-purple-50 mb-6">
+                  International hotel booking engine with real-time availability and mobile-first experience.
+                </p>
+                <Button
+                  className="w-full bg-white text-purple-600 hover:bg-purple-50"
+                  onClick={() => window.open('https://book-8rv.pages.dev/', '_blank')}
+                >
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  Download App
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
         {/* How to Access Section */}
         <Card className="max-w-4xl mx-auto">
           <CardHeader className="text-center">
@@ -411,11 +515,11 @@ export const InteractivePortfolio: React.FC = () => {
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Chat with AI Bot</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Message @MunirChatBot on Telegram. Ask about my projects, skills, 
+                  Message @MunirChatBot on Telegram. Ask about my projects, skills,
                   or request the Android app download link.
                 </p>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="sm"
                   onClick={() => openDemo('telegramBot')}
                 >
@@ -430,11 +534,11 @@ export const InteractivePortfolio: React.FC = () => {
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Download iOS App</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Join TestFlight beta to experience native iOS development 
+                  Join TestFlight beta to experience native iOS development
                   with SwiftUI and Apple ecosystem integration.
                 </p>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="sm"
                   onClick={() => openDemo('iosApp')}
                 >
@@ -449,11 +553,11 @@ export const InteractivePortfolio: React.FC = () => {
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Download Android App</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Get the portfolio demo app directly from Google Play Store 
+                  Get the portfolio demo app directly from Google Play Store
                   or download the APK file.
                 </p>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="sm"
                   onClick={() => openDemo('androidApp')}
                 >
@@ -468,11 +572,11 @@ export const InteractivePortfolio: React.FC = () => {
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Browse This Website</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Explore this portfolio website to see detailed project descriptions, 
+                  Explore this portfolio website to see detailed project descriptions,
                   code samples, and live demos.
                 </p>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="sm"
                   onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
                 >
@@ -490,28 +594,28 @@ export const InteractivePortfolio: React.FC = () => {
             Ready to Experience My Work?
           </AlertTitle>
           <AlertDescription className="text-blue-700 dark:text-blue-300">
-            These are fully interactive web demos running in your browser! Experience the AI chat bot, 
+            These are fully interactive web demos running in your browser! Experience the AI chat bot,
             iOS app interface, and Android Material Design 3 - all without any downloads required.
           </AlertDescription>
         </Alert>
       </div>
-      
+
       {/* Demo Modals */}
-      <TelegramBotDemo 
+      <TelegramBotDemo
         isOpen={demoStates.telegramBot.isOpen}
         onClose={() => closeDemo('telegramBot')}
         onToggleFullscreen={() => toggleFullscreen('telegramBot')}
         isFullscreen={demoStates.telegramBot.isFullscreen}
       />
-      
-      <IOSAppDemo 
+
+      <IOSAppDemo
         isOpen={demoStates.iosApp.isOpen}
         onClose={() => closeDemo('iosApp')}
         onToggleFullscreen={() => toggleFullscreen('iosApp')}
         isFullscreen={demoStates.iosApp.isFullscreen}
       />
-      
-      <AndroidAppDemo 
+
+      <AndroidAppDemo
         isOpen={demoStates.androidApp.isOpen}
         onClose={() => closeDemo('androidApp')}
         onToggleFullscreen={() => toggleFullscreen('androidApp')}

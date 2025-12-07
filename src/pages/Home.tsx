@@ -9,11 +9,11 @@ import { TextArcEffect } from '@/components/ui/text-arc-effect';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { 
-  Code, 
-  Smartphone, 
-  Globe, 
-  Palette, 
+import {
+  Code,
+  Smartphone,
+  Globe,
+  Palette,
   ChevronRight,
   Star,
   Award,
@@ -23,71 +23,10 @@ import {
   Heart
 } from 'lucide-react';
 
+import { munirProjects } from '@/data/munirProjects';
+
 // Featured projects for home page - Using the same projects as Portfolio page
-const featuredProjects: Project[] = [
-  {
-    id: 'findy-navigation',
-    title: 'FINDY - Advanced Navigation Platform',
-    description: 'Netflix-inspired navigation app with real-time GPS tracking, AI-powered route planning, and beautiful dark-themed UI. Progressive Web App with offline support.',
-    image: 'https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=800&h=600&fit=crop',
-    technologies: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Google Maps API', 'PWA'],
-    category: 'fullstack',
-    liveUrl: 'https://findy-navigation-app.netlify.app/',
-    githubUrl: 'https://github.com/black12-ag/findy',
-    featured: true,
-    completedDate: '2025-01',
-    status: 'completed'
-  },
-  {
-    id: 'ios-chat-app',
-    title: 'iOS Chat Application',
-    description: 'Native iOS chat application built with SwiftUI, featuring real-time messaging, media sharing, and push notifications. Fully completed and deployed.',
-    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop',
-    technologies: ['SwiftUI', 'Swift', 'Firebase', 'Core Data', 'Push Notifications'],
-    category: 'mobile',
-    githubUrl: 'https://github.com/black12-ag/chat-ios-app-',
-    featured: true,
-    completedDate: '2025-01',
-    status: 'completed'
-  },
-  {
-    id: 'android-chat-app',
-    title: 'Android Chat Application',
-    description: 'Native Android chat application built with Kotlin and Material Design 3, featuring modern UI and seamless messaging experience. Fully completed.',
-    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop',
-    technologies: ['Kotlin', 'Material Design 3', 'Firebase', 'Room Database'],
-    category: 'mobile',
-    githubUrl: 'https://github.com/black12-ag/chat-andorid-app',
-    featured: true,
-    completedDate: '2025-01',
-    status: 'completed'
-  },
-  {
-    id: 'flutter-movies-app',
-    title: 'Munir Movies - Flutter App',
-    description: 'Modern Flutter app for discovering movies and TV shows with clean architecture, beautiful UI, and smooth animations using Material Design.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
-    technologies: ['Flutter', 'Dart', 'BLoC', 'Material Design'],
-    category: 'mobile',
-    liveUrl: 'https://movies-app-munir.netlify.app/',
-    githubUrl: 'https://github.com/black12-ag/movies-app',
-    videoUrl: 'https://www.youtube.com/watch?v=JlsN8xb195A',
-    featured: true,
-    completedDate: '2025-01',
-    status: 'completed'
-  },
-  {
-    id: 'hotel-booking-platform',
-    title: 'Hotel Booking Platform',
-    description: 'Advanced hotel reservation system with real-time availability, payment processing, and comprehensive admin dashboard. 90% complete with final testing phase.',
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop',
-    technologies: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'Stripe'],
-    category: 'fullstack',
-    featured: true,
-    completedDate: '90% Complete',
-    status: 'in-progress'
-  }
-];
+const featuredProjects = munirProjects.filter(project => project.featured).slice(0, 6);
 
 // Services overview for home page (unused but kept for potential future use)
 // const services = [
@@ -158,7 +97,7 @@ export default function Home() {
     },
     {
       text: "Working with Munir was a pleasure. He understood our requirements perfectly and delivered beyond expectations.",
-      author: "Mike Chen", 
+      author: "Mike Chen",
       position: "CTO, TechStart",
       rating: 5
     },
@@ -180,7 +119,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       {/* Hero Section */}
       <PortfolioHero />
 
@@ -265,17 +204,16 @@ export default function Home() {
                 </div>
               </CardContent>
             </Card>
-            
+
             {/* Testimonial Navigation */}
             <div className="flex justify-center mt-6 space-x-2">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
-                  className={`w-3 h-3 rounded-full transition-all ${
-                    index === currentTestimonial 
-                      ? 'bg-blue-600' 
+                  className={`w-3 h-3 rounded-full transition-all ${index === currentTestimonial
+                      ? 'bg-blue-600'
                       : 'bg-gray-300 dark:bg-gray-600'
-                  }`}
+                    }`}
                   onClick={() => setCurrentTestimonial(index)}
                 />
               ))}
@@ -291,8 +229,8 @@ export default function Home() {
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Let's discuss your ideas and create something amazing together.
           </p>
-          <Button 
-            size="lg" 
+          <Button
+            size="lg"
             className="bg-white text-blue-600 hover:bg-gray-100"
             onClick={() => navigate('/contact')}
           >
@@ -303,7 +241,7 @@ export default function Home() {
       </section>
 
       {/* Thank You Arc Effect */}
-      <TextArcEffect 
+      <TextArcEffect
         text=" THANK YOU • FOR VISITING • MUNIR AYUB •"
         logoUrl="/images/profile-photo.jpg"
         logoAlt="Munir Ayub"
