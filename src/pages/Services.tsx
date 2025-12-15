@@ -4,7 +4,6 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { useServices } from '@/contexts/ServiceContext';
 import { 
   Code, 
   Smartphone, 
@@ -35,6 +34,75 @@ import {
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
+
+// Services data
+const servicesData = [
+  {
+    id: 'web-dev',
+    title: 'Web Development',
+    shortDescription: 'Modern, responsive web applications',
+    description: 'Full-stack web development using React, TypeScript, and modern frameworks',
+    icon: '🌐',
+    color: 'from-blue-500 to-cyan-500',
+    borderColor: 'border-blue-200',
+    lucideIcon: Globe,
+    popular: true,
+    isAdditional: false,
+    features: ['React/Next.js', 'TypeScript', 'Responsive Design', 'API Integration']
+  },
+  {
+    id: 'mobile-dev',
+    title: 'Mobile Development',
+    shortDescription: 'Native and cross-platform mobile apps',
+    description: 'iOS and Android app development with React Native and modern tools',
+    icon: '📱',
+    color: 'from-purple-500 to-pink-500',
+    borderColor: 'border-purple-200',
+    lucideIcon: Smartphone,
+    popular: true,
+    isAdditional: false,
+    features: ['React Native', 'iOS/Android', 'Cross-platform', 'Native Features']
+  },
+  {
+    id: 'ui-ux',
+    title: 'UI/UX Design',
+    shortDescription: 'Beautiful, user-friendly interfaces',
+    description: 'Modern UI/UX design with focus on user experience and accessibility',
+    icon: '🎨',
+    color: 'from-pink-500 to-rose-500',
+    borderColor: 'border-pink-200',
+    lucideIcon: Palette,
+    popular: false,
+    isAdditional: false,
+    features: ['Figma', 'Responsive Design', 'Accessibility', 'User Testing']
+  },
+  {
+    id: 'backend',
+    title: 'Backend Development',
+    shortDescription: 'Scalable server-side solutions',
+    description: 'RESTful APIs, databases, and server infrastructure',
+    icon: '⚙️',
+    color: 'from-green-500 to-emerald-500',
+    borderColor: 'border-green-200',
+    lucideIcon: Server,
+    popular: false,
+    isAdditional: false,
+    features: ['Node.js', 'Databases', 'APIs', 'Cloud Services']
+  },
+  {
+    id: 'consulting',
+    title: 'Technical Consulting',
+    shortDescription: 'Expert guidance for your projects',
+    description: 'Technical consultation and architecture planning',
+    icon: '💼',
+    color: 'from-orange-500 to-amber-500',
+    borderColor: 'border-orange-200',
+    lucideIcon: Briefcase,
+    popular: false,
+    isAdditional: true,
+    features: ['Architecture', 'Code Review', 'Best Practices', 'Team Training']
+  }
+];
 
 // Process steps
 const processSteps = [
@@ -73,17 +141,11 @@ const processSteps = [
 export default function Services() {
   const navigate = useNavigate();
   const [selectedService, setSelectedService] = useState<string | null>(null);
-  const { getMainServices, getAdditionalServices, services } = useServices();
 
-  const mainServices = getMainServices(); // Only returns visible services by default
-  const additionalServices = getAdditionalServices(); // Only returns visible services by default
+  // Hardcoded services data since ServiceContext was removed
+  const mainServices = servicesData.filter(s => !s.isAdditional);
+  const additionalServices = servicesData.filter(s => s.isAdditional);
   const popularServices = mainServices.filter(service => service.popular);
-  
-  // Debug logging
-  console.log('Services page - Total services:', services.length);
-  console.log('Services page - Main services:', mainServices.length);
-  console.log('Services page - Additional services:', additionalServices.length);
-  console.log('Services page - Popular services:', popularServices.length);
 
   return (
     <div className="min-h-screen bg-background">

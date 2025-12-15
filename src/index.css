@@ -1,9 +1,4 @@
-/* Import performance optimizations */
-@import './styles/performance.css';
-/* Import enterprise animations */
-@import './styles/enterprise-animations.css';
-/* Import mobile portfolio animations */
-@import './mobile/styles/animations.css';
+/* Portfolio styles */
 
 @tailwind base;
 @tailwind components;

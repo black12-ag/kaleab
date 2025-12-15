@@ -4,13 +4,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { ThemeProvider } from "@/contexts/ThemeContext";
-import { AuthProvider } from "@/contexts/AuthContext";
-import { LanguageProvider } from "@/contexts/LanguageContext";
-import { CurrencyProvider } from "@/contexts/CurrencyContext";
 import { AdminSettingsProvider } from "@/contexts/AdminSettingsContext";
-import { ServiceProvider } from "@/contexts/ServiceContext";
 import { ErrorBoundary } from "react-error-boundary";
-import "./i18n";
 
 // ScrollToTop component to reset scroll position on route change
 function ScrollToTop() {
@@ -33,7 +28,6 @@ const Contact = React.lazy(() => import('./pages/Contact'));
 const NotFound = React.lazy(() => import('./pages/NotFound'));
 const PrivacyPolicy = React.lazy(() => import('./pages/PrivacyPolicy'));
 const TermsOfService = React.lazy(() => import('./pages/TermsOfService'));
-const AnimationDemo = React.lazy(() => import('./mobile/pages/AnimationDemo'));
 const AdminPanel = React.lazy(() => import('./pages/AdminPanel'));
 
 // Loading component
@@ -66,43 +60,34 @@ const ErrorFallback = ({ error, resetErrorBoundary }: { error: Error; resetError
 const App = () => {
   return (
     <ThemeProvider defaultTheme="system" storageKey="portfolio-ui-theme">
-      <AuthProvider>
-        <AdminSettingsProvider>
-          <ServiceProvider>
-            <LanguageProvider>
-              <CurrencyProvider>
-                <TooltipProvider>
-            <Toaster />
-            <Sonner />
-            <BrowserRouter basename={import.meta.env.BASE_URL} future={{
-              v7_startTransition: true,
-              v7_relativeSplatPath: true
-            }}>
-              <ErrorBoundary FallbackComponent={ErrorFallback}>
-                <ScrollToTop />
-                <Suspense fallback={<LoadingFallback />}>
-                  <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/portfolio" element={<Portfolio />} />
-                    <Route path="/projects" element={<Projects />} />
-                    <Route path="/services" element={<Services />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/contact" element={<Contact />} />
-                    <Route path="/animation-demo" element={<AnimationDemo />} />
-                    <Route path="/admin" element={<AdminPanel />} />
-                    <Route path="/privacy" element={<PrivacyPolicy />} />
-                    <Route path="/terms" element={<TermsOfService />} />
-                    <Route path="*" element={<NotFound />} />
-                  </Routes>
-                </Suspense>
-              </ErrorBoundary>
-            </BrowserRouter>
-                </TooltipProvider>
-              </CurrencyProvider>
-            </LanguageProvider>
-          </ServiceProvider>
-        </AdminSettingsProvider>
-      </AuthProvider>
+      <AdminSettingsProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter basename={import.meta.env.BASE_URL} future={{
+            v7_startTransition: true,
+            v7_relativeSplatPath: true
+          }}>
+            <ErrorBoundary FallbackComponent={ErrorFallback}>
+              <ScrollToTop />
+              <Suspense fallback={<LoadingFallback />}>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/portfolio" element={<Portfolio />} />
+                  <Route path="/projects" element={<Projects />} />
+                  <Route path="/services" element={<Services />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/admin" element={<AdminPanel />} />
+                  <Route path="/privacy" element={<PrivacyPolicy />} />
+                  <Route path="/terms" element={<TermsOfService />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </Suspense>
+            </ErrorBoundary>
+          </BrowserRouter>
+        </TooltipProvider>
+      </AdminSettingsProvider>
     </ThemeProvider>
   );
 };

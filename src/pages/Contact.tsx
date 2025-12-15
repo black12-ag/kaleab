@@ -6,10 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
-import { useToast } from '@/hooks/use-toast';
 import ProjectTypeSelector from '@/components/ui/project-type-selector';
-import BudgetRangeSelector from '@/components/ui/budget-range-selector';
-import contactService from '@/lib/contactService';
 import { 
   Mail, 
   Phone, 
@@ -423,9 +420,11 @@ export default function Contact() {
                             />
                           </div>
                           <div>
-                            <BudgetRangeSelector
+                            <label className="block text-sm font-medium mb-2">Budget Range</label>
+                            <Input
+                              placeholder="e.g., $5,000 - $10,000"
                               value={formData.budget}
-                              onChange={(value) => handleInputChange('budget', value)}
+                              onChange={(e) => handleInputChange('budget', e.target.value)}
                             />
                           </div>
                         </div>

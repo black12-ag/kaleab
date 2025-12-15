@@ -28,7 +28,6 @@ import {
   Settings,
   Briefcase
 } from 'lucide-react';
-import ServiceAdmin from '@/components/admin/ServiceAdmin';
 
 interface Project {
   id: string;
@@ -690,7 +689,9 @@ export default function AdminPanel() {
 
       <div className="container mx-auto px-4 py-8">
         {activeTab === 'services' && (
-          <ServiceAdmin />
+          <div className="text-center py-12">
+            <p className="text-muted-foreground">Services management removed - portfolio only</p>
+          </div>
         )}
         
         {activeTab === 'media' && (

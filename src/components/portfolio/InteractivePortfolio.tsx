@@ -16,9 +16,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import TelegramBotDemo from '../demos/TelegramBotDemo';
-import IOSAppDemo from '../demos/IOSAppDemo';
-import AndroidAppDemo from '../demos/AndroidAppDemo';
 
 export const InteractivePortfolio: React.FC = () => {
   const [botStatus, setBotStatus] = useState({
@@ -600,27 +597,6 @@ export const InteractivePortfolio: React.FC = () => {
         </Alert>
       </div>
 
-      {/* Demo Modals */}
-      <TelegramBotDemo
-        isOpen={demoStates.telegramBot.isOpen}
-        onClose={() => closeDemo('telegramBot')}
-        onToggleFullscreen={() => toggleFullscreen('telegramBot')}
-        isFullscreen={demoStates.telegramBot.isFullscreen}
-      />
-
-      <IOSAppDemo
-        isOpen={demoStates.iosApp.isOpen}
-        onClose={() => closeDemo('iosApp')}
-        onToggleFullscreen={() => toggleFullscreen('iosApp')}
-        isFullscreen={demoStates.iosApp.isFullscreen}
-      />
-
-      <AndroidAppDemo
-        isOpen={demoStates.androidApp.isOpen}
-        onClose={() => closeDemo('androidApp')}
-        onToggleFullscreen={() => toggleFullscreen('androidApp')}
-        isFullscreen={demoStates.androidApp.isFullscreen}
-      />
     </div>
   );
 };
