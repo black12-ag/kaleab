@@ -139,8 +139,11 @@ export default function Navbar({ className }: NavbarProps) {
                     window.open(storedCV, '_blank');
                   }
                 } else {
-                  // Fallback to default CV
-                  window.open(`${import.meta.env.BASE_URL}resume.pdf`, '_blank');
+                  // Fallback to default CV - download directly
+                  const link = document.createElement('a');
+                  link.href = '/Munir_Ayub_CV.pdf';
+                  link.download = 'Munir_Ayub_CV.pdf';
+                  link.click();
                 }
               }}
             >
@@ -240,7 +243,22 @@ export default function Navbar({ className }: NavbarProps) {
                     <Button
                       className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white"
                       onClick={() => {
-window.open(`${import.meta.env.BASE_URL}resume.pdf`, '_blank');
+                        const storedCV = localStorage.getItem('portfolio_cv');
+                        if (storedCV) {
+                          if (storedCV.startsWith('data:')) {
+                            const link = document.createElement('a');
+                            link.href = storedCV;
+                            link.download = 'Munir_Ayub_CV.pdf';
+                            link.click();
+                          } else {
+                            window.open(storedCV, '_blank');
+                          }
+                        } else {
+                          const link = document.createElement('a');
+                          link.href = '/Munir_Ayub_CV.pdf';
+                          link.download = 'Munir_Ayub_CV.pdf';
+                          link.click();
+                        }
                         setIsOpen(false);
                       }}
                     >
