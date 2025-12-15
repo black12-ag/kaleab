@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import PortfolioHero from '@/components/portfolio/PortfolioHero';
 import PortfolioGlareCards from '@/components/portfolio/PortfolioGlareCards';
 import PortfolioVideoShowcase from '@/components/portfolio/PortfolioVideoShowcase';
 import ProjectCard, { Project } from '@/components/portfolio/ProjectCard';
 import { TextArcEffect } from '@/components/ui/text-arc-effect';
+import ScrollToTop from '@/components/ui/ScrollToTop';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -129,23 +131,57 @@ export default function Home() {
       {/* Featured Projects */}
       <section className="py-20 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">Featured Projects</h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Check out some of my recent work and the technologies I've used.
             </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
+          </motion.div>
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.1
+                }
+              }
+            }}
+          >
             {featuredProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} className="mb-4 sm:mb-0" />
+              <motion.div
+                key={project.id}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                transition={{ duration: 0.5 }}
+              >
+                <ProjectCard project={project} className="mb-4 sm:mb-0" />
+              </motion.div>
             ))}
-          </div>
-          <div className="text-center">
+          </motion.div>
+          <motion.div 
+            className="text-center"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
             <Button size="lg" onClick={() => navigate('/portfolio')}>
               View All Projects
               <ChevronRight className="w-5 h-5 ml-2" />
             </Button>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -155,23 +191,50 @@ export default function Home() {
       {/* Why Choose Me */}
       <section className="py-20 bg-white dark:bg-gray-950">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">Why Work With Me?</h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               I bring passion, expertise, and dedication to every project.
             </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
+          </motion.div>
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.15
+                }
+              }
+            }}
+          >
             {highlights.map((highlight, index) => (
-              <div key={index} className="text-center px-4 sm:px-0">
+              <motion.div 
+                key={index} 
+                className="text-center px-4 sm:px-0"
+                variants={{
+                  hidden: { opacity: 0, scale: 0.8 },
+                  visible: { opacity: 1, scale: 1 }
+                }}
+                transition={{ duration: 0.5 }}
+              >
                 <div className={`inline-flex p-4 rounded-full bg-gray-100 dark:bg-gray-800 mb-4`}>
                   <highlight.icon className={`w-8 h-8 ${highlight.color}`} />
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold mb-3 text-gray-900 dark:text-white leading-tight">{highlight.title}</h3>
                 <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base leading-relaxed">{highlight.description}</p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -248,6 +311,7 @@ export default function Home() {
       />
 
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }
