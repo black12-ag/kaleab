@@ -175,6 +175,28 @@ export const munirProjects = [
       'Money back guarantee',
       'Real/high quality services'
     ]
+  },
+  {
+    id: '9',
+    title: 'Metah - Hotel Booking',
+    description: 'Modern hotel search and booking platform',
+    longDescription: 'A sleek hotel booking platform featuring curated recommendations from top destinations worldwide including Paris, Bangkok, London, New York, Singapore, Rome, Bali, Tokyo, and Istanbul.',
+    image: '/images/metah-booking.jpg',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'API Integration'],
+    category: 'Web Development',
+    githubUrl: 'https://github.com/black12-ag/metah-booking',
+    liveUrl: 'https://book-8rv.pages.dev/',
+    featured: true,
+    status: 'completed',
+    completionDate: '2024-12-10',
+    features: [
+      'Hotel search functionality',
+      'Curated destination recommendations',
+      'Trending hotels by city',
+      'Best value selections',
+      'Top rated properties',
+      'Luxury and romantic getaways'
+    ]
   }
 ];
 
