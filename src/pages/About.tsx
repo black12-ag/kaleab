@@ -602,8 +602,8 @@ export default function About() {
                           <h4 className="text-xl font-semibold text-gray-900 dark:text-white">{edu.degree}</h4>
                           <p className="text-lg text-blue-600 font-medium">{edu.institution}</p>
                           <p className="text-gray-600 dark:text-gray-400">{edu.location}</p>
-                          {edu.gpa && (
-                            <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">GPA: {edu.gpa}</p>
+                          {(edu as any).gpa && (
+                            <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">GPA: {(edu as any).gpa}</p>
                           )}
                         </div>
                         <Badge variant="outline" className="mt-2 md:mt-0 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600">

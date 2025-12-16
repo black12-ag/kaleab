@@ -349,7 +349,7 @@ export default function PortfolioHero({ imageUrls }: PortfolioHeroProps) {
               {[
                 {
                   icon: Github,
-                  url: 'https://github.com/munir-ayub',
+                  url: 'https://github.com/black12-ag',
                   brandClass: 'github-hover',
                   label: 'GitHub'
                 },
