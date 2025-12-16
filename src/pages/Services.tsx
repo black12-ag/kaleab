@@ -100,7 +100,10 @@ const servicesData = [
     lucideIcon: Briefcase,
     popular: false,
     isAdditional: true,
-    features: ['Architecture', 'Code Review', 'Best Practices', 'Team Training']
+    features: ['Architecture', 'Code Review', 'Best Practices', 'Team Training'],
+    technologies: ['Architecture', 'Code Review', 'Best Practices', 'Team Training'],
+    startingPrice: '$150/hr',
+    timeline: 'Flexible'
   }
 ];
 

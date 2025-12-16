@@ -128,8 +128,8 @@ export default function Contact() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'munir.ayub@example.com',
-      href: 'mailto:munir.ayub@example.com',
+      value: 'munirayub011@gmail.com',
+      href: 'mailto:munirayub011@gmail.com',
       description: 'Send me an email anytime'
     },
     {
