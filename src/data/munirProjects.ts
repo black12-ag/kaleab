@@ -131,6 +131,29 @@ export const munirProjects = [
       'Data visualization',
       'Export functionality'
     ]
+  },
+  {
+    id: '7',
+    title: 'NaturaSkin AI',
+    description: 'AI-powered skin texture restoration tool',
+    longDescription: 'The first AI that fixes the "plastic look" of generated images. Add realistic pores, micro-details, and film grain directly in your browser with offline client-side processing.',
+    image: '/images/naturaskin.jpg',
+    videoUrl: 'https://youtu.be/kpAZdAl43KE',
+    technologies: ['React', 'TypeScript', 'AI/ML', 'Flux.1 Model', 'WebAssembly'],
+    category: 'AI/ML',
+    githubUrl: 'https://github.com/black12-ag/naturaskin-ai',
+    liveUrl: 'https://naturaskin-ai.pages.dev/',
+    featured: true,
+    status: 'completed',
+    completionDate: '2024-12-15',
+    features: [
+      'Offline client-side AI processing',
+      'Automatic skin region segmentation',
+      'Flux.1 model texture re-sampling',
+      'Micropore and film grain injection',
+      'Supports PNG, JPG, WEBP formats',
+      'Before/after comparison view'
+    ]
   }
 ];
 
