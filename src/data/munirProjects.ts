@@ -154,6 +154,27 @@ export const munirProjects = [
       'Supports PNG, JPG, WEBP formats',
       'Before/after comparison view'
     ]
+  },
+  {
+    id: '8',
+    title: 'Ethio Viral',
+    description: 'All-in-one SMM services platform',
+    longDescription: 'A comprehensive social media marketing platform with instant start, fair pricing, and professional support. Trusted by 54,000+ active users including creators, businesses, and influencers to boost their social media presence.',
+    image: '/images/ethio-viral.jpg',
+    technologies: ['React', 'Node.js', 'Payment Integration', 'API', 'Database'],
+    category: 'Web Development',
+    githubUrl: 'https://github.com/black12-ag/ethio-viral',
+    featured: true,
+    status: 'completed',
+    completionDate: '2024-11-20',
+    features: [
+      '54,000+ active users',
+      '100+ secure payment methods',
+      '24/7 customer support',
+      'Auto-refill functionality',
+      'Money back guarantee',
+      'Real/high quality services'
+    ]
   }
 ];
 
