@@ -265,14 +265,14 @@ export default function Services() {
                       ) : (
                         <div className="space-y-4">
                           <div className="flex flex-wrap gap-2 justify-center">
-                            {service.technologies.slice(0, 3).map((tech, index) => (
+                            {(service.features || []).slice(0, 3).map((tech, index) => (
                               <Badge key={index} variant="outline" className="text-xs">
                                 {tech}
                               </Badge>
                             ))}
-                            {service.technologies.length > 3 && (
+                            {(service.features || []).length > 3 && (
                               <Badge variant="outline" className="text-xs">
-                                +{service.technologies.length - 3}
+                                +{(service.features || []).length - 3}
                               </Badge>
                             )}
                           </div>

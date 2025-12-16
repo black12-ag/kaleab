@@ -534,7 +534,7 @@ export default function Portfolio() {
                   <h3 className="text-lg sm:text-xl font-semibold mb-3 text-gray-900 dark:text-white leading-tight">{service.title}</h3>
                   <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base mb-4 leading-relaxed">{service.description}</p>
                   <div className="flex flex-wrap gap-1 justify-center">
-                    {service.technologies.map((tech, techIndex) => (
+                    {(service.technologies || []).map((tech, techIndex) => (
                       <Badge key={techIndex} variant="secondary" className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
                         {tech}
                       </Badge>

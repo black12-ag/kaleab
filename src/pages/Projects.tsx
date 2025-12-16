@@ -227,7 +227,7 @@ export default function Projects() {
       filtered = filtered.filter(project =>
         project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        project.technologies.some(tech => tech.toLowerCase().includes(searchTerm.toLowerCase()))
+        (project.technologies || []).some(tech => tech.toLowerCase().includes(searchTerm.toLowerCase()))
       );
     }
 
