@@ -27,8 +27,16 @@ import {
 
 import { munirProjects } from '@/data/munirProjects';
 
-// Featured projects for home page - Using the same projects as Portfolio page
-const featuredProjects = munirProjects.filter(project => project.featured).slice(0, 6);
+// Featured projects for home page - Map to include completedDate for ProjectCard compatibility
+const featuredProjects = munirProjects
+  .filter(project => project.featured)
+  .slice(0, 6)
+  .map(project => ({
+    ...project,
+    completedDate: project.completionDate || 'In Progress',
+    category: project.category.toLowerCase().includes('web') ? 'web' as const : 
+              project.category.toLowerCase().includes('mobile') ? 'mobile' as const : 'web' as const
+  }));
 
 // Services overview for home page (unused but kept for potential future use)
 // const services = [

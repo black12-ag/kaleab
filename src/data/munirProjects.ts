@@ -123,6 +123,7 @@ export const munirProjects = [
     githubUrl: 'https://github.com/yourusername/social-dashboard',
     featured: true,
     status: 'in-progress',
+    completionDate: 'In Progress',
     features: [
       'Multi-platform integration',
       'Real-time analytics',
