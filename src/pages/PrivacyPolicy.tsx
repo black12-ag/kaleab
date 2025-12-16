@@ -1,13 +1,27 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import ScrollToTop from '@/components/ui/ScrollToTop';
 
 export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <Navbar />
+      <motion.div 
+        className="container mx-auto px-4 sm:px-6 lg:px-8 py-24"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         <Card className="rounded-xl">
           <CardContent className="prose dark:prose-invert max-w-none p-6">
-            <h1>Privacy Policy</h1>
+            <motion.h1
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+            >Privacy Policy</motion.h1>
             <p>Last updated: {new Date().toLocaleDateString()}</p>
             
             <h2>Information We Collect</h2>
@@ -26,7 +40,9 @@ export default function PrivacyPolicy() {
             <p>If you have any questions about this Privacy Policy, please contact us through the contact form on this website.</p>
           </CardContent>
         </Card>
-      </div>
+      </motion.div>
+      <Footer />
+      <ScrollToTop />
     </div>
   );
 }
