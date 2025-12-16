@@ -48,7 +48,10 @@ const servicesData = [
     lucideIcon: Globe,
     popular: true,
     isAdditional: false,
-    features: ['React/Next.js', 'TypeScript', 'Responsive Design', 'API Integration']
+    features: ['React/Next.js', 'TypeScript', 'Responsive Design', 'API Integration'],
+    technologies: ['React/Next.js', 'TypeScript', 'Responsive Design', 'API Integration'],
+    startingPrice: '$200',
+    timeline: '2-4 weeks'
   },
   {
     id: 'mobile-dev',
@@ -61,7 +64,10 @@ const servicesData = [
     lucideIcon: Smartphone,
     popular: true,
     isAdditional: false,
-    features: ['React Native', 'iOS/Android', 'Cross-platform', 'Native Features']
+    features: ['React Native', 'iOS/Android', 'Cross-platform', 'Native Features'],
+    technologies: ['React Native', 'iOS/Android', 'Cross-platform', 'Native Features'],
+    startingPrice: '$300',
+    timeline: '3-6 weeks'
   },
   {
     id: 'ui-ux',
@@ -74,7 +80,10 @@ const servicesData = [
     lucideIcon: Palette,
     popular: false,
     isAdditional: false,
-    features: ['Figma', 'Responsive Design', 'Accessibility', 'User Testing']
+    features: ['Figma', 'Responsive Design', 'Accessibility', 'User Testing'],
+    technologies: ['Figma', 'Responsive Design', 'Accessibility', 'User Testing'],
+    startingPrice: '$150',
+    timeline: '1-2 weeks'
   },
   {
     id: 'backend',
@@ -87,7 +96,10 @@ const servicesData = [
     lucideIcon: Server,
     popular: false,
     isAdditional: false,
-    features: ['Node.js', 'Databases', 'APIs', 'Cloud Services']
+    features: ['Node.js', 'Databases', 'APIs', 'Cloud Services'],
+    technologies: ['Node.js', 'Databases', 'APIs', 'Cloud Services'],
+    startingPrice: '$250',
+    timeline: '2-4 weeks'
   },
   {
     id: 'consulting',
@@ -102,7 +114,7 @@ const servicesData = [
     isAdditional: true,
     features: ['Architecture', 'Code Review', 'Best Practices', 'Team Training'],
     technologies: ['Architecture', 'Code Review', 'Best Practices', 'Team Training'],
-    startingPrice: '$150/hr',
+    startingPrice: '$50/hr',
     timeline: 'Flexible'
   }
 ];
