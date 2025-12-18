@@ -243,7 +243,7 @@ export default function Navbar({ className }: NavbarProps) {
                     <Button
                       className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white"
                       onClick={() => {
-                        const storedCV = localStorage.getItem('portfolio_cv');
+
                         if (storedCV) {
                           if (storedCV.startsWith('data:')) {
                             const link = document.createElement('a');

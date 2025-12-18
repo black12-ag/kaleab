@@ -30,6 +30,7 @@ const NotFound = React.lazy(() => import('./pages/NotFound'));
 const PrivacyPolicy = React.lazy(() => import('./pages/PrivacyPolicy'));
 const TermsOfService = React.lazy(() => import('./pages/TermsOfService'));
 const AdminPanel = React.lazy(() => import('./pages/AdminPanel'));
+const Videos = React.lazy(() => import('./pages/Videos'));
 
 // Loading component
 const LoadingFallback = () => (
@@ -122,6 +123,16 @@ const AnimatedRoutes = () => {
             transition={{ duration: 0.3 }}
           >
             <Contact />
+          </motion.div>
+        } />
+        <Route path="/videos" element={
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+          >
+            <Videos />
           </motion.div>
         } />
         <Route path="/admin" element={<AdminPanel />} />

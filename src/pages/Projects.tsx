@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ui/ScrollToTop';
 import ProjectCard, { Project } from '@/components/portfolio/ProjectCard';
+import PortfolioVideoShowcase from '@/components/portfolio/PortfolioVideoShowcase';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -189,6 +190,135 @@ const allProjects: Project[] = [
       responseTime: '< 1 second',
       availablePlugins: ['Payment Gateway', 'Service API', 'Order Tracking', 'User Management']
     }
+  },
+  {
+    id: 'abstract-culinary',
+    title: 'Abstract - Culinary Excellence',
+    description: 'Modern recipe discovery platform with chef-curated content from 12 expert chefs across 18 countries. Features elegant UI, category browsing, and newsletter integration.',
+    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vite'],
+    category: 'web',
+    liveUrl: 'https://abstract-82t.pages.dev/',
+    githubUrl: 'https://github.com/black12-ag/abstract-culinary',
+    videoUrl: 'https://youtu.be/3OI1w50p0ts',
+    featured: true,
+    completedDate: '2024-12',
+    status: 'completed',
+    keyFeatures: [
+      '250+ curated recipes from 18 countries',
+      'Chef-selected featured recipes',
+      'Quick category browsing',
+      'Newsletter subscription system',
+      'Responsive modern design',
+      'Smooth animations and transitions'
+    ]
+  },
+  {
+    id: 'wholecase-verification',
+    title: 'WholeCase - Document Verification',
+    description: 'Remote document verification and authentication platform designed for Ethiopia. Features secure document upload, verification workflows, and a modern luxury-themed UI.',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Authentication'],
+    category: 'web',
+    liveUrl: 'https://wholecase.pages.dev/',
+    githubUrl: 'https://github.com/black12-ag/wholecase',
+    videoUrl: 'https://youtu.be/eSOB2tai8hc',
+    featured: true,
+    completedDate: '2024-12',
+    status: 'completed',
+    keyFeatures: [
+      'Remote document verification',
+      'Secure authentication system',
+      'Document upload and processing',
+      'Luxury-themed modern UI',
+      'Ethiopian market focused',
+      'Responsive design with animations'
+    ]
+  },
+  {
+    id: 'warp-bypass',
+    title: 'Warp Bypass - Identity Reset Tool',
+    description: 'Identity reset & complete removal tools for Warp terminal. Cross-platform support for macOS, Windows, and Linux with one-liner installation.',
+    image: 'https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=800&h=600&fit=crop',
+    technologies: ['Python', 'Shell', 'Bash', 'Cross-Platform'],
+    category: 'automation',
+    githubUrl: 'https://github.com/black12-ag/warp-bypass',
+    videoUrl: 'https://youtu.be/Fh5IQUv8XBU',
+    featured: true,
+    completedDate: '2024-12',
+    status: 'completed',
+    keyFeatures: [
+      'Identity Reset - keeps app, resets machine ID',
+      'Complete Removal - removes all traces',
+      'Cross-platform (macOS, Windows, Linux)',
+      'One-liner installation commands',
+      'Linux standalone bash scripts',
+      'Video tutorial included'
+    ]
+  },
+  {
+    id: 'cursor-bypass',
+    title: 'Cursor Bypass Tool',
+    description: 'Professional account management for Cursor AI with auto-registration, Machine ID Reset, and 15 language support. Bulletproof installation.',
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop',
+    technologies: ['Python', 'Browser Automation', 'Cross-Platform', 'Multi-Language'],
+    category: 'automation',
+    githubUrl: 'https://github.com/black12-ag/cursor-bypass-tool',
+    videoUrl: 'https://youtu.be/xWOLAMmtvd4',
+    featured: true,
+    completedDate: '2024-12',
+    status: 'completed',
+    keyFeatures: [
+      'Machine ID Reset',
+      'Auto & Manual registration modes',
+      'Temp email auto-generation',
+      '15 language support',
+      'Bulletproof one-line installer',
+      'Cross-platform (Windows, macOS, Linux)'
+    ]
+  },
+  {
+    id: 'windsurf-bypass',
+    title: 'Windsurf Bypass Tool',
+    description: 'Professional automation suite for Windsurf AI Editor. Machine ID Reset, Auto Account Creation, Total Reset. Completes in under 60 seconds.',
+    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop',
+    technologies: ['Python', 'Browser Automation', 'Cross-Platform', 'Temp Email'],
+    category: 'automation',
+    githubUrl: 'https://github.com/black12-ag/windsurf-bypass',
+    videoUrl: 'https://youtu.be/hQPsczoqfAY',
+    featured: true,
+    completedDate: '2024-12',
+    status: 'completed',
+    keyFeatures: [
+      'Reset Machine ID (5-10 seconds)',
+      'Auto Account Creation with temp email',
+      'Total Reset for fresh start',
+      'Zero configuration needed',
+      'Cross-platform support',
+      'Completes in under 60 seconds'
+    ]
+  },
+  {
+    id: 'apple-clone',
+    title: 'Apple.com High-Fidelity Clone',
+    description: 'Pixel-perfect Apple.com clone with 60+ pages, responsive design, global navigation, hero sections, and product highlight cards.',
+    image: 'https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=800&h=600&fit=crop',
+    technologies: ['React', 'TypeScript', 'Vite', 'Styled Components', 'Framer Motion', 'React Router'],
+    category: 'web',
+    liveUrl: 'https://apple-com-clw.pages.dev/',
+    githubUrl: 'https://github.com/black12-ag/apple.com',
+    videoUrl: 'https://youtu.be/fCDqxrsjnVk',
+    featured: true,
+    completedDate: '2024-12',
+    status: 'completed',
+    keyFeatures: [
+      '60+ dedicated pages mirroring Apple structure',
+      'Pixel-perfect responsive design',
+      'Global navigation bar',
+      'Hero sections with product highlights',
+      'Product tile grids and promo cards',
+      'Cloudflare Pages deployment ready'
+    ]
   }
 ];
 
@@ -208,6 +338,7 @@ export default function Projects() {
     { id: 'web', name: 'Web Apps', count: allProjects.filter(p => p.category === 'web').length },
     { id: 'mobile', name: 'Mobile Apps', count: allProjects.filter(p => p.category === 'mobile').length },
     { id: 'bot', name: 'Telegram Bots', count: allProjects.filter(p => p.category === 'bot').length },
+    { id: 'automation', name: 'Automation', count: allProjects.filter(p => p.category === 'automation').length },
     { id: 'design', name: 'Design', count: allProjects.filter(p => p.category === 'design').length }
   ];
 
@@ -452,9 +583,24 @@ export default function Projects() {
                 </Button>
               </div>
             )}
+
+            {/* Watch Demos Button */}
+            <div className="text-center mt-12">
+              <Button 
+                size="lg" 
+                variant="outline"
+                onClick={() => document.getElementById('video-demos')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-gradient-to-r from-purple-500 to-pink-500 text-white border-0 hover:from-purple-600 hover:to-pink-600"
+              >
+                🎬 Watch Project Demos
+              </Button>
+            </div>
           </div>
         </div>
       </section>
+
+      {/* Project Video Demos */}
+      <PortfolioVideoShowcase />
 
       {/* Project Stats */}
       <section className="py-16 bg-white dark:bg-gray-950">

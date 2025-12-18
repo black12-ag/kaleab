@@ -1,6 +1,8 @@
 import { VideoPlayer } from '@/components/ui/video-thumbnail-player';
 import { motion } from 'framer-motion';
 import { parseVideoUrl } from '@/utils/videoUtils';
+import { Link } from 'react-router-dom';
+import { Play } from 'lucide-react';
 
 export default function PortfolioVideoShowcase() {
   // Real project videos - Your actual project demonstrations
@@ -54,7 +56,7 @@ export default function PortfolioVideoShowcase() {
   });
 
   return (
-    <section className="py-20 bg-white dark:bg-neutral-950">
+    <section id="video-demos" className="py-20 bg-white dark:bg-neutral-950">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <motion.div 
@@ -70,6 +72,23 @@ export default function PortfolioVideoShowcase() {
           <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
             Watch real demonstrations of my projects in action. See the actual features, functionality, and user experience.
           </p>
+        </motion.div>
+
+        {/* View All Demos Button */}
+        <motion.div 
+          className="flex justify-center mb-12"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <Link
+            to="/videos"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+          >
+            <Play className="w-5 h-5" />
+            View All Demos
+          </Link>
         </motion.div>
 
         {/* Video Grid */}

@@ -197,6 +197,141 @@ export const munirProjects = [
       'Top rated properties',
       'Luxury and romantic getaways'
     ]
+  },
+  {
+    id: '10',
+    title: 'Abstract - Culinary Excellence',
+    description: 'Modern recipe discovery platform with chef-curated content',
+    longDescription: 'A beautifully designed culinary platform that transforms recipes into experiences. Features chef-curated content from 12 expert chefs across 18 countries, category browsing, newsletter integration, and a stunning modern UI with smooth animations.',
+    image: '/images/abstract-culinary.jpg',
+    videoUrl: 'https://youtu.be/3OI1w50p0ts',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vite'],
+    category: 'Web Development',
+    githubUrl: 'https://github.com/black12-ag/abstract-culinary',
+    liveUrl: 'https://abstract-82t.pages.dev/',
+    featured: true,
+    status: 'completed',
+    completionDate: '2024-12-18',
+    features: [
+      '250+ curated recipes from 18 countries',
+      'Chef-selected featured recipes',
+      'Quick category browsing',
+      'Newsletter subscription system',
+      'Responsive modern design',
+      'Smooth animations and transitions'
+    ]
+  },
+  {
+    id: '11',
+    title: 'WholeCase - Document Verification',
+    description: 'Remote document verification platform for Ethiopia',
+    longDescription: 'A professional remote document verification and authentication platform designed for Ethiopia. Features secure document upload, verification workflows, and a modern luxury-themed UI with smooth animations.',
+    image: '/images/wholecase.jpg',
+    videoUrl: 'https://youtu.be/eSOB2tai8hc',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Authentication'],
+    category: 'Web Development',
+    githubUrl: 'https://github.com/black12-ag/wholecase',
+    liveUrl: 'https://wholecase.pages.dev/',
+    featured: true,
+    status: 'completed',
+    completionDate: '2024-12-18',
+    features: [
+      'Remote document verification',
+      'Secure authentication system',
+      'Document upload and processing',
+      'Luxury-themed modern UI',
+      'Ethiopian market focused',
+      'Responsive design with animations'
+    ]
+  },
+  {
+    id: '12',
+    title: 'Warp Bypass - Identity Reset Tool',
+    description: 'Identity reset & complete removal tools for Warp terminal',
+    longDescription: 'Warp Bypass provides two powerful tools: Identity Reset (keeps app installed, resets machine identity) and Complete Removal (removes app and all traces). Cross-platform support for macOS, Windows, and Linux with one-liner installation commands.',
+    image: '/images/warp-bypass.jpg',
+    videoUrl: 'https://youtu.be/Fh5IQUv8XBU',
+    technologies: ['Python', 'Shell', 'Bash', 'Cross-Platform'],
+    category: 'Automation',
+    githubUrl: 'https://github.com/black12-ag/warp-bypass',
+    featured: true,
+    status: 'completed',
+    completionDate: '2024-12-18',
+    features: [
+      'Identity Reset - keeps app, resets machine ID',
+      'Complete Removal - removes all traces',
+      'Cross-platform (macOS, Windows, Linux)',
+      'One-liner installation commands',
+      'Linux standalone bash scripts',
+      'Video tutorial included'
+    ]
+  },
+  {
+    id: '13',
+    title: 'Cursor Bypass Tool',
+    description: 'Professional account management tool for Cursor AI with auto-registration',
+    longDescription: 'A powerful cross-platform automation tool for Cursor AI account management. Features Machine ID Reset, Smart Registration (automatic & manual modes), secure account handling, and 15 language support. Bulletproof installation that never fails.',
+    image: '/images/cursor-bypass.jpg',
+    videoUrl: 'https://youtu.be/xWOLAMmtvd4',
+    technologies: ['Python', 'Browser Automation', 'Cross-Platform', 'Multi-Language'],
+    category: 'Automation',
+    githubUrl: 'https://github.com/black12-ag/cursor-bypass-tool',
+    featured: true,
+    status: 'completed',
+    completionDate: '2024-12-18',
+    features: [
+      'Machine ID Reset',
+      'Auto & Manual registration modes',
+      'Temp email auto-generation',
+      '15 language support',
+      'Bulletproof one-line installer',
+      'Cross-platform (Windows, macOS, Linux)'
+    ]
+  },
+  {
+    id: '14',
+    title: 'Windsurf Bypass Tool',
+    description: 'Professional automation suite for Windsurf AI Editor',
+    longDescription: 'Complete automation suite for Windsurf AI Editor featuring Machine ID Reset, Auto Account Creation with temp email, and Total Reset for fresh start. Zero config, cross-platform, completes in under 60 seconds.',
+    image: '/images/windsurf-bypass.jpg',
+    videoUrl: 'https://youtu.be/hQPsczoqfAY',
+    technologies: ['Python', 'Browser Automation', 'Cross-Platform', 'Temp Email'],
+    category: 'Automation',
+    githubUrl: 'https://github.com/black12-ag/windsurf-bypass',
+    featured: true,
+    status: 'completed',
+    completionDate: '2024-12-18',
+    features: [
+      'Reset Machine ID (5-10 seconds)',
+      'Auto Account Creation with temp email',
+      'Total Reset for fresh start',
+      'Zero configuration needed',
+      'Cross-platform support',
+      'Completes in under 60 seconds'
+    ]
+  },
+  {
+    id: '15',
+    title: 'Apple.com High-Fidelity Clone',
+    description: 'Pixel-perfect Apple.com clone with 60+ pages and responsive design',
+    longDescription: 'A high-fidelity clone of Apple.com featuring pixel-perfect components, responsive design, and over 60 dedicated pages mirroring the official structure. Includes global navigation, hero sections, product highlight cards, call-to-action banners, and layouts that adapt from desktop to mobile.',
+    image: '/images/apple-clone.jpg',
+    videoUrl: 'https://youtu.be/fCDqxrsjnVk',
+    technologies: ['React', 'TypeScript', 'Vite', 'Styled Components', 'Framer Motion', 'React Router'],
+    category: 'Web Development',
+    githubUrl: 'https://github.com/black12-ag/apple.com',
+    liveUrl: 'https://apple-com-clw.pages.dev/',
+    featured: true,
+    status: 'completed',
+    completionDate: '2024-12-18',
+    features: [
+      '60+ dedicated pages mirroring Apple structure',
+      'Pixel-perfect responsive design',
+      'Global navigation bar',
+      'Hero sections with product highlights',
+      'Product tile grids and promo cards',
+      'Cloudflare Pages deployment ready'
+    ]
   }
 ];
 

@@ -27,15 +27,14 @@ import {
 
 import { munirProjects } from '@/data/munirProjects';
 
-// Featured projects for home page - Map to include completedDate for ProjectCard compatibility
-const featuredProjects = munirProjects
-  .filter(project => project.featured)
-  .slice(0, 6)
+// All projects for home page - Map to include completedDate for ProjectCard compatibility
+const allHomeProjects = munirProjects
   .map(project => ({
     ...project,
     completedDate: project.completionDate || 'In Progress',
     category: project.category.toLowerCase().includes('web') ? 'web' as const : 
-              project.category.toLowerCase().includes('mobile') ? 'mobile' as const : 'web' as const
+              project.category.toLowerCase().includes('mobile') ? 'mobile' as const : 
+              project.category.toLowerCase().includes('ai') ? 'ai' as const : 'web' as const
   }));
 
 // Services overview for home page (unused but kept for potential future use)
@@ -165,7 +164,7 @@ export default function Home() {
               }
             }}
           >
-            {featuredProjects.map((project) => (
+            {allHomeProjects.map((project) => (
               <motion.div
                 key={project.id}
                 variants={{
@@ -179,15 +178,18 @@ export default function Home() {
             ))}
           </motion.div>
           <motion.div 
-            className="text-center"
+            className="text-center flex flex-col sm:flex-row gap-4 justify-center items-center"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            <Button size="lg" onClick={() => navigate('/portfolio')}>
+            <Button size="lg" onClick={() => navigate('/projects')}>
               View All Projects
               <ChevronRight className="w-5 h-5 ml-2" />
+            </Button>
+            <Button size="lg" variant="outline" onClick={() => document.getElementById('video-demos')?.scrollIntoView({ behavior: 'smooth' })}>
+              🎬 Watch Demos
             </Button>
           </motion.div>
         </div>

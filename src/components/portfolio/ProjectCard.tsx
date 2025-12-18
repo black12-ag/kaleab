@@ -152,15 +152,8 @@ export default function ProjectCard({ project, className = '', showFullDetails =
   };
 
   return (
-    <motion.div
-      whileHover={{ 
-        y: -8,
-        rotateX: 5,
-        rotateY: 5,
-        scale: 1.02
-      }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
-      className={className}
+    <div
+      className={`${className} transform transition-transform duration-300 ease-out hover:-translate-y-2 hover:scale-[1.01]`}
     >
       <Card className="group hover:shadow-2xl transition-all duration-500 border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-600 bg-white dark:bg-gray-900 hover:bg-gradient-to-br hover:from-white hover:to-blue-50 dark:hover:from-gray-900 dark:hover:to-blue-950 overflow-hidden">
         {/* Animated glow effect */}
@@ -179,29 +172,24 @@ export default function ProjectCard({ project, className = '', showFullDetails =
             </div>
           ) : (
             <div className={`aspect-video bg-gray-100 ${!imageLoaded ? 'animate-pulse' : ''}`}>
-              <motion.img
+              <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-400 ease-out group-hover:scale-110"
                 onLoad={handleImageLoad}
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
               />
               
               {/* Video Play Button Overlay */}
               {hasVideo && (
-                <motion.div
+                <div
                   className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300"
-                  whileHover={{ opacity: 1 }}
                 >
-                  <motion.button
+                  <button
                     onClick={() => setShowVideo(true)}
-                    className="bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 rounded-full p-4 transition-all duration-300 hover:scale-110"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
+                    className="bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 rounded-full p-4 transition-all duration-300 hover:scale-110 active:scale-95"
                   >
                     <Play className="w-8 h-8 text-white fill-white translate-x-0.5" />
-                  </motion.button>
+                  </button>
                   
                   {/* Video Info Badge */}
                   <div className="absolute bottom-3 right-3 bg-black/70 text-white px-2 py-1 rounded text-xs flex items-center gap-1">
@@ -210,46 +198,34 @@ export default function ProjectCard({ project, className = '', showFullDetails =
                      videoInfo?.type === 'vimeo' ? 'Vimeo' : 
                      videoInfo?.type === 'local' ? getVideoSizeInfo(primaryVideoUrl!) : 'Video'}
                   </div>
-                </motion.div>
+                </div>
               )}
             </div>
           )}
           
           {/* Overlay with actions */}
-          <motion.div 
+          <div 
             className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4"
-            initial={{ opacity: 0 }}
-            whileHover={{ opacity: 1 }}
           >
             {project.liveUrl && (
-              <motion.div
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
+              <Button
+                size="sm"
+                className="bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700 shadow-lg hover:shadow-xl border-0 px-4 py-2 hover:scale-110 active:scale-95 transition-transform"
+                onClick={() => window.open(project.liveUrl, '_blank')}
               >
-                <Button
-                  size="sm"
-                  className="bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700 shadow-lg hover:shadow-xl border-0 px-4 py-2"
-                  onClick={() => window.open(project.liveUrl, '_blank')}
-                >
-                  🔗 <span className="ml-2">Live Demo</span>
-                </Button>
-              </motion.div>
+                🔗 <span className="ml-2">Live Demo</span>
+              </Button>
             )}
             {project.githubUrl && (
-              <motion.div
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
+              <Button
+                size="sm"
+                className="bg-gradient-to-r from-gray-700 to-gray-800 text-white hover:from-gray-800 hover:to-gray-900 shadow-lg hover:shadow-xl border-0 px-4 py-2 hover:scale-110 active:scale-95 transition-transform"
+                onClick={() => window.open(project.githubUrl, '_blank')}
               >
-                <Button
-                  size="sm"
-                  className="bg-gradient-to-r from-gray-700 to-gray-800 text-white hover:from-gray-800 hover:to-gray-900 shadow-lg hover:shadow-xl border-0 px-4 py-2"
-                  onClick={() => window.open(project.githubUrl, '_blank')}
-                >
-                  💻 <span className="ml-2">GitHub Repo</span>
-                </Button>
-              </motion.div>
+                💻 <span className="ml-2">GitHub Repo</span>
+              </Button>
             )}
-          </motion.div>
+          </div>
 
         {/* Status Badge */}
         <div className="absolute top-3 left-3">
@@ -423,30 +399,41 @@ export default function ProjectCard({ project, className = '', showFullDetails =
         <CardFooter className="px-4 sm:px-6 pb-4 sm:pb-6 pt-0 relative z-10">
           <div className="flex flex-col sm:flex-row gap-3 w-full">
             {project.liveUrl && (
-              <motion.div className="flex-1" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <div className="flex-1">
                 <Button
                   variant="default"
-                  className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 border-0 h-10 sm:h-11"
+                  className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 border-0 h-10 sm:h-11 hover:scale-[1.02] active:scale-[0.98]"
                   onClick={() => window.open(project.liveUrl, '_blank')}
                 >
                   🔗 <span className="ml-2">Live Demo</span>
                 </Button>
-              </motion.div>
+              </div>
             )}
             {project.githubUrl && (
-              <motion.div className="flex-1" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <div className="flex-1">
                 <Button
                   variant="outline"
-                  className="w-full border-2 border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 font-semibold transition-all duration-300 h-10 sm:h-11"
+                  className="w-full border-2 border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 font-semibold transition-all duration-300 h-10 sm:h-11 hover:scale-[1.02] active:scale-[0.98]"
                   onClick={() => window.open(project.githubUrl, '_blank')}
                 >
                   💻 <span className="ml-2">GitHub Repo</span>
                 </Button>
-              </motion.div>
+              </div>
+            )}
+            {hasVideo && (
+              <div className="flex-1">
+                <Button
+                  variant="outline"
+                  className="w-full border-2 border-purple-300 dark:border-purple-600 hover:border-purple-400 dark:hover:border-purple-500 text-purple-700 dark:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-900/20 font-semibold transition-all duration-300 h-10 sm:h-11 hover:scale-[1.02] active:scale-[0.98]"
+                  onClick={() => window.open(primaryVideoUrl, '_blank')}
+                >
+                  🎬 <span className="ml-2">Watch Video</span>
+                </Button>
+              </div>
             )}
           </div>
         </CardFooter>
       </Card>
-    </motion.div>
+    </div>
   );
 }
