@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 export default function Footer() {
   const { toast } = useToast();
   const [email, setEmail] = useState('');
-  const [profilePhoto, setProfilePhoto] = useState<string>('/images/profile-photo.jpg');
+  const [profilePhoto, setProfilePhoto] = useState<string>('/images/munir-profile.jpg');
 
   // Load profile photo from localStorage
   useEffect(() => {
@@ -242,14 +242,7 @@ export default function Footer() {
         <div className="border-t border-border py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-card-foreground/80 dark:text-gray-400 text-sm">
-              © {new Date().getFullYear()} Munir Ayub. All rights reserved.
-            </div>
-            <div className="flex items-center space-x-4 text-sm">
-              <span className="text-card-foreground/60 dark:text-gray-500">Built with</span>
-              <div className="flex items-center space-x-1">
-                <Heart className="h-3 w-3 text-red-500" />
-                <span className="text-card-foreground/80 dark:text-gray-300">and React</span>
-              </div>
+              &copy; {new Date().getFullYear()} Munir Ayub. All rights reserved.
             </div>
           </div>
         </div>

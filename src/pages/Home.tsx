@@ -9,6 +9,7 @@ import ProjectCard, { Project } from '@/components/portfolio/ProjectCard';
 import { TextArcEffect } from '@/components/ui/text-arc-effect';
 import ScrollToTop from '@/components/ui/ScrollToTop';
 import Footer from '@/components/Footer';
+import SkillsMarquee from '@/components/skills-marquee';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import {
@@ -27,14 +28,46 @@ import {
 
 import { munirProjects } from '@/data/munirProjects';
 
+type ProjectStatus = Project['status'];
+type ProjectCategory = Project['category'];
+
+/**
+ * @param {unknown} rawStatus The raw status value from data.
+ * @returns {ProjectStatus} A normalized project status.
+ */
+function normalizeProjectStatus(rawStatus: unknown): ProjectStatus {
+  if (rawStatus === 'completed' || rawStatus === 'in-progress' || rawStatus === 'coming-soon') {
+    return rawStatus;
+  }
+  return 'completed';
+}
+
+/**
+ * @param {string} rawCategory The raw category label from data.
+ * @returns {ProjectCategory} A normalized project category.
+ */
+function normalizeProjectCategory(rawCategory: string): ProjectCategory {
+  const value = rawCategory.toLowerCase();
+
+  if (value.includes('mobile')) return 'mobile';
+  if (value.includes('ai')) return 'ai';
+  if (value.includes('bot')) return 'bot';
+  if (value.includes('trade')) return 'trading';
+  if (value.includes('auto')) return 'automation';
+  if (value.includes('design')) return 'design';
+  if (value.includes('full')) return 'fullstack';
+  if (value.includes('web')) return 'web';
+
+  return 'other';
+}
+
 // All projects for home page - Map to include completedDate for ProjectCard compatibility
 const allHomeProjects = munirProjects
   .map(project => ({
     ...project,
     completedDate: project.completionDate || 'In Progress',
-    category: project.category.toLowerCase().includes('web') ? 'web' as const : 
-              project.category.toLowerCase().includes('mobile') ? 'mobile' as const : 
-              project.category.toLowerCase().includes('ai') ? 'ai' as const : 'web' as const
+    category: normalizeProjectCategory(project.category),
+    status: normalizeProjectStatus(project.status)
   }));
 
 // Services overview for home page (unused but kept for potential future use)
@@ -213,6 +246,17 @@ export default function Home() {
               I bring passion, expertise, and dedication to every project.
             </p>
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="max-w-5xl mx-auto mb-12"
+          >
+            <SkillsMarquee className="py-2" />
+          </motion.div>
+
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10"
             initial="hidden"

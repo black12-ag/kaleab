@@ -13,7 +13,7 @@ interface CentralLogoProps {
 }
 
 const CentralLogo: React.FC<CentralLogoProps> = ({ 
-  imageUrl = "/images/profile-photo.jpg",
+  imageUrl = "/images/munir-profile.jpg",
   alt = "Munir Ayub"
 }) => (
   <img
@@ -23,7 +23,7 @@ const CentralLogo: React.FC<CentralLogoProps> = ({
     onError={(e) => { 
       const target = e.target as HTMLImageElement;
       target.onerror = null; 
-      target.src = '/images/profile-photo.jpg';
+      target.src = '/images/munir-profile.jpg';
     }}
   />
 );
