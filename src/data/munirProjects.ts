@@ -396,30 +396,29 @@ export const munirProjects = [
       'Location sharing',
       'Interactive map interface'
     ]
-  }
   },
-{
-  id: '14',
+  {
+    id: '14',
     title: 'Ethio Viral Bot',
-      description: 'Automated Telegram bot for SMM services',
-        longDescription: 'A fully automated Telegram bot allowing users to place SMM orders, check balances, and manage their social media growth directly from Telegram. Seamlessly integrated with the Ethio Viral platform.',
-          image: '/images/ethio-viral-bot-showcase.png',
-            technologies: ['Telegram API', 'Node.js', 'Webhooks', 'Redis'],
-              category: 'Bot Development',
-                githubUrl: 'https://github.com/black12-ag/ethio-viral-bot',
-                  liveUrl: 'https://t.me/Ethio_viral_bot',
-                    featured: true,
-                      status: 'completed',
-                        completionDate: '2024-12-15',
-                          features: [
-                            'Instant order processing via Telegram',
-                            'Real-time balance checking',
-                            'Service list queries',
-                            'Automatic order status updates',
-                            'User-friendly command interface',
-                            'Secure API integration'
-                          ]
-}
+    description: 'Automated Telegram bot for SMM services',
+    longDescription: 'A fully automated Telegram bot allowing users to place SMM orders, check balances, and manage their social media growth directly from Telegram. Seamlessly integrated with the Ethio Viral platform.',
+    image: '/images/ethio-viral-bot-showcase.png',
+    technologies: ['Telegram API', 'Node.js', 'Webhooks', 'Redis'],
+    category: 'Bot Development',
+    githubUrl: 'https://github.com/black12-ag/ethio-viral-bot',
+    liveUrl: 'https://t.me/Ethio_viral_bot',
+    featured: true,
+    status: 'completed',
+    completionDate: '2024-12-15',
+    features: [
+      'Instant order processing via Telegram',
+      'Real-time balance checking',
+      'Service list queries',
+      'Automatic order status updates',
+      'User-friendly command interface',
+      'Secure API integration'
+    ]
+  }
 ];
 
 // Helper functions
