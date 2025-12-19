@@ -68,9 +68,9 @@ export default function Footer() {
             <div className="space-y-6">
               <div>
                 <div className="flex items-center space-x-3 mb-6">
-                  <img 
-                    src="/images/logo.jpeg" 
-                    alt="Munir Ayub Logo" 
+                  <img
+                    src="/images/logo.jpeg"
+                    alt="Munir Ayub Logo"
                     className="w-12 h-12 rounded-lg object-cover"
                   />
                   <span className="text-2xl font-bold text-foreground dark:text-white">Munir Ayub</span>
@@ -80,14 +80,14 @@ export default function Footer() {
                   Let's build something amazing together.
                 </p>
               </div>
-              
+
               {/* Profile Photo with Animation */}
               <div className="mt-6">
                 <div className="relative w-32 h-32 mx-auto lg:mx-0 group">
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full animate-pulse opacity-75 group-hover:opacity-100 transition-opacity"></div>
-                  <img 
-                    src={profilePhoto} 
-                    alt="Munir Ayub" 
+                  <img
+                    src={profilePhoto}
+                    alt="Munir Ayub"
                     className="relative w-full h-full rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-xl transform transition-transform group-hover:scale-105"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
@@ -116,7 +116,7 @@ export default function Footer() {
                   }}
                   className="flex space-x-2"
                 >
-                  <Input 
+                  <Input
                     placeholder="Enter your email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -243,6 +243,10 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-card-foreground/80 dark:text-gray-400 text-sm">
               &copy; {new Date().getFullYear()} Munir Ayub. All rights reserved.
+              <span className="hidden md:inline mx-2">•</span>
+              <a href="https://munir-dev-portfolio-2024.netlify.app/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                munir-dev-portfolio-2024.netlify.app
+              </a>
             </div>
           </div>
         </div>
