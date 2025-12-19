@@ -24,11 +24,22 @@ import {
   Clock,
   User
 } from 'lucide-react';
+import { munirProjects } from '@/data/munirProjects';
 
-// All project data - Using the same projects as Portfolio page
-import { munirProjects as allProjects } from '../data/munirProjects';
-
-// All project data - centralized in munirProjects.ts
+// Map munirProjects to Project interface format if necessary, or use directly
+const allProjects: Project[] = munirProjects.map(project => ({
+  ...project,
+  // Ensure category matches the UI filter keys if simpler mapping is needed,
+  // but existing keys like 'mobile', 'web', 'bot' seem compatible.
+  // We'll normalize just in case.
+  category: project.category.toLowerCase().includes('mobile') ? 'mobile' :
+    project.category.toLowerCase().includes('bot') ? 'bot' :
+      project.category.toLowerCase().includes('automation') ? 'automation' :
+        project.category.toLowerCase().includes('design') ? 'design' :
+          project.category.toLowerCase().includes('full') ? 'fullstack' : 'web',
+  // Ensure status matches the Project type union
+  status: (project.status === 'completed' || project.status === 'in-progress' || project.status === 'coming-soon') ? project.status : 'completed'
+}));
 
 export default function Projects() {
   const [projects, setProjects] = useState<Project[]>(allProjects);
