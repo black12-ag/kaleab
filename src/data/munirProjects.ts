@@ -252,7 +252,7 @@ export const munirProjects = [
     title: 'Social Media Dashboard',
     description: 'Analytics dashboard for social media metrics',
     longDescription: 'A comprehensive analytics dashboard for tracking social media performance across multiple platforms.',
-    image: '/images/project6.jpg',
+    image: '/images/social-dashboard-showcase.png',
     technologies: ['Vue.js', 'D3.js', 'Node.js', 'Express'],
     category: 'Web Development',
     githubUrl: 'https://github.com/black12-ag/social-dashboard',

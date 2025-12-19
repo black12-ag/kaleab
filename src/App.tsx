@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { AdminSettingsProvider } from "@/contexts/AdminSettingsContext";
 import { ErrorBoundary } from "react-error-boundary";
+import LoadingScreen from "@/components/ui/LoadingScreen";
 
 // ScrollToTop component to reset scroll position on route change
 function ScrollToTop() {
@@ -32,15 +33,7 @@ const TermsOfService = React.lazy(() => import('./pages/TermsOfService'));
 const AdminPanel = React.lazy(() => import('./pages/AdminPanel'));
 const Videos = React.lazy(() => import('./pages/Videos'));
 
-// Loading component
-const LoadingFallback = () => (
-  <div className="flex items-center justify-center min-h-screen bg-background">
-    <div className="flex flex-col items-center space-y-4">
-      <div className="animate-spin rounded-full h-12 w-12 border-4 border-primary border-t-transparent"></div>
-      <p className="text-sm text-muted-foreground animate-pulse">Loading...</p>
-    </div>
-  </div>
-);
+
 
 // Error fallback component
 const ErrorFallback = ({ error, resetErrorBoundary }: { error: Error; resetErrorBoundary: () => void }) => (
@@ -61,7 +54,7 @@ const ErrorFallback = ({ error, resetErrorBoundary }: { error: Error; resetError
 
 const AnimatedRoutes = () => {
   const location = useLocation();
-  
+
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
@@ -157,7 +150,7 @@ const App = () => {
           }}>
             <ErrorBoundary FallbackComponent={ErrorFallback}>
               <ScrollToTop />
-              <Suspense fallback={<LoadingFallback />}>
+              <Suspense fallback={<LoadingScreen />}>
                 <AnimatedRoutes />
               </Suspense>
             </ErrorBoundary>
