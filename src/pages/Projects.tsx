@@ -93,16 +93,17 @@ export default function Projects() {
     }
 
     // Apply sorting
-    filtered.sort((a, b) => {
-      if (sortBy === 'default') return 0;
-      if (sortBy === 'date') {
-        const dateA = new Date(a.completedDate || '0');
-        const dateB = new Date(b.completedDate || '0');
-        return sortOrder === 'desc' ? dateB.getTime() - dateA.getTime() : dateA.getTime() - dateB.getTime();
-      } else {
-        return sortOrder === 'desc' ? b.title.localeCompare(a.title) : a.title.localeCompare(b.title);
-      }
-    });
+    if (sortBy !== 'default') {
+      filtered.sort((a, b) => {
+        if (sortBy === 'date') {
+          const dateA = new Date(a.completedDate || '0');
+          const dateB = new Date(b.completedDate || '0');
+          return sortOrder === 'desc' ? dateB.getTime() - dateA.getTime() : dateA.getTime() - dateB.getTime();
+        } else {
+          return sortOrder === 'desc' ? b.title.localeCompare(a.title) : a.title.localeCompare(b.title);
+        }
+      });
+    }
 
     setFilteredProjects(filtered);
   }, [searchTerm, selectedCategory, selectedStatus, sortBy, sortOrder, projects]);

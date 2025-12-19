@@ -143,7 +143,7 @@ export const munirProjects = [
     image: '/images/ecommerce-platform-showcase.png',
     technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
     category: 'Web Development',
-    githubUrl: 'https://github.com/black12-ag/ecommerce',
+
     liveUrl: 'https://demo-ecommerce.com',
     featured: true,
     status: 'completed',
@@ -171,7 +171,7 @@ export const munirProjects = [
     image: '/images/fitness-app-mobile.png',
     technologies: ['React Native', 'Firebase', 'TypeScript'],
     category: 'Mobile Development',
-    githubUrl: 'https://github.com/black12-ag/fitness-app',
+
     liveUrl: 'https://apps.apple.com/fitness-tracker',
     featured: true,
     status: 'completed',
@@ -214,7 +214,7 @@ export const munirProjects = [
     image: '/images/task-manager-showcase.png',
     technologies: ['Next.js', 'PostgreSQL', 'Prisma', 'TailwindCSS'],
     category: 'Web Development',
-    githubUrl: 'https://github.com/black12-ag/task-manager',
+
     featured: false,
     status: 'completed',
     completionDate: '2023-12-05',
@@ -234,7 +234,7 @@ export const munirProjects = [
     image: '/images/weather-dashboard-showcase.jpg',
     technologies: ['React', 'OpenWeather API', 'Chart.js'],
     category: 'Web Development',
-    githubUrl: 'https://github.com/black12-ag/weather-dashboard',
+
     liveUrl: 'https://weather-dash.com',
     featured: false,
     status: 'completed',
