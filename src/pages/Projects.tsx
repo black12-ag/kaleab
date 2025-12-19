@@ -48,7 +48,7 @@ export default function Projects() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedStatus, setSelectedStatus] = useState('all');
-  const [sortBy, setSortBy] = useState<'date' | 'name'>('date');
+  const [sortBy, setSortBy] = useState<'date' | 'name' | 'default'>('default');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
@@ -94,6 +94,7 @@ export default function Projects() {
 
     // Apply sorting
     filtered.sort((a, b) => {
+      if (sortBy === 'default') return 0;
       if (sortBy === 'date') {
         const dateA = new Date(a.completedDate || '0');
         const dateB = new Date(b.completedDate || '0');
@@ -220,6 +221,7 @@ export default function Projects() {
                     onChange={(e) => setSortBy(e.target.value as 'date' | 'name')}
                     className="px-3 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                   >
+                    <option value="default">Recommended</option>
                     <option value="date">Sort by Date</option>
                     <option value="name">Sort by Name</option>
                   </select>
