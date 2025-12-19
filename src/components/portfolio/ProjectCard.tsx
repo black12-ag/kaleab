@@ -4,12 +4,12 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { EnhancedVideoPlayer } from '@/components/ui/enhanced-video-player';
 import { motion } from 'framer-motion';
-import { 
-  ExternalLink, 
-  Github, 
-  Star, 
-  Calendar, 
-  Code, 
+import {
+  ExternalLink,
+  Github,
+  Star,
+  Calendar,
+  Code,
   Smartphone,
   Globe,
   Eye,
@@ -110,7 +110,7 @@ export default function ProjectCard({ project, className = '', showFullDetails =
   const [imageLoaded, setImageLoaded] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
-  
+
   const CategoryIcon = categoryIcons[project.category];
   const categoryColor = categoryColors[project.category];
 
@@ -120,7 +120,7 @@ export default function ProjectCard({ project, className = '', showFullDetails =
   const hasVideo = Boolean(primaryVideoUrl);
 
   const handleImageLoad = () => setImageLoaded(true);
-  
+
   const getTechColor = (tech: string) => {
     const colors: Record<string, string> = {
       'React': 'bg-blue-500',
@@ -178,7 +178,7 @@ export default function ProjectCard({ project, className = '', showFullDetails =
                 className="w-full h-full object-cover transition-transform duration-400 ease-out group-hover:scale-110"
                 onLoad={handleImageLoad}
               />
-              
+
               {/* Video Play Button Overlay */}
               {hasVideo && (
                 <div
@@ -190,21 +190,21 @@ export default function ProjectCard({ project, className = '', showFullDetails =
                   >
                     <Play className="w-8 h-8 text-white fill-white translate-x-0.5" />
                   </button>
-                  
+
                   {/* Video Info Badge */}
                   <div className="absolute bottom-3 right-3 bg-black/70 text-white px-2 py-1 rounded text-xs flex items-center gap-1">
                     <Video className="w-3 h-3" />
-                    {videoInfo?.type === 'youtube' ? 'YouTube' : 
-                     videoInfo?.type === 'vimeo' ? 'Vimeo' : 
-                     videoInfo?.type === 'local' ? getVideoSizeInfo(primaryVideoUrl!) : 'Video'}
+                    {videoInfo?.type === 'youtube' ? 'YouTube' :
+                      videoInfo?.type === 'vimeo' ? 'Vimeo' :
+                        videoInfo?.type === 'local' ? getVideoSizeInfo(primaryVideoUrl!) : 'Video'}
                   </div>
                 </div>
               )}
             </div>
           )}
-          
+
           {/* Overlay with actions */}
-          <div 
+          <div
             className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4"
           >
             {project.liveUrl && (
@@ -227,133 +227,123 @@ export default function ProjectCard({ project, className = '', showFullDetails =
             )}
           </div>
 
-        {/* Status Badge Removed */}
+          {/* Status Badge Removed */}
 
-        {/* Featured Badge Removed */}
+          {/* Featured Badge Removed */}
 
-        {/* Like Button */}
-        <button
-          className="absolute bottom-3 right-3 p-2 bg-white/90 hover:bg-white rounded-full transition-all duration-200 hover:scale-110"
-          onClick={() => setIsLiked(!isLiked)}
-        >
-          <Heart 
-            className={`w-4 h-4 transition-colors ${
-              isLiked ? 'text-red-500 fill-red-500' : 'text-gray-600'
-            }`} 
-          />
-        </button>
-      </div>
+          {/* Like Button Removed */}
+        </div>
 
-      <CardContent className="p-4 sm:p-6 space-y-4">
-        {/* Category & Date */}
-        <div className="flex items-center justify-between mb-3">
-          <div className="flex items-center gap-2">
-            <div className={`p-1.5 rounded ${categoryColor} text-white`}>
-              <CategoryIcon className="w-3 h-3" />
+        <CardContent className="p-4 sm:p-6 space-y-4">
+          {/* Category & Date */}
+          <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center gap-2">
+              <div className={`p-1.5 rounded ${categoryColor} text-white`}>
+                <CategoryIcon className="w-3 h-3" />
+              </div>
+              <span className="text-sm font-medium text-gray-700 dark:text-gray-300 capitalize">
+                {project.category.replace('-', ' ')}
+              </span>
             </div>
-            <span className="text-sm font-medium text-gray-700 dark:text-gray-300 capitalize">
-              {project.category.replace('-', ' ')}
-            </span>
+            <div className="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-400">
+              <Calendar className="w-3 h-3" />
+              {project.completedDate}
+            </div>
           </div>
-          <div className="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-400">
-            <Calendar className="w-3 h-3" />
-            {project.completedDate}
-          </div>
-        </div>
 
-        {/* Title & Description */}
-        <div className="space-y-3">
-          <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors leading-tight">
-            {project.title}
-          </h3>
-          <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base line-clamp-2 leading-relaxed">
-            {project.description}
-          </p>
-        </div>
-
-        {/* Client */}
-        {project.client && (
-          <div className="py-2">
-            <p className="text-sm text-gray-600 dark:text-gray-400">
-              Client: <span className="font-medium text-gray-800 dark:text-gray-200">{project.client}</span>
+          {/* Title & Description */}
+          <div className="space-y-3">
+            <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors leading-tight">
+              {project.title}
+            </h3>
+            <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base line-clamp-2 leading-relaxed">
+              {project.description}
             </p>
           </div>
-        )}
 
-        {/* Video Toggle (if video available) */}
-        {hasVideo && (
-          <div className="py-2">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-                <Video className="w-4 h-4" />
-                <span>
-                  {videoInfo?.type === 'youtube' ? 'YouTube Video' : 
-                   videoInfo?.type === 'vimeo' ? 'Vimeo Video' : 
-                   `Video (${getVideoSizeInfo(primaryVideoUrl!)})`}
-                </span>
-              </div>
-              <Button
-                size="sm"
-                variant={showVideo ? "default" : "outline"}
-                onClick={() => setShowVideo(!showVideo)}
-                className="h-8 px-3 text-xs"
-              >
-                {showVideo ? (
-                  <>📷 Show Image</>
-                ) : (
-                  <>▶️ Show Video</>
-                )}
-              </Button>
+          {/* Client */}
+          {project.client && (
+            <div className="py-2">
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                Client: <span className="font-medium text-gray-800 dark:text-gray-200">{project.client}</span>
+              </p>
             </div>
-          </div>
-        )}
-
-        {/* Technologies */}
-        <div className="flex flex-wrap gap-2 py-2">
-          {project.technologies.slice(0, showFullDetails ? undefined : 4).map((tech, index) => (
-            <Badge
-              key={index}
-              variant="secondary"
-              className={`${getTechColor(tech)} text-white text-xs px-2.5 py-1`}
-            >
-              {tech}
-            </Badge>
-          ))}
-          {!showFullDetails && project.technologies.length > 4 && (
-            <Badge variant="outline" className="text-xs px-2.5 py-1">
-              +{project.technologies.length - 4} more
-            </Badge>
           )}
-        </div>
 
-        {/* Key Features (if showing full details) */}
-        {showFullDetails && project.keyFeatures && (
-          <div className="mb-4">
-            <h4 className="font-semibold mb-2 text-gray-900 dark:text-white">Key Features:</h4>
-            <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
-              {project.keyFeatures.map((feature, index) => (
-                <li key={index} className="flex items-start gap-2">
-                  <span className="text-blue-500 mt-1">•</span>
-                  {feature}
-                </li>
-              ))}
-            </ul>
+          {/* Video Toggle (if video available) */}
+          {hasVideo && (
+            <div className="py-2">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+                  <Video className="w-4 h-4" />
+                  <span>
+                    {videoInfo?.type === 'youtube' ? 'YouTube Video' :
+                      videoInfo?.type === 'vimeo' ? 'Vimeo Video' :
+                        `Video (${getVideoSizeInfo(primaryVideoUrl!)})`}
+                  </span>
+                </div>
+                <Button
+                  size="sm"
+                  variant={showVideo ? "default" : "outline"}
+                  onClick={() => setShowVideo(!showVideo)}
+                  className="h-8 px-3 text-xs"
+                >
+                  {showVideo ? (
+                    <>📷 Show Image</>
+                  ) : (
+                    <>▶️ Show Video</>
+                  )}
+                </Button>
+              </div>
+            </div>
+          )}
+
+          {/* Technologies */}
+          <div className="flex flex-wrap gap-2 py-2">
+            {project.technologies.slice(0, showFullDetails ? undefined : 4).map((tech, index) => (
+              <Badge
+                key={index}
+                variant="secondary"
+                className={`${getTechColor(tech)} text-white text-xs px-2.5 py-1`}
+              >
+                {tech}
+              </Badge>
+            ))}
+            {!showFullDetails && project.technologies.length > 4 && (
+              <Badge variant="outline" className="text-xs px-2.5 py-1">
+                +{project.technologies.length - 4} more
+              </Badge>
+            )}
+          </div>
+
+          {/* Key Features (if showing full details) */}
+          {showFullDetails && project.keyFeatures && (
+            <div className="mb-4">
+              <h4 className="font-semibold mb-2 text-gray-900 dark:text-white">Key Features:</h4>
+              <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
+                {project.keyFeatures.map((feature, index) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <span className="text-blue-500 mt-1">•</span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Testimonial Removed */}
+        </CardContent>
+
+        {/* Telegram Integration */}
+        {showFullDetails && (
+          <div className="px-6">
+            <TelegramIntegration
+              projectId={project.id}
+              telegramAccess={project.telegramAccess}
+              downloadOptions={project.downloadOptions}
+            />
           </div>
         )}
-
-        {/* Testimonial Removed */}
-      </CardContent>
-
-      {/* Telegram Integration */}
-      {showFullDetails && (
-        <div className="px-6">
-          <TelegramIntegration 
-            projectId={project.id}
-            telegramAccess={project.telegramAccess}
-            downloadOptions={project.downloadOptions}
-          />
-        </div>
-      )}
 
         <CardFooter className="px-4 sm:px-6 pb-4 sm:pb-6 pt-0 relative z-10">
           <div className="flex flex-col sm:flex-row gap-3 w-full">
