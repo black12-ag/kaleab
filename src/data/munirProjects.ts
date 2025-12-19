@@ -375,6 +375,28 @@ export const munirProjects = [
       'Group chat functionality'
     ]
   }
+  {
+    id: '13',
+    title: 'Findy - Advanced Navigation',
+    description: 'Intelligent navigation companion with smart routing',
+    longDescription: 'An advanced navigation application featuring real-time traffic updates, smart route optimization, and offline maps. Designed as a reliable companion for seamless travel experiences.',
+    image: '/images/findy-showcase.png',
+    technologies: ['React', 'Leaflet', 'Geolocation API', 'PWA'],
+    category: 'Web Development',
+    githubUrl: 'https://github.com/black12-ag/findy-navigation',
+    liveUrl: 'https://findy-navigation-app.netlify.app/',
+    featured: true,
+    status: 'completed',
+    completionDate: '2024-12-19',
+    features: [
+      'Smart route optimization',
+      'Real-time traffic updates',
+      'Offline maps availability',
+      'Turn-by-turn guidance',
+      'Location sharing',
+      'Interactive map interface'
+    ]
+  }
 ];
 
 // Helper functions
