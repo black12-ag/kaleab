@@ -5,7 +5,7 @@ export const munirProjects = [
     title: 'E-Commerce Platform',
     description: 'Full-stack e-commerce solution with payment integration',
     longDescription: 'A comprehensive e-commerce platform built with React and Node.js, featuring product management, shopping cart, payment processing, and order tracking.',
-    image: '/images/project1.jpg',
+    image: '/images/ecommerce-platform-showcase.png',
     technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
     category: 'Web Development',
     githubUrl: 'https://github.com/black12-ag/ecommerce',
