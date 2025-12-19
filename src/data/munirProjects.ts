@@ -374,7 +374,7 @@ export const munirProjects = [
       'Image and file sharing',
       'Group chat functionality'
     ]
-  }
+  },
   {
     id: '13',
     title: 'Findy - Advanced Navigation',
