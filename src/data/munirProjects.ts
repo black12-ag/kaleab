@@ -181,7 +181,7 @@ export const munirProjects = [
     title: 'Metah - Hotel Booking',
     description: 'Modern hotel search and booking platform',
     longDescription: 'A sleek hotel booking platform featuring curated recommendations from top destinations worldwide including Paris, Bangkok, London, New York, Singapore, Rome, Bali, Tokyo, and Istanbul.',
-    image: '/images/metah-booking.png',
+    image: '/images/metah-booking-showcase.jpg',
     technologies: ['React', 'TypeScript', 'Tailwind CSS', 'API Integration'],
     category: 'Web Development',
     githubUrl: 'https://github.com/black12-ag/metah-booking',
