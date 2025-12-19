@@ -160,7 +160,7 @@ export const munirProjects = [
     title: 'Ethio Viral',
     description: 'All-in-one SMM services platform',
     longDescription: 'A comprehensive social media marketing platform with instant start, fair pricing, and professional support. Trusted by 54,000+ active users including creators, businesses, and influencers to boost their social media presence.',
-    image: '/images/social-media-dashboard-showcase.jpg',
+    image: '/images/ethio-viral-showcase.png',
     technologies: ['React', 'Node.js', 'Payment Integration', 'API', 'Database'],
     category: 'Web Development',
     githubUrl: 'https://github.com/black12-ag/ethio-viral',
