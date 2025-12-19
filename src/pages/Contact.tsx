@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react'; // Added useEffect
+import { useLocation } from 'react-router-dom'; // Added useLocation
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -8,10 +9,10 @@ import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
 import ProjectTypeSelector from '@/components/ui/project-type-selector';
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
+import {
+  Mail,
+  Phone,
+  MapPin,
   Send,
   Clock,
   Globe,
@@ -37,6 +38,19 @@ interface ContactForm {
   budget?: string;
 }
 
+// Mock contact service since the file is missing
+const contactService = {
+  submitContactForm: async (data: ContactForm) => {
+    // Simulate network delay
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    // Return result that triggers the "success" path but notes it's manual WhatsApp/Telegram if backend fails
+    // In this case, we want to ensure the user gets to send the message. 
+    // Since we don't have a real backend, we'll default to the manual WhatsApp flow being the "success" case for now 
+    // or let it fall through to the manual handler in the existing code.
+    return { success: false };
+  }
+};
+
 // Function to format the WhatsApp message
 const formatWhatsAppMessage = (data: ContactForm) => {
   const currentDate = new Date().toLocaleDateString('en-US', {
@@ -51,7 +65,7 @@ const formatWhatsAppMessage = (data: ContactForm) => {
   message += `📅 *Date:* ${currentDate}\n\n`;
   message += `👤 *Name:* ${data.name}\n`;
   message += `📧 *Email:* ${data.email}\n\n`;
-  
+
   if (data.projectType) {
     // Map the project type ID to a readable format
     const projectTypeMap: { [key: string]: string } = {
@@ -70,7 +84,7 @@ const formatWhatsAppMessage = (data: ContactForm) => {
     };
     message += `💼 *Project Type:* ${projectTypeMap[data.projectType] || data.projectType}\n`;
   }
-  
+
   if (data.budget) {
     // Map the budget ID to a readable format
     const budgetMap: { [key: string]: string } = {
@@ -85,19 +99,20 @@ const formatWhatsAppMessage = (data: ContactForm) => {
     };
     message += `💵 *Budget Range:* ${budgetMap[data.budget] || data.budget}\n`;
   }
-  
+
   message += `\n📝 *Project Details:*\n${data.message}\n\n`;
   message += `---\n`;
   message += `✨ *Thank you for considering my services!*\n`;
   message += `🚀 I'll review your requirements and get back to you with a detailed proposal.\n\n`;
   message += `Best regards,\n`;
   message += `*Munir Ayub* - Full Stack Developer`;
-  
+
   return message;
 };
 
 export default function Contact() {
   const { toast } = useToast();
+  const location = useLocation();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState<ContactForm>({
     name: '',
@@ -106,6 +121,27 @@ export default function Contact() {
     projectType: '',
     budget: ''
   });
+
+  useEffect(() => {
+    if (location.state?.service && location.state?.package) {
+      const { service, package: pkg } = location.state;
+
+      // Auto-select project type
+      let type = 'other';
+      if (service.includes('Web')) type = 'web-application';
+      else if (service.includes('Mobile')) type = 'mobile-app';
+      else if (service.includes('UI/UX')) type = 'ui-ux-design';
+      else if (service.includes('Backend')) type = 'api-development';
+      else if (service.includes('Consulting')) type = 'consulting';
+
+      setFormData(prev => ({
+        ...prev,
+        projectType: type,
+        budget: 'under-5k',
+        message: `I'm interested in the ${service} - ${pkg} package. I'd like to get more details about starting this project.`
+      }));
+    }
+  }, [location]);
 
   const contactInfo = [
     {
@@ -142,23 +178,23 @@ export default function Contact() {
   ];
 
   const socialLinks = [
-    { 
-      icon: Github, 
-      label: 'GitHub', 
+    {
+      icon: Github,
+      label: 'GitHub',
       href: 'https://github.com/black12-ag',
       username: '@black12-ag',
       description: 'Check out my code'
     },
-    { 
-      icon: Linkedin, 
-      label: 'LinkedIn', 
+    {
+      icon: Linkedin,
+      label: 'LinkedIn',
       href: 'https://linkedin.com/in/munir-ayub',
       username: '/in/munir-ayub',
       description: 'Professional network'
     },
-    { 
-      icon: Twitter, 
-      label: 'Twitter/X', 
+    {
+      icon: Twitter,
+      label: 'Twitter/X',
       href: 'https://x.com/muay01111',
       username: '@muay01111',
       description: 'Follow for updates'
@@ -196,14 +232,14 @@ export default function Contact() {
     // Submit using new contact service
     try {
       const result = await contactService.submitContactForm(formData);
-      
+
       if (result.success) {
         // Success - message delivered automatically
         toast({
           title: `Message Sent via ${result.method}!`,
           description: result.message,
         });
-        
+
         // Reset form after successful submission
         setFormData({
           name: '',
@@ -212,7 +248,7 @@ export default function Contact() {
           projectType: '',
           budget: ''
         });
-        
+
         // If using WhatsApp fallback, still open WhatsApp
         if (result.method === 'WhatsApp (Manual)') {
           const whatsappMessage = formatWhatsAppMessage(formData);
@@ -224,7 +260,7 @@ export default function Contact() {
         const whatsappMessage = formatWhatsAppMessage(formData);
         const whatsappURL = `https://wa.me/251907806267?text=${encodeURIComponent(whatsappMessage)}`;
         window.open(whatsappURL, '_blank');
-        
+
         toast({
           title: 'Opening WhatsApp',
           description: 'Automatic delivery failed. Please send via WhatsApp manually.',
@@ -249,7 +285,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-12 bg-gradient-to-br from-blue-50 via-purple-50 to-slate-100 dark:from-gray-900 via-gray-850 dark:to-gray-800">
         <div className="container mx-auto px-4">
@@ -286,7 +322,7 @@ export default function Contact() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* WhatsApp Contact */}
               <Card className="border-2 border-green-200 dark:border-green-700 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 hover:shadow-lg transition-all duration-300 cursor-pointer group"
-                    onClick={() => window.open('https://wa.me/message/XAPGDNH6M4HGB1', '_blank')}>
+                onClick={() => window.open('https://wa.me/message/XAPGDNH6M4HGB1', '_blank')}>
                 <CardContent className="p-6 text-center">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-green-600 rounded-full text-white mb-4 group-hover:scale-110 transition-transform duration-300">
                     <FaWhatsapp className="w-8 h-8" />
@@ -302,10 +338,10 @@ export default function Contact() {
                   </Button>
                 </CardContent>
               </Card>
-              
+
               {/* Telegram Contact */}
               <Card className="border-2 border-blue-200 dark:border-blue-700 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 hover:shadow-lg transition-all duration-300 cursor-pointer group"
-                    onClick={() => window.open('https://t.me/muay011', '_blank')}>
+                onClick={() => window.open('https://t.me/muay011', '_blank')}>
                 <CardContent className="p-6 text-center">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 rounded-full text-white mb-4 group-hover:scale-110 transition-transform duration-300">
                     <FaTelegram className="w-8 h-8" />
@@ -330,7 +366,7 @@ export default function Contact() {
       <section className="py-16 bg-white dark:bg-gray-950">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
-            
+
             {/* Contact Form */}
             <div>
               <Card className="border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow">
@@ -342,7 +378,7 @@ export default function Contact() {
                   <p className="text-gray-600 dark:text-gray-300">
                     Fill out this form and click submit to send your inquiry directly via WhatsApp with all your details pre-filled.
                   </p>
-                  
+
                   {/* Telegram Integration Notice */}
                   <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 rounded-lg p-3 mt-4">
                     <div className="flex items-center gap-2">
@@ -432,9 +468,9 @@ export default function Contact() {
                       </div>
                     </details>
 
-                    <Button 
-                      type="submit" 
-                      size="lg" 
+                    <Button
+                      type="submit"
+                      size="lg"
                       className="w-full h-12 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold transition-all duration-300 hover:shadow-lg"
                       disabled={isSubmitting}
                     >
@@ -450,7 +486,7 @@ export default function Contact() {
                         </>
                       )}
                     </Button>
-                    
+
                     <p className="text-xs text-center text-gray-500 dark:text-gray-400">
                       Instant Telegram delivery • Push notifications enabled • Quick response guaranteed • All information is confidential
                     </p>
@@ -461,7 +497,7 @@ export default function Contact() {
 
             {/* Contact Information */}
             <div className="space-y-8">
-              
+
               {/* Alternative Contact Methods */}
               <Card className="border border-gray-200 dark:border-gray-700">
                 <CardHeader>
@@ -485,7 +521,7 @@ export default function Contact() {
                         <div className="flex-1">
                           <p className="font-semibold text-gray-900 dark:text-white">{info.label}</p>
                           {info.href ? (
-                            <a 
+                            <a
                               href={info.href}
                               className={`${info.primary ? 'text-green-600 hover:text-green-700' : 'text-blue-600 hover:text-blue-700'} transition-colors font-medium`}
                               target={info.href.startsWith('http') ? '_blank' : undefined}
@@ -528,9 +564,9 @@ export default function Contact() {
                 </CardHeader>
                 <CardContent className="flex flex-col items-center">
                   <div className="bg-white p-4 rounded-xl shadow-lg">
-                    <img 
-                      src="/images/whatsapp-qr.png" 
-                      alt="WhatsApp QR Code" 
+                    <img
+                      src="/images/whatsapp-qr.png"
+                      alt="WhatsApp QR Code"
                       className="w-48 h-48 object-contain"
                       onError={(e) => {
                         // If QR image doesn't exist, show placeholder
@@ -540,13 +576,13 @@ export default function Contact() {
                         if (placeholder) placeholder.style.display = 'flex';
                       }}
                     />
-                    <div 
-                      id="qr-placeholder" 
+                    <div
+                      id="qr-placeholder"
                       className="w-48 h-48 hidden flex-col items-center justify-center bg-gray-100 rounded-lg"
                       style={{ display: 'none' }}
                     >
                       <QrCode className="w-16 h-16 text-gray-400 mb-2" />
-                      <p className="text-sm text-gray-500 text-center">QR Code<br/>Coming Soon</p>
+                      <p className="text-sm text-gray-500 text-center">QR Code<br />Coming Soon</p>
                     </div>
                   </div>
                   <Button
@@ -578,7 +614,7 @@ export default function Contact() {
                       </div>
                       <div className="flex-1">
                         <p className="font-medium text-gray-900 dark:text-white">{social.label}</p>
-                        <a 
+                        <a
                           href={social.href}
                           className="text-blue-600 hover:text-blue-700 transition-colors"
                           target="_blank"
@@ -642,37 +678,37 @@ export default function Contact() {
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">What's your typical project timeline?</h3>
                   <p className="text-gray-700 dark:text-gray-300">
-                    Project timelines vary based on complexity, but most web applications take 4-8 weeks, while mobile apps take 6-12 weeks. 
+                    Project timelines vary based on complexity, but most web applications take 4-8 weeks, while mobile apps take 6-12 weeks.
                     I provide detailed timelines during our initial consultation.
                   </p>
                 </CardContent>
               </Card>
-              
+
               <Card className="border border-gray-200 dark:border-gray-700">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">Do you work with existing teams?</h3>
                   <p className="text-gray-700 dark:text-gray-300">
-                    Absolutely! I can integrate with your existing development team or work independently. 
+                    Absolutely! I can integrate with your existing development team or work independently.
                     I'm experienced with various collaboration tools and methodologies.
                   </p>
                 </CardContent>
               </Card>
-              
+
               <Card className="border border-gray-200 dark:border-gray-700">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">What technologies do you specialize in?</h3>
                   <p className="text-gray-700 dark:text-gray-300">
-                    I specialize in React, TypeScript, Node.js, and modern web technologies. For mobile development, 
+                    I specialize in React, TypeScript, Node.js, and modern web technologies. For mobile development,
                     I use React Native and Flutter. I'm also experienced with cloud platforms like AWS.
                   </p>
                 </CardContent>
               </Card>
-              
+
               <Card className="border border-gray-200 dark:border-gray-700">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">Do you provide ongoing support?</h3>
                   <p className="text-gray-700 dark:text-gray-300">
-                    Yes! I offer maintenance and support packages to keep your applications running smoothly. 
+                    Yes! I offer maintenance and support packages to keep your applications running smoothly.
                     This includes bug fixes, updates, and feature enhancements.
                   </p>
                 </CardContent>
@@ -690,8 +726,8 @@ export default function Contact() {
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Whether you need a quick consultation or want to start a full project, I'm here to help.
           </p>
-          <Button 
-            size="lg" 
+          <Button
+            size="lg"
             className="bg-white text-blue-600 hover:bg-gray-100"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
