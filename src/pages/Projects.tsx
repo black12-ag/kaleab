@@ -38,7 +38,8 @@ const allProjects: Project[] = munirProjects.map(project => ({
         project.category.toLowerCase().includes('design') ? 'design' :
           project.category.toLowerCase().includes('full') ? 'fullstack' : 'web',
   // Ensure status matches the Project type union
-  status: (project.status === 'completed' || project.status === 'in-progress' || project.status === 'coming-soon') ? project.status : 'completed'
+  status: (project.status === 'completed' || project.status === 'in-progress' || project.status === 'coming-soon') ? project.status : 'completed',
+  completedDate: project.completionDate
 }));
 
 export default function Projects() {
