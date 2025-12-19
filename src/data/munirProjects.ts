@@ -255,7 +255,7 @@ export const munirProjects = [
     image: '/images/social-dashboard-showcase.png',
     technologies: ['Vue.js', 'D3.js', 'Node.js', 'Express'],
     category: 'Web Development',
-    githubUrl: 'https://github.com/black12-ag/social-dashboard',
+
     featured: true,
     status: 'in-progress',
     completionDate: 'In Progress',
