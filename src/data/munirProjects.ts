@@ -96,7 +96,7 @@ export const munirProjects = [
     title: 'Weather Dashboard',
     description: 'Real-time weather monitoring application',
     longDescription: 'A beautiful weather dashboard that provides real-time weather data and forecasts for multiple locations.',
-    image: '/images/project5.jpg',
+    image: '/images/weather-dashboard-showcase.jpg',
     technologies: ['React', 'OpenWeather API', 'Chart.js'],
     category: 'Web Development',
     githubUrl: 'https://github.com/black12-ag/weather-dashboard',
