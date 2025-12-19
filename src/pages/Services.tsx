@@ -4,11 +4,11 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { 
-  Code, 
-  Smartphone, 
-  Globe, 
-  Palette, 
+import {
+  Code,
+  Smartphone,
+  Globe,
+  Palette,
   Users,
   Database,
   Monitor,
@@ -30,9 +30,11 @@ import {
   Cpu,
   Laptop,
   Settings2,
-  Sparkles
+  Sparkles,
+  Check
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 
 // Services data
@@ -51,7 +53,36 @@ const servicesData = [
     features: ['React/Next.js', 'TypeScript', 'Responsive Design', 'API Integration'],
     technologies: ['React/Next.js', 'TypeScript', 'Responsive Design', 'API Integration'],
     startingPrice: '$200',
-    timeline: '2-4 weeks'
+    timeline: '2-4 weeks',
+    packages: [
+      {
+        name: 'Basic',
+        price: '$200',
+        description: 'Single Page / Landing Page',
+        details: 'Responsive, Modern UI, Contact Form, SEO Friendly',
+        deliveryTime: '3-5 Days',
+        revisions: '2 Revisions',
+        features: ['1 Page', 'Responsive Design', 'Source Code', 'Content Upload']
+      },
+      {
+        name: 'Standard',
+        price: '$500',
+        description: 'Multi-page Website (up to 5 pages)',
+        details: 'Admin Panel, Dynamic Content, Animations, Speed Optimized',
+        deliveryTime: '1-2 Weeks',
+        revisions: '5 Revisions',
+        features: ['5 Pages', 'Responsive Design', 'Source Code', 'SEO Optimization', 'Admin Panel']
+      },
+      {
+        name: 'Premium',
+        price: '$1200',
+        description: 'Full Scale Web Application / E-commerce',
+        details: 'Payment Gateway, User Authentication, Database, Advanced Features',
+        deliveryTime: '3-4 Weeks',
+        revisions: 'Unlimited Revisions',
+        features: ['Full Web App', 'E-commerce', 'Payment Integration', 'Authentication', 'Database', 'Admin Dashboard']
+      }
+    ]
   },
   {
     id: 'mobile-dev',
@@ -67,7 +98,36 @@ const servicesData = [
     features: ['React Native', 'iOS/Android', 'Cross-platform', 'Native Features'],
     technologies: ['React Native', 'iOS/Android', 'Cross-platform', 'Native Features'],
     startingPrice: '$300',
-    timeline: '3-6 weeks'
+    timeline: '3-6 weeks',
+    packages: [
+      {
+        name: 'Basic',
+        price: '$300',
+        description: 'Simple App / UI Prototype',
+        details: 'Up to 3 Screens, Navigation, Basic Logic',
+        deliveryTime: '1 Week',
+        revisions: '2 Revisions',
+        features: ['3 Screens', 'App Icon', 'Splash Screen', 'Source Code']
+      },
+      {
+        name: 'Standard',
+        price: '$800',
+        description: 'Functional App with API Integration',
+        details: 'API Integration, State Management, Local Storage',
+        deliveryTime: '3-4 Weeks',
+        revisions: '5 Revisions',
+        features: ['Up to 10 Screens', 'API Integration', 'Authentication', 'Publishing Help', 'Source Code']
+      },
+      {
+        name: 'Premium',
+        price: '$1800',
+        description: 'Complex App with Backend',
+        details: 'Full feature set, Push Notifications, Real-time Chat/Data',
+        deliveryTime: '6-8 Weeks',
+        revisions: 'Unlimited Revisions',
+        features: ['Full App', 'Backend Dev', 'Push Notifications', 'Store Submission', 'Maintenance']
+      }
+    ]
   },
   {
     id: 'ui-ux',
@@ -83,7 +143,36 @@ const servicesData = [
     features: ['Figma', 'Responsive Design', 'Accessibility', 'User Testing'],
     technologies: ['Figma', 'Responsive Design', 'Accessibility', 'User Testing'],
     startingPrice: '$150',
-    timeline: '1-2 weeks'
+    timeline: '1-2 weeks',
+    packages: [
+      {
+        name: 'Basic',
+        price: '$150',
+        description: 'Landing Page Design',
+        details: 'Desktop & Mobile View, Source File',
+        deliveryTime: '3 Days',
+        revisions: '3 Revisions',
+        features: ['1 Page', 'Source File (Figma)', 'Assets', 'Responsive View']
+      },
+      {
+        name: 'Standard',
+        price: '$400',
+        description: 'Full Website Design (5 Pages)',
+        details: 'Design System, Style Guide, Interactive Prototype',
+        deliveryTime: '1 Week',
+        revisions: 'Unlimited Revisions',
+        features: ['5 Pages', 'Prototype', 'Style Guide', 'Source File', 'Wireframes']
+      },
+      {
+        name: 'Premium',
+        price: '$900',
+        description: 'Complete Product Design (App/Web)',
+        details: 'User Research, Wireframing, Prototyping, Handoff Docs',
+        deliveryTime: '2-3 Weeks',
+        revisions: 'Unlimited Revisions',
+        features: ['Full Project', 'User Flow', 'Prototype', 'Design System', 'Dev Handoff']
+      }
+    ]
   },
   {
     id: 'backend',
@@ -99,7 +188,36 @@ const servicesData = [
     features: ['Node.js', 'Databases', 'APIs', 'Cloud Services'],
     technologies: ['Node.js', 'Databases', 'APIs', 'Cloud Services'],
     startingPrice: '$250',
-    timeline: '2-4 weeks'
+    timeline: '2-4 weeks',
+    packages: [
+      {
+        name: 'Basic',
+        price: '$250',
+        description: 'Simple API / Script',
+        details: 'CRUD operations, Basic Auth, Database Setup',
+        deliveryTime: '5 Days',
+        revisions: '3 Revisions',
+        features: ['Rest API', 'Database Schema', 'Documentation', 'Source Code']
+      },
+      {
+        name: 'Standard',
+        price: '$600',
+        description: 'Advanced Backend Architecture',
+        details: 'Authentication (JWT/OAuth), File Uploads, Email Services',
+        deliveryTime: '2 Weeks',
+        revisions: '5 Revisions',
+        features: ['Complex API', 'Auth System', 'Integration', 'Optimization', 'Swagger Docs']
+      },
+      {
+        name: 'Premium',
+        price: '$1500',
+        description: 'Enterprise Grade Microservices',
+        details: 'Scalable Architecture, Docker/K8s, CI/CD pipelines',
+        deliveryTime: '4 Weeks',
+        revisions: 'Unlimited Revisions',
+        features: ['Microservices', 'Cloud Deploy', 'CI/CD', 'Load Balancing', 'Monitoring']
+      }
+    ]
   },
   {
     id: 'consulting',
@@ -115,7 +233,36 @@ const servicesData = [
     features: ['Architecture', 'Code Review', 'Best Practices', 'Team Training'],
     technologies: ['Architecture', 'Code Review', 'Best Practices', 'Team Training'],
     startingPrice: '$50/hr',
-    timeline: 'Flexible'
+    timeline: 'Flexible',
+    packages: [
+      {
+        name: 'Basic',
+        price: '$100',
+        description: '1 Hour Consultation',
+        details: 'Code Review or Technical Discussion via Video Call',
+        deliveryTime: '1 Hour',
+        revisions: 'N/A',
+        features: ['1 Hr Call', 'Q&A', 'Recap Doc']
+      },
+      {
+        name: 'Standard',
+        price: '$400',
+        description: 'Project Audit & Planning',
+        details: 'Deep dive into codebase or architecture planning',
+        deliveryTime: '3 Days',
+        revisions: '1 Revision',
+        features: ['Deep Audit', 'Written Report', 'Optimization Plan', 'Architecture Diagram']
+      },
+      {
+        name: 'Premium',
+        price: '$2000',
+        description: 'Monthly Retainer',
+        details: 'Ongoing support, code reviews, and mentoring for your team',
+        deliveryTime: '1 Month',
+        revisions: 'Ongoing',
+        features: ['Priority Support', 'Weekly Calls', 'Code Reviews', 'Team Training']
+      }
+    ]
   }
 ];
 
@@ -165,7 +312,7 @@ export default function Services() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-12 bg-gradient-to-br from-blue-50 via-purple-50 to-slate-100 dark:from-gray-900 via-gray-850 dark:to-gray-800">
         <div className="container mx-auto px-4">
@@ -174,7 +321,7 @@ export default function Services() {
               Development Services
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-              Comprehensive development solutions to bring your digital ideas to life. 
+              Comprehensive development solutions to bring your digital ideas to life.
               From web applications to mobile apps, I've got you covered.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
@@ -203,18 +350,17 @@ export default function Services() {
             <p className="text-lg text-gray-600 dark:text-gray-300 text-center mb-12 max-w-2xl mx-auto">
               Comprehensive development services to bring your ideas to life
             </p>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {mainServices.map((service) => {
                 const LucideIcon = service.lucideIcon;
                 return (
-                  <Card 
-                    key={service.id} 
-                    className={`group hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden ${
-                      service.popular 
-                        ? 'ring-2 ring-blue-400 ring-opacity-50 border-blue-200 dark:border-blue-700' 
-                        : `${service.borderColor} dark:border-gray-700 border`
-                    }`}
+                  <Card
+                    key={service.id}
+                    className={`group hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden ${service.popular
+                      ? 'ring-2 ring-blue-400 ring-opacity-50 border-blue-200 dark:border-blue-700'
+                      : `${service.borderColor} dark:border-gray-700 border`
+                      }`}
                     onClick={() => setSelectedService(selectedService === service.id ? null : service.id)}
                   >
                     {service.popular && (
@@ -222,14 +368,14 @@ export default function Services() {
                         Popular
                       </div>
                     )}
-                    
+
                     <CardContent className="p-6">
                       <div className="text-center mb-4">
                         {/* Emoji Icon with Gradient Background */}
                         <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r ${service.color} text-white text-2xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
                           {service.icon}
                         </div>
-                        
+
                         <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                           {service.title}
                         </h3>
@@ -237,45 +383,52 @@ export default function Services() {
                           {service.shortDescription}
                         </p>
                       </div>
-                      
+
                       {selectedService === service.id ? (
-                        <div className="space-y-4 animate-in fade-in duration-300">
-                          <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                            {service.description}
-                          </p>
-                          
-                          <div className="flex flex-wrap gap-2">
-                            {service.technologies.map((tech, index) => (
-                              <Badge key={index} variant="secondary" className="text-xs px-2 py-1">
-                                {tech}
-                              </Badge>
+                        <div className="mt-6">
+                          <Tabs defaultValue="Basic" className="w-full">
+                            <TabsList className="grid w-full grid-cols-3 mb-4">
+                              <TabsTrigger value="Basic">Basic</TabsTrigger>
+                              <TabsTrigger value="Standard">Standard</TabsTrigger>
+                              <TabsTrigger value="Premium">Premium</TabsTrigger>
+                            </TabsList>
+                            {service.packages && service.packages.map((pkg) => (
+                              <TabsContent key={pkg.name} value={pkg.name} className="animate-in slide-in-from-bottom-2 duration-300">
+                                <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-5 border border-gray-100 dark:border-gray-800">
+                                  <div className="flex justify-between items-baseline mb-2">
+                                    <h4 className="font-bold text-lg text-gray-900 dark:text-white">{pkg.name}</h4>
+                                    <span className="text-2xl font-bold text-green-600">{pkg.price}</span>
+                                  </div>
+                                  <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{pkg.description}</p>
+                                  <p className="text-xs text-gray-500 dark:text-gray-400 mb-4">{pkg.details}</p>
+
+                                  <div className="flex items-center gap-4 text-xs font-semibold text-gray-700 dark:text-gray-300 mb-4 pb-4 border-b border-gray-200 dark:border-gray-700">
+                                    <div className="flex items-center"><Clock className="w-3 h-3 mr-1" /> {pkg.deliveryTime}</div>
+                                    <div className="flex items-center"><Shield className="w-3 h-3 mr-1" /> {pkg.revisions}</div>
+                                  </div>
+
+                                  <div className="space-y-2 mb-6">
+                                    {pkg.features.map((feature, i) => (
+                                      <div key={i} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                                        <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                                        {feature}
+                                      </div>
+                                    ))}
+                                  </div>
+
+                                  <Button
+                                    className={`w-full bg-gradient-to-r ${service.color} text-white hover:shadow-lg hover:opacity-90 transition-all duration-300`}
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      navigate('/contact', { state: { service: service.title, package: pkg.name } });
+                                    }}
+                                  >
+                                    Select {pkg.name}
+                                  </Button>
+                                </div>
+                              </TabsContent>
                             ))}
-                          </div>
-                          
-                          <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
-                            <div className="text-center">
-                              <div className="text-lg font-bold text-green-600">
-                                {service.startingPrice}
-                              </div>
-                              <p className="text-xs text-gray-600 dark:text-gray-400">Starting from</p>
-                            </div>
-                            <div className="text-center">
-                              <div className="text-lg font-bold text-blue-600">
-                                {service.timeline}
-                              </div>
-                              <p className="text-xs text-gray-600 dark:text-gray-400">Timeline</p>
-                            </div>
-                          </div>
-                          
-                          <Button 
-                            className={`w-full bg-gradient-to-r ${service.color} text-white hover:shadow-lg transition-all duration-300`}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              navigate('/contact');
-                            }}
-                          >
-                            Get Started
-                          </Button>
+                          </Tabs>
                         </div>
                       ) : (
                         <div className="space-y-4">
@@ -291,14 +444,14 @@ export default function Services() {
                               </Badge>
                             )}
                           </div>
-                          
+
                           <div className="flex items-center justify-between text-sm text-gray-600 dark:text-gray-400">
                             <span className="font-medium">{service.startingPrice}</span>
                             <span>{service.timeline}</span>
                           </div>
-                          
-                          <Button 
-                            size="sm" 
+
+                          <Button
+                            size="sm"
                             className="w-full bg-blue-600 hover:bg-blue-700 text-white transition-colors"
                           >
                             View Details <ArrowRight className="w-3 h-3 ml-2" />
@@ -329,7 +482,7 @@ export default function Services() {
                       </div>
                       <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">{service.title}</h3>
                       <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">{service.shortDescription}</p>
-                      <p className="text-blue-600 font-semibold">{service.price || service.startingPrice}</p>
+                      <p className="text-blue-600 font-semibold">{service.startingPrice}</p>
                     </CardContent>
                   </Card>
                 );
@@ -347,7 +500,7 @@ export default function Services() {
             <p className="text-lg text-gray-600 dark:text-gray-300 text-center mb-12 max-w-2xl mx-auto">
               A proven methodology that ensures successful project delivery and client satisfaction.
             </p>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
               {processSteps.map((step, index) => (
                 <div key={step.step} className="text-center relative">
@@ -355,7 +508,7 @@ export default function Services() {
                   {index < processSteps.length - 1 && (
                     <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gray-300 dark:bg-gray-600 transform translate-x-4" />
                   )}
-                  
+
                   <div className="relative z-10">
                     <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
                       {step.step}
@@ -410,11 +563,11 @@ export default function Services() {
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-12">
               Clear, honest pricing with no hidden fees. Every project is unique, so let's discuss your specific needs.
             </p>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {popularServices.map((service) => {
+              {popularServices.map((service) => {
                 return (
-                  <Card key={service.id} className={`border-2 ${service.borderColor} ${service.bgColor} dark:bg-opacity-20 hover:shadow-lg transition-shadow`}>
+                  <Card key={service.id} className={`border-2 ${service.borderColor} dark:bg-opacity-20 hover:shadow-lg transition-shadow`}>
                     <CardContent className="p-6 text-center">
                       <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-r ${service.color} text-white text-xl mb-4`}>
                         {service.icon}
@@ -428,13 +581,13 @@ export default function Services() {
                 );
               })}
             </div>
-            
+
             <p className="text-gray-600 dark:text-gray-300 mb-8">
               All projects include free consultation, project planning, and 30 days of post-launch support.
             </p>
-            
-            <Button 
-              size="lg" 
+
+            <Button
+              size="lg"
               className="bg-blue-600 hover:bg-blue-700 text-white"
               onClick={() => navigate('/contact')}
             >
@@ -452,16 +605,16 @@ export default function Services() {
             Let's discuss your project requirements and create something amazing together.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="bg-white text-blue-600 hover:bg-gray-100"
               onClick={() => navigate('/contact')}
             >
               <MessageSquare className="w-5 h-5 mr-2" />
               Start Discussion
             </Button>
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="bg-white/10 backdrop-blur-sm border-2 border-white/50 text-white hover:bg-white hover:text-blue-600 transition-all duration-300"
               onClick={() => navigate('/projects')}
             >
