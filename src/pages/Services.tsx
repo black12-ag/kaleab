@@ -384,84 +384,51 @@ export default function Services() {
                         </p>
                       </div>
 
-                      {selectedService === service.id ? (
-                        <div className="mt-6">
-                          <Tabs defaultValue="Basic" className="w-full">
-                            <TabsList className="grid w-full grid-cols-3 mb-4">
-                              <TabsTrigger value="Basic">Basic</TabsTrigger>
-                              <TabsTrigger value="Standard">Standard</TabsTrigger>
-                              <TabsTrigger value="Premium">Premium</TabsTrigger>
-                            </TabsList>
-                            {service.packages && service.packages.map((pkg) => (
-                              <TabsContent key={pkg.name} value={pkg.name} className="animate-in slide-in-from-bottom-2 duration-300">
-                                <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-5 border border-gray-100 dark:border-gray-800">
-                                  <div className="flex justify-between items-baseline mb-2">
-                                    <h4 className="font-bold text-lg text-gray-900 dark:text-white">{pkg.name}</h4>
-                                    <span className="text-2xl font-bold text-green-600">{pkg.price}</span>
-                                  </div>
-                                  <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{pkg.description}</p>
-                                  <p className="text-xs text-gray-500 dark:text-gray-400 mb-4">{pkg.details}</p>
-
-                                  <div className="flex items-center gap-4 text-xs font-semibold text-gray-700 dark:text-gray-300 mb-4 pb-4 border-b border-gray-200 dark:border-gray-700">
-                                    <div className="flex items-center"><Clock className="w-3 h-3 mr-1" /> {pkg.deliveryTime}</div>
-                                    <div className="flex items-center"><Shield className="w-3 h-3 mr-1" /> {pkg.revisions}</div>
-                                  </div>
-
-                                  <div className="space-y-2 mb-6">
-                                    {pkg.features.map((feature, i) => (
-                                      <div key={i} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
-                                        <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                                        {feature}
-                                      </div>
-                                    ))}
-                                  </div>
-
-                                  <Button
-                                    className={`w-full bg-gradient-to-r ${service.color} text-white hover:shadow-lg hover:opacity-90 transition-all duration-300`}
-                                    onClick={(e) => {
-                                      e.stopPropagation();
-                                      navigate('/contact', { state: { service: service.title, package: pkg.name } });
-                                    }}
-                                  >
-                                    Select {pkg.name}
-                                  </Button>
+                      <div className="mt-6">
+                        <Tabs defaultValue="Basic" className="w-full">
+                          <TabsList className="grid w-full grid-cols-3 mb-4">
+                            <TabsTrigger value="Basic">Basic</TabsTrigger>
+                            <TabsTrigger value="Standard">Standard</TabsTrigger>
+                            <TabsTrigger value="Premium">Premium</TabsTrigger>
+                          </TabsList>
+                          {service.packages && service.packages.map((pkg) => (
+                            <TabsContent key={pkg.name} value={pkg.name} className="animate-in slide-in-from-bottom-2 duration-300">
+                              <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-5 border border-gray-100 dark:border-gray-800">
+                                <div className="flex justify-between items-baseline mb-2">
+                                  <h4 className="font-bold text-lg text-gray-900 dark:text-white">{pkg.name}</h4>
+                                  <span className="text-2xl font-bold text-green-600">{pkg.price}</span>
                                 </div>
-                              </TabsContent>
-                            ))}
-                          </Tabs>
-                        </div>
-                      ) : (
-                        <div className="space-y-4">
-                          <div className="flex flex-wrap gap-2 justify-center">
-                            {(service.features || []).slice(0, 3).map((tech, index) => (
-                              <Badge key={index} variant="outline" className="text-xs">
-                                {tech}
-                              </Badge>
-                            ))}
-                            {(service.features || []).length > 3 && (
-                              <Badge variant="outline" className="text-xs">
-                                +{(service.features || []).length - 3}
-                              </Badge>
-                            )}
-                          </div>
+                                <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{pkg.description}</p>
+                                <p className="text-xs text-gray-500 dark:text-gray-400 mb-4">{pkg.details}</p>
 
-                          <div className="flex items-center justify-between text-sm text-gray-600 dark:text-gray-400">
-                            <span className="font-medium">{service.startingPrice}</span>
-                            <span>{service.timeline}</span>
-                          </div>
+                                <div className="flex items-center gap-4 text-xs font-semibold text-gray-700 dark:text-gray-300 mb-4 pb-4 border-b border-gray-200 dark:border-gray-700">
+                                  <div className="flex items-center"><Clock className="w-3 h-3 mr-1" /> {pkg.deliveryTime}</div>
+                                  <div className="flex items-center"><Shield className="w-3 h-3 mr-1" /> {pkg.revisions}</div>
+                                </div>
 
-                          <Button
-                            size="sm"
-                            className="w-full bg-blue-600 hover:bg-blue-700 text-white transition-colors"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              setSelectedService(service.id);
-                            }}
-                          >
-                            View Details <ArrowRight className="w-3 h-3 ml-2" />
-                          </Button>
-                        </div>
-                      )}
+                                <div className="space-y-2 mb-6">
+                                  {pkg.features.map((feature, i) => (
+                                    <div key={i} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                                      <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                                      {feature}
+                                    </div>
+                                  ))}
+                                </div>
+
+                                <Button
+                                  className={`w-full bg-gradient-to-r ${service.color} text-white hover:shadow-lg hover:opacity-90 transition-all duration-300`}
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    navigate('/contact', { state: { service: service.title, package: pkg.name } });
+                                  }}
+                                >
+                                  Select {pkg.name}
+                                </Button>
+                              </div>
+                            </TabsContent>
+                          ))}
+                        </Tabs>
+                      </div>
                     </CardContent>
                   </Card>
                 );

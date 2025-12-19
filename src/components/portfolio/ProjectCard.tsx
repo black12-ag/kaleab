@@ -227,28 +227,9 @@ export default function ProjectCard({ project, className = '', showFullDetails =
             )}
           </div>
 
-        {/* Status Badge */}
-        <div className="absolute top-3 left-3">
-          <Badge 
-            variant={project.status === 'completed' ? 'default' : 'secondary'}
-            className={`${
-              project.status === 'completed' ? 'bg-green-500' : 
-              project.status === 'in-progress' ? 'bg-yellow-500' : 'bg-blue-500'
-            } text-white`}
-          >
-            {project.status.replace('-', ' ').toUpperCase()}
-          </Badge>
-        </div>
+        {/* Status Badge Removed */}
 
-        {/* Featured Badge */}
-        {project.featured && (
-          <div className="absolute top-3 right-3">
-            <Badge className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white">
-              <Star className="w-3 h-3 mr-1" />
-              Featured
-            </Badge>
-          </div>
-        )}
+        {/* Featured Badge Removed */}
 
         {/* Like Button */}
         <button
@@ -360,29 +341,7 @@ export default function ProjectCard({ project, className = '', showFullDetails =
           </div>
         )}
 
-        {/* Testimonial */}
-        {project.testimonial && (
-          <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 mb-4">
-            <div className="flex items-center gap-1 mb-2">
-              {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                  className={`w-4 h-4 ${
-                    i < project.testimonial!.rating 
-                      ? 'text-yellow-500 fill-yellow-500' 
-                      : 'text-gray-300 dark:text-gray-600'
-                  }`}
-                />
-              ))}
-            </div>
-            <p className="text-sm italic text-gray-700 dark:text-gray-300 mb-2">
-              "{project.testimonial.text}"
-            </p>
-            <p className="text-xs text-gray-600 dark:text-gray-400 font-medium">
-              - {project.testimonial.author}
-            </p>
-          </div>
-        )}
+        {/* Testimonial Removed */}
       </CardContent>
 
       {/* Telegram Integration */}
