@@ -54,7 +54,7 @@ export const munirProjects = [
     title: 'Portfolio Website',
     description: 'Modern portfolio website with admin panel',
     longDescription: 'A sleek portfolio website built with React and TypeScript, featuring an admin panel for easy content management.',
-    image: '/images/project3.jpg',
+    image: '/images/portfolio-website-showcase.png',
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
     category: 'Web Development',
