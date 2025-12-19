@@ -13,6 +13,7 @@ export default tseslint.config(
       "backend/**",
       "**/*.d.ts",
       "node_modules/**",
+      "tailwind.config.ts"
     ],
   },
   {
