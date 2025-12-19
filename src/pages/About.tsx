@@ -4,11 +4,11 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { 
-  MapPin, 
-  Calendar, 
-  Mail, 
-  Phone, 
+import {
+  MapPin,
+  Calendar,
+  Mail,
+  Phone,
   Globe,
   Download,
   Award,
@@ -201,7 +201,7 @@ const journeyMilestones = [
   },
   {
     year: '2025',
-    title: '15+ Projects Delivered',
+    title: '67+ Projects Delivered',
     description: 'Successfully delivered diverse projects from e-commerce to automation tools with excellent client feedback',
     type: 'achievement',
     icon: Award,
@@ -290,7 +290,7 @@ const AnimatedSkillBar: React.FC<AnimatedSkillBarProps> = ({ skill, inView }) =>
         <span className="text-sm text-gray-700 dark:text-gray-300 font-medium">{skill.level}%</span>
       </div>
       <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden">
-        <div 
+        <div
           className={`h-2.5 rounded-full transition-all duration-1000 ease-out ${skill.color}`}
           style={{ width: `${animatedLevel}%` }}
         ></div>
@@ -314,7 +314,7 @@ interface TimelineItemProps {
 
 const TimelineItem: React.FC<TimelineItemProps> = ({ milestone, index }) => {
   const Icon = milestone.icon;
-  
+
   return (
     <div className="flex items-center group hover:scale-105 transition-all duration-300">
       <div className="flex flex-col items-center mr-6">
@@ -376,8 +376,8 @@ export default function About() {
     phone: '+251 90 780 6267',
     website: 'https://munir-portfolio.dev',
     yearsOfExperience: 3,
-    projectsCompleted: 15,
-    happyClients: 12
+    projectsCompleted: 67,
+    happyClients: 34
   };
 
   const tabs = [
@@ -390,7 +390,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-12 bg-gradient-to-br from-blue-50 via-purple-50 to-slate-100 dark:from-gray-900 via-gray-850 dark:to-gray-800">
         <div className="container mx-auto px-4">
@@ -421,7 +421,7 @@ export default function About() {
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
+              <Button
                 size="lg"
                 onClick={() => navigate('/contact')}
                 className="bg-blue-600 hover:bg-blue-700 text-white"
@@ -429,8 +429,8 @@ export default function About() {
                 <Mail className="w-5 h-5 mr-2" />
                 Get In Touch
               </Button>
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 variant="outline"
                 onClick={() => window.open('/Munir_Ayub_CV.pdf', '_blank')}
                 className="border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
@@ -450,24 +450,24 @@ export default function About() {
             <h2 className="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-white">My Story</h2>
             <div className="prose prose-lg max-w-none text-gray-700 dark:text-gray-300">
               <p className="mb-6">
-                I'm a passionate self-taught full-stack developer from Ethiopia with 3 years of hands-on experience 
-                creating digital solutions for clients worldwide. My journey began in 2022 when I discovered the 
+                I'm a passionate self-taught full-stack developer from Ethiopia with 3 years of hands-on experience
+                creating digital solutions for clients worldwide. My journey began in 2022 when I discovered the
                 world of programming through online resources and fell in love with building things that solve real problems.
               </p>
               <p className="mb-6">
-                Starting from absolute zero with no formal computer science background, I dedicated myself to learning 
-                web development through platforms like FreeCodeCamp, YouTube, and countless hours of practice. 
-                What began as curiosity quickly turned into a career as I built my first paid website just months after 
+                Starting from absolute zero with no formal computer science background, I dedicated myself to learning
+                web development through platforms like FreeCodeCamp, YouTube, and countless hours of practice.
+                What began as curiosity quickly turned into a career as I built my first paid website just months after
                 writing my first line of code.
               </p>
               <p className="mb-6">
-                Today, I specialize in building modern web applications, e-commerce platforms, business automation tools, 
-                and AI-powered solutions. I've worked with local businesses in Ethiopia and international clients, 
+                Today, I specialize in building modern web applications, e-commerce platforms, business automation tools,
+                and AI-powered solutions. I've worked with local businesses in Ethiopia and international clients,
                 delivering everything from simple business websites to complex booking systems and Telegram bots.
               </p>
               <p>
-                My journey proves that with determination, consistent learning, and passion for problem-solving, 
-                anyone can build a successful career in tech. I'm always excited to take on new challenges and 
+                My journey proves that with determination, consistent learning, and passion for problem-solving,
+                anyone can build a successful career in tech. I'm always excited to take on new challenges and
                 help businesses grow through technology.
               </p>
             </div>
@@ -512,11 +512,10 @@ export default function About() {
                     <button
                       key={tab.id}
                       onClick={() => setActiveTab(tab.id as any)}
-                      className={`flex items-center gap-2 px-4 py-3 rounded-md font-medium transition-all ${
-                        activeTab === tab.id
+                      className={`flex items-center gap-2 px-4 py-3 rounded-md font-medium transition-all ${activeTab === tab.id
                           ? 'bg-white dark:bg-gray-700 text-blue-600 shadow-sm'
                           : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'
-                      }`}
+                        }`}
                     >
                       <Icon className="w-4 h-4" />
                       {tab.label}
@@ -559,7 +558,7 @@ export default function About() {
                         </Badge>
                       </div>
                       <p className="text-gray-700 dark:text-gray-300 mb-4">{exp.description}</p>
-                      
+
                       {/* Achievements */}
                       <div className="mb-4">
                         <h5 className="font-semibold text-gray-900 dark:text-white mb-2">Key Achievements:</h5>
@@ -612,7 +611,7 @@ export default function About() {
                         </Badge>
                       </div>
                       <p className="text-gray-700 dark:text-gray-300 mb-4">{edu.description}</p>
-                      
+
                       {/* Relevant Courses */}
                       <div>
                         <h5 className="font-semibold text-gray-900 dark:text-white mb-2">Relevant Courses:</h5>
@@ -664,9 +663,9 @@ export default function About() {
                           </div>
                           <div className="space-y-4">
                             {category.skills.map((skill, skillIndex) => (
-                              <AnimatedSkillBar 
-                                key={skillIndex} 
-                                skill={skill} 
+                              <AnimatedSkillBar
+                                key={skillIndex}
+                                skill={skill}
                                 inView={skillsInView}
                               />
                             ))}
@@ -692,7 +691,7 @@ export default function About() {
                 <BookOpen className="w-12 h-12 text-blue-500 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Continuous Learner</h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Always exploring new technologies and frameworks. Currently diving deep into AI integration, 
+                  Always exploring new technologies and frameworks. Currently diving deep into AI integration,
                   TypeScript patterns, and mobile development.
                 </p>
               </div>
@@ -700,7 +699,7 @@ export default function About() {
                 <Code2 className="w-12 h-12 text-purple-500 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Problem Solver</h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                  I love turning complex business problems into elegant technical solutions. 
+                  I love turning complex business problems into elegant technical solutions.
                   Each project is a new puzzle to solve creatively.
                 </p>
               </div>
@@ -708,7 +707,7 @@ export default function About() {
                 <Heart className="w-12 h-12 text-red-500 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Helping Businesses Grow</h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Passionate about helping small businesses and entrepreneurs leverage technology 
+                  Passionate about helping small businesses and entrepreneurs leverage technology
                   to reach their goals and serve their customers better.
                 </p>
               </div>
@@ -725,16 +724,16 @@ export default function About() {
             I'm always excited to take on new challenges and help bring your ideas to life.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="bg-white text-blue-600 hover:bg-gray-100"
               onClick={() => navigate('/contact')}
             >
               <Mail className="w-5 h-5 mr-2" />
               Contact Me
             </Button>
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="bg-white/10 backdrop-blur-sm border-2 border-white/50 text-white hover:bg-white hover:text-blue-600 transition-all duration-300"
               onClick={() => navigate('/portfolio')}
             >

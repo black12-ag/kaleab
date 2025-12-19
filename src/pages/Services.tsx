@@ -453,6 +453,10 @@ export default function Services() {
                           <Button
                             size="sm"
                             className="w-full bg-blue-600 hover:bg-blue-700 text-white transition-colors"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setSelectedService(service.id);
+                            }}
                           >
                             View Details <ArrowRight className="w-3 h-3 ml-2" />
                           </Button>

@@ -1,6 +1,140 @@
 // Portfolio projects data
 export const munirProjects = [
   {
+    id: '8',
+    title: 'Ethio Viral',
+    description: 'All-in-one SMM services platform',
+    longDescription: 'A comprehensive social media marketing platform with instant start, fair pricing, and professional support. Trusted by 54,000+ active users including creators, businesses, and influencers to boost their social media presence.',
+    image: '/images/ethio-viral-showcase.png',
+    technologies: ['React', 'Node.js', 'Payment Integration', 'API', 'Database'],
+    category: 'Web Development',
+    githubUrl: 'https://github.com/black12-ag/ethio-viral',
+    featured: true,
+    status: 'completed',
+    completionDate: '2024-11-20',
+    features: [
+      '54,000+ active users',
+      '100+ secure payment methods',
+      '24/7 customer support',
+      'Auto-refill functionality',
+      'Money back guarantee',
+      'Real/high quality services'
+    ]
+  },
+  {
+    id: '19',
+    title: 'Ethio Viral Bot',
+    description: 'Automated Telegram bot for SMM services',
+    longDescription: 'A fully automated Telegram bot allowing users to place SMM orders, check balances, and manage their social media growth directly from Telegram. Seamlessly integrated with the Ethio Viral platform.',
+    image: '/images/ethio-viral-bot-showcase.png',
+    technologies: ['Telegram API', 'Node.js', 'Webhooks', 'Redis'],
+    category: 'Bot Development',
+    githubUrl: 'https://github.com/black12-ag/ethio-viral-bot',
+    liveUrl: 'https://t.me/Ethio_viral_bot',
+    featured: true,
+    status: 'completed',
+    completionDate: '2024-12-15',
+    features: [
+      'Instant order processing via Telegram',
+      'Real-time balance checking',
+      'Service list queries',
+      'Automatic order status updates',
+      'User-friendly command interface',
+      'Secure API integration'
+    ]
+  },
+  {
+    id: '18',
+    title: 'Findy - Advanced Navigation',
+    description: 'Intelligent navigation companion with smart routing',
+    longDescription: 'An advanced navigation application featuring real-time traffic updates, smart route optimization, and offline maps. Designed as a reliable companion for seamless travel experiences.',
+    image: '/images/findy-showcase.png',
+    technologies: ['React', 'Leaflet', 'Geolocation API', 'PWA'],
+    category: 'Web Development',
+    githubUrl: 'https://github.com/black12-ag/findy-navigation',
+    liveUrl: 'https://findy-navigation-app.netlify.app/',
+    featured: true,
+    status: 'completed',
+    completionDate: '2024-12-19',
+    features: [
+      'Smart route optimization',
+      'Real-time traffic updates',
+      'Offline maps availability',
+      'Turn-by-turn guidance',
+      'Location sharing',
+      'Interactive map interface'
+    ]
+  },
+  {
+    id: '15',
+    title: 'Apple.com High-Fidelity Clone',
+    description: 'Pixel-perfect Apple.com clone with 60+ pages and responsive design',
+    longDescription: 'A high-fidelity clone of Apple.com featuring pixel-perfect components, responsive design, and over 60 dedicated pages mirroring the official structure. Includes global navigation, hero sections, product highlight cards, call-to-action banners, and layouts that adapt from desktop to mobile.',
+    image: '/images/apple-clone.png',
+    videoUrl: 'https://youtu.be/fCDqxrsjnVk',
+    technologies: ['React', 'TypeScript', 'Vite', 'Styled Components', 'Framer Motion', 'React Router'],
+    category: 'Web Development',
+    githubUrl: 'https://github.com/black12-ag/apple.com',
+    liveUrl: 'https://apple-com-clw.pages.dev/',
+    featured: true,
+    status: 'completed',
+    completionDate: '2024-12-18',
+    features: [
+      '60+ dedicated pages mirroring Apple structure',
+      'Pixel-perfect responsive design',
+      'Global navigation bar',
+      'Hero sections with product highlights',
+      'Product tile grids and promo cards',
+      'Cloudflare Pages deployment ready'
+    ]
+  },
+  {
+    id: '10',
+    title: 'Abstract - Culinary Excellence',
+    description: 'Modern recipe discovery platform with chef-curated content',
+    longDescription: 'A beautifully designed culinary platform that transforms recipes into experiences. Features chef-curated content from 12 expert chefs across 18 countries, category browsing, newsletter integration, and a stunning modern UI with smooth animations.',
+    image: '/images/abstract-culinary.png',
+    videoUrl: 'https://youtu.be/3OI1w50p0ts',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vite'],
+    category: 'Web Development',
+    githubUrl: 'https://github.com/black12-ag/abstract-culinary',
+    liveUrl: 'https://abstract-82t.pages.dev/',
+    featured: true,
+    status: 'completed',
+    completionDate: '2024-12-18',
+    features: [
+      '250+ curated recipes from 18 countries',
+      'Chef-selected featured recipes',
+      'Quick category browsing',
+      'Newsletter subscription system',
+      'Responsive modern design',
+      'Smooth animations and transitions'
+    ]
+  },
+  {
+    id: '7',
+    title: 'NaturaSkin AI',
+    description: 'AI-powered skin texture restoration tool',
+    longDescription: 'The first AI that fixes the "plastic look" of generated images. Add realistic pores, micro-details, and film grain directly in your browser with offline client-side processing.',
+    image: '/images/naturaskin.png',
+    videoUrl: 'https://youtu.be/kpAZdAl43KE',
+    technologies: ['React', 'TypeScript', 'AI/ML', 'Flux.1 Model', 'WebAssembly'],
+    category: 'AI/ML',
+    githubUrl: 'https://github.com/black12-ag/naturaskin-ai',
+    liveUrl: 'https://naturaskin-ai.pages.dev/',
+    featured: true,
+    status: 'completed',
+    completionDate: '2024-12-15',
+    features: [
+      'Offline client-side AI processing',
+      'Automatic skin region segmentation',
+      'Flux.1 model texture re-sampling',
+      'Micropore and film grain injection',
+      'Supports PNG, JPG, WEBP formats',
+      'Before/after comparison view'
+    ]
+  },
+  {
     id: '1',
     title: 'E-Commerce Platform',
     description: 'Full-stack e-commerce solution with payment integration',
@@ -133,50 +267,6 @@ export const munirProjects = [
     ]
   },
   {
-    id: '7',
-    title: 'NaturaSkin AI',
-    description: 'AI-powered skin texture restoration tool',
-    longDescription: 'The first AI that fixes the "plastic look" of generated images. Add realistic pores, micro-details, and film grain directly in your browser with offline client-side processing.',
-    image: '/images/naturaskin.png',
-    videoUrl: 'https://youtu.be/kpAZdAl43KE',
-    technologies: ['React', 'TypeScript', 'AI/ML', 'Flux.1 Model', 'WebAssembly'],
-    category: 'AI/ML',
-    githubUrl: 'https://github.com/black12-ag/naturaskin-ai',
-    liveUrl: 'https://naturaskin-ai.pages.dev/',
-    featured: true,
-    status: 'completed',
-    completionDate: '2024-12-15',
-    features: [
-      'Offline client-side AI processing',
-      'Automatic skin region segmentation',
-      'Flux.1 model texture re-sampling',
-      'Micropore and film grain injection',
-      'Supports PNG, JPG, WEBP formats',
-      'Before/after comparison view'
-    ]
-  },
-  {
-    id: '8',
-    title: 'Ethio Viral',
-    description: 'All-in-one SMM services platform',
-    longDescription: 'A comprehensive social media marketing platform with instant start, fair pricing, and professional support. Trusted by 54,000+ active users including creators, businesses, and influencers to boost their social media presence.',
-    image: '/images/ethio-viral-showcase.png',
-    technologies: ['React', 'Node.js', 'Payment Integration', 'API', 'Database'],
-    category: 'Web Development',
-    githubUrl: 'https://github.com/black12-ag/ethio-viral',
-    featured: true,
-    status: 'completed',
-    completionDate: '2024-11-20',
-    features: [
-      '54,000+ active users',
-      '100+ secure payment methods',
-      '24/7 customer support',
-      'Auto-refill functionality',
-      'Money back guarantee',
-      'Real/high quality services'
-    ]
-  },
-  {
     id: '9',
     title: 'Metah - Hotel Booking',
     description: 'Modern hotel search and booking platform',
@@ -196,29 +286,6 @@ export const munirProjects = [
       'Best value selections',
       'Top rated properties',
       'Luxury and romantic getaways'
-    ]
-  },
-  {
-    id: '10',
-    title: 'Abstract - Culinary Excellence',
-    description: 'Modern recipe discovery platform with chef-curated content',
-    longDescription: 'A beautifully designed culinary platform that transforms recipes into experiences. Features chef-curated content from 12 expert chefs across 18 countries, category browsing, newsletter integration, and a stunning modern UI with smooth animations.',
-    image: '/images/abstract-culinary.png',
-    videoUrl: 'https://youtu.be/3OI1w50p0ts',
-    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vite'],
-    category: 'Web Development',
-    githubUrl: 'https://github.com/black12-ag/abstract-culinary',
-    liveUrl: 'https://abstract-82t.pages.dev/',
-    featured: true,
-    status: 'completed',
-    completionDate: '2024-12-18',
-    features: [
-      '250+ curated recipes from 18 countries',
-      'Chef-selected featured recipes',
-      'Quick category browsing',
-      'Newsletter subscription system',
-      'Responsive modern design',
-      'Smooth animations and transitions'
     ]
   },
   {
@@ -311,29 +378,6 @@ export const munirProjects = [
     ]
   },
   {
-    id: '15',
-    title: 'Apple.com High-Fidelity Clone',
-    description: 'Pixel-perfect Apple.com clone with 60+ pages and responsive design',
-    longDescription: 'A high-fidelity clone of Apple.com featuring pixel-perfect components, responsive design, and over 60 dedicated pages mirroring the official structure. Includes global navigation, hero sections, product highlight cards, call-to-action banners, and layouts that adapt from desktop to mobile.',
-    image: '/images/apple-clone.png',
-    videoUrl: 'https://youtu.be/fCDqxrsjnVk',
-    technologies: ['React', 'TypeScript', 'Vite', 'Styled Components', 'Framer Motion', 'React Router'],
-    category: 'Web Development',
-    githubUrl: 'https://github.com/black12-ag/apple.com',
-    liveUrl: 'https://apple-com-clw.pages.dev/',
-    featured: true,
-    status: 'completed',
-    completionDate: '2024-12-18',
-    features: [
-      '60+ dedicated pages mirroring Apple structure',
-      'Pixel-perfect responsive design',
-      'Global navigation bar',
-      'Hero sections with product highlights',
-      'Product tile grids and promo cards',
-      'Cloudflare Pages deployment ready'
-    ]
-  },
-  {
     id: '16',
     title: 'iOS Chat Application',
     description: 'Native iOS chat application built with SwiftUI',
@@ -373,50 +417,6 @@ export const munirProjects = [
       'MVVM Architecture',
       'Image and file sharing',
       'Group chat functionality'
-    ]
-  },
-  {
-    id: '13',
-    title: 'Findy - Advanced Navigation',
-    description: 'Intelligent navigation companion with smart routing',
-    longDescription: 'An advanced navigation application featuring real-time traffic updates, smart route optimization, and offline maps. Designed as a reliable companion for seamless travel experiences.',
-    image: '/images/findy-showcase.png',
-    technologies: ['React', 'Leaflet', 'Geolocation API', 'PWA'],
-    category: 'Web Development',
-    githubUrl: 'https://github.com/black12-ag/findy-navigation',
-    liveUrl: 'https://findy-navigation-app.netlify.app/',
-    featured: true,
-    status: 'completed',
-    completionDate: '2024-12-19',
-    features: [
-      'Smart route optimization',
-      'Real-time traffic updates',
-      'Offline maps availability',
-      'Turn-by-turn guidance',
-      'Location sharing',
-      'Interactive map interface'
-    ]
-  },
-  {
-    id: '14',
-    title: 'Ethio Viral Bot',
-    description: 'Automated Telegram bot for SMM services',
-    longDescription: 'A fully automated Telegram bot allowing users to place SMM orders, check balances, and manage their social media growth directly from Telegram. Seamlessly integrated with the Ethio Viral platform.',
-    image: '/images/ethio-viral-bot-showcase.png',
-    technologies: ['Telegram API', 'Node.js', 'Webhooks', 'Redis'],
-    category: 'Bot Development',
-    githubUrl: 'https://github.com/black12-ag/ethio-viral-bot',
-    liveUrl: 'https://t.me/Ethio_viral_bot',
-    featured: true,
-    status: 'completed',
-    completionDate: '2024-12-15',
-    features: [
-      'Instant order processing via Telegram',
-      'Real-time balance checking',
-      'Service list queries',
-      'Automatic order status updates',
-      'User-friendly command interface',
-      'Secure API integration'
     ]
   }
 ];

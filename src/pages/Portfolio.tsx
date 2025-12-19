@@ -9,11 +9,11 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
-import { 
-  Code, 
-  Smartphone, 
-  Globe, 
-  Palette, 
+import {
+  Code,
+  Smartphone,
+  Globe,
+  Palette,
   Users,
   Star,
   Award,
@@ -409,8 +409,8 @@ export default function Portfolio() {
     };
   }, []);
 
-  const filteredProjects = selectedCategory === 'all' 
-    ? allProjects 
+  const filteredProjects = selectedCategory === 'all'
+    ? allProjects
     : allProjects.filter(p => p.category === selectedCategory);
 
   const categories = [
@@ -427,7 +427,7 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       {/* Hero Section */}
       <PortfolioHero />
 
@@ -489,17 +489,17 @@ export default function Portfolio() {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-900 dark:text-white">About Me</h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-              I'm a passionate full-stack developer with over 3 years of experience creating 
-              comprehensive digital solutions. From booking systems to e-commerce platforms, 
+              I'm a passionate full-stack developer with over 3 years of experience creating
+              comprehensive digital solutions. From booking systems to e-commerce platforms,
               I specialize in building scalable applications that solve real-world problems.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
               <div className="text-center py-4">
-                <div className="text-2xl sm:text-3xl font-bold text-blue-600">50+</div>
+                <div className="text-2xl sm:text-3xl font-bold text-blue-600">67</div>
                 <div className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">Projects</div>
               </div>
               <div className="text-center py-4">
-                <div className="text-2xl sm:text-3xl font-bold text-purple-600">25+</div>
+                <div className="text-2xl sm:text-3xl font-bold text-purple-600">34</div>
                 <div className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">Clients</div>
               </div>
               <div className="text-center py-4">
@@ -564,7 +564,7 @@ export default function Portfolio() {
                   <span className="text-sm text-gray-700 dark:text-gray-300">{skill.level}%</span>
                 </div>
                 <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                  <div 
+                  <div
                     className="bg-blue-600 h-2 rounded-full transition-all duration-500"
                     style={{ width: `${skill.level}%` }}
                   ></div>
