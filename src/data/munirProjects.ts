@@ -76,7 +76,7 @@ export const munirProjects = [
     title: 'Task Management System',
     description: 'Collaborative project management tool',
     longDescription: 'A comprehensive task management system with team collaboration features, built for modern agile teams.',
-    image: '/images/project4.jpg',
+    image: '/images/task-manager-showcase.png',
     technologies: ['Next.js', 'PostgreSQL', 'Prisma', 'TailwindCSS'],
     category: 'Web Development',
     githubUrl: 'https://github.com/black12-ag/task-manager',
