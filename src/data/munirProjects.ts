@@ -9,6 +9,7 @@ export const munirProjects = [
     technologies: ['React', 'Node.js', 'Payment Integration', 'API', 'Database'],
     category: 'Web Development',
     githubUrl: 'https://github.com/black12-ag/ethio-viral',
+    liveUrl: 'https://ethio-viral.com',
     featured: true,
     status: 'completed',
     completionDate: '2024-11-20',
