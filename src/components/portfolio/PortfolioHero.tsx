@@ -34,12 +34,10 @@ export default function PortfolioHero({ imageUrls }: PortfolioHeroProps) {
   });
   const [profilePhoto, setProfilePhoto] = useState<string>('/images/munir-profile.jpg');
 
-  // Default portfolio background images (fallback)
-  const defaultImages = [
-    '/images/munir-profile.jpg'
-  ];
-
   const images = useMemo(() => {
+    // Default portfolio background images (fallback)
+    const defaultImages = ['/images/munir-profile.jpg'];
+    
     // If admin has set hero images, use those
     if (heroImages.length > 0) {
       return heroImages.map(img => img.url);

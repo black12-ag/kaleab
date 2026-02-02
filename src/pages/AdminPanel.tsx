@@ -384,8 +384,8 @@ export default function AdminPanel() {
 
     const newProject: Project = {
       id: editingProject?.id || Date.now().toString(),
-      title: formData.title!,
-      description: formData.description!,
+      title: formData.title,
+      description: formData.description,
       image: formData.image || 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop',
       videoUrl: formData.videoUrl,
       youtubeUrl: formData.youtubeUrl,

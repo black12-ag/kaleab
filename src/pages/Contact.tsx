@@ -538,7 +538,7 @@ export default function Contact() {
                           <Button
                             variant="outline"
                             size="sm"
-                            onClick={() => window.open(info.href!, '_blank')}
+                            onClick={() => window.open(info.href, '_blank')}
                             className={`${info.primary ? 'border-green-300 text-green-700 hover:bg-green-50 dark:border-green-600 dark:text-green-400' : 'border-blue-300 text-blue-700 hover:bg-blue-50 dark:border-blue-600 dark:text-blue-400'}`}
                           >
                             <ExternalLink className="w-4 h-4 mr-1" />

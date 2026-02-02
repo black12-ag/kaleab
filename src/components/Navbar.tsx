@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link, useLocation } from 'react-router-dom';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, Sun, Moon, Github, Linkedin, Mail, Code, User, FileText, Cog, MessageSquare, Phone } from 'lucide-react';
+import { Menu, Sun, Moon, Github, Code, User, FileText, Cog, Mail } from 'lucide-react';
 import { FaTelegram, FaWhatsapp, FaXTwitter } from 'react-icons/fa6';
 import { cn } from '@/lib/utils';
 import { useTheme } from '@/contexts/ThemeContext';
@@ -243,7 +243,7 @@ export default function Navbar({ className }: NavbarProps) {
                     <Button
                       className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white"
                       onClick={() => {
-
+                        const storedCV = localStorage.getItem('portfolio_cv');
                         if (storedCV) {
                           if (storedCV.startsWith('data:')) {
                             const link = document.createElement('a');

@@ -18,7 +18,6 @@ const NativeArray = Array;
 
 // Ensure Array constructor is not overridden
 if (typeof (globalThis as any).Array !== 'function' || (globalThis as any).Array !== NativeArray) {
-  console.warn('Array constructor was modified, restoring native Array');
   (globalThis as any).Array = NativeArray;
 }
 
@@ -63,16 +62,12 @@ if (typeof (globalThis as any).module === 'undefined') {
 // CRITICAL: Universal require function for mobile compatibility
 if (typeof (globalThis as any).require === 'undefined') {
   const moduleCache = new Map<string, any>();
-  
-  console.log('🔧 Initializing mobile require() function');
-  
+
   (globalThis as any).require = function(id: string) {
     // Check cache first
     if (moduleCache.has(id)) {
       return moduleCache.get(id);
     }
-
-    console.log(`📦 Loading module: ${id}`);
 
     // Handle React core module
     if (id.includes('react.production.min.js') || 
@@ -81,7 +76,6 @@ if (typeof (globalThis as any).require === 'undefined') {
       
       const reactModule = React;
       moduleCache.set(id, reactModule);
-      console.log(`✅ Loaded React module: ${id}`);
       return reactModule;
     }
 
@@ -89,7 +83,6 @@ if (typeof (globalThis as any).require === 'undefined') {
     if (id.includes('react-dom')) {
       const reactDomModule = ReactDOM;
       moduleCache.set(id, reactDomModule);
-      console.log(`✅ Loaded ReactDOM module: ${id}`);
       return reactDomModule;
     }
 
@@ -101,7 +94,6 @@ if (typeof (globalThis as any).require === 'undefined') {
         Fragment: React.Fragment
       };
       moduleCache.set(id, jsxRuntime);
-      console.log(`✅ Loaded JSX runtime: ${id}`);
       return jsxRuntime;
     }
 
@@ -112,7 +104,6 @@ if (typeof (globalThis as any).require === 'undefined') {
         Fragment: React.Fragment
       };
       moduleCache.set(id, jsxDevRuntime);
-      console.log(`✅ Loaded JSX dev runtime: ${id}`);
       return jsxDevRuntime;
     }
 
@@ -120,12 +111,10 @@ if (typeof (globalThis as any).require === 'undefined') {
     if (id.includes('buffer')) {
       const bufferModule = { Buffer };
       moduleCache.set(id, bufferModule);
-      console.log(`✅ Loaded Buffer module: ${id}`);
       return bufferModule;
     }
 
-    // Default fallback - return empty object but log it
-    console.warn(`⚠️ Unknown module '${id}', returning empty object`);
+    // Default fallback - return empty object
     const emptyModule = {};
     moduleCache.set(id, emptyModule);
     return emptyModule;
@@ -133,8 +122,6 @@ if (typeof (globalThis as any).require === 'undefined') {
   
   // Alias for Vite
   (globalThis as any).__vite_require = (globalThis as any).require;
-  
-  console.log('✅ Mobile require() function initialized successfully');
 }
 
 // Additional mobile-specific globals
@@ -153,4 +140,3 @@ if (typeof globalThis.console === 'undefined') {
   } as any;
 }
 
-console.log('🚀 Mobile polyfills initialized successfully');

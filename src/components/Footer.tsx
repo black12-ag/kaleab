@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Github, Linkedin, Mail, MessageSquare, Phone, Heart, Code, ExternalLink, Settings } from 'lucide-react';
+import { Github, Mail, MessageSquare, Phone, Heart, Code } from 'lucide-react';
 import { FaTelegram, FaWhatsapp, FaXTwitter } from 'react-icons/fa6';
 import { useState, useEffect } from 'react';
 import { useToast } from '@/hooks/use-toast';
@@ -142,7 +142,6 @@ export default function Footer() {
                         className="text-card-foreground/80 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors duration-200 text-sm flex items-center space-x-2 group"
                       >
                         <span className="w-1.5 h-1.5 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                        {item.icon && <item.icon className="w-3 h-3" />}
                         <span>{item.name}</span>
                       </Link>
                     </li>

@@ -10,17 +10,11 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import {
-  Code,
   Smartphone,
   Globe,
   Palette,
-  Users,
-  Star,
-  Award,
   ChevronRight,
   Mail,
-  Github,
-  Linkedin,
   ExternalLink,
   Monitor,
   Cog,
@@ -29,7 +23,8 @@ import {
 } from 'lucide-react';
 import { parseVideoUrl } from '@/utils/videoUtils';
 
-const BASE_URL = import.meta.env.BASE_URL || '/';
+// Base URL for assets (available if needed)
+// const BASE_URL = import.meta.env.BASE_URL || '/';
 
 // Video Project Data - Real projects with actual videos
 const videoProjects: VideoProject[] = [
@@ -375,21 +370,20 @@ export default function Portfolio() {
   // Initialize with sample projects immediately to prevent empty state
   const [featuredProjects, setFeaturedProjects] = useState<Project[]>(sampleProjects.filter(p => p.featured));
   const [allProjects, setAllProjects] = useState<Project[]>(sampleProjects);
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  // Category filter state - used for future filtering feature
+  const [, setSelectedCategory] = useState<string>('all');
 
   // Load projects from localStorage (managed by admin)
   const loadProjects = () => {
     const storedProjects = localStorage.getItem('portfolio_projects');
     if (storedProjects) {
-      const projects = JSON.parse(storedProjects);
-      const featured = projects.filter((p: any) => p.featured);
-      console.log('Loaded from localStorage:', projects.length, 'projects,', featured.length, 'featured');
+      const projects = JSON.parse(storedProjects) as Project[];
+      const featured = projects.filter((p) => p.featured);
       setAllProjects(projects);
       setFeaturedProjects(featured);
     } else {
       // Use sample projects as fallback
       const featured = sampleProjects.filter(p => p.featured);
-      console.log('Using sample projects:', sampleProjects.length, 'projects,', featured.length, 'featured');
       setFeaturedProjects(featured);
       setAllProjects(sampleProjects);
     }
@@ -409,20 +403,20 @@ export default function Portfolio() {
     };
   }, []);
 
-  const filteredProjects = selectedCategory === 'all'
-    ? allProjects
-    : allProjects.filter(p => p.category === selectedCategory);
-
-  const categories = [
-    { id: 'all', name: 'All Projects', count: allProjects.length },
-    { id: 'fullstack', name: 'Full Stack', count: allProjects.filter(p => p.category === 'fullstack').length },
-    { id: 'bot', name: 'Telegram Bots', count: allProjects.filter(p => p.category === 'bot').length },
-    { id: 'ai', name: 'AI Tools', count: allProjects.filter(p => p.category === 'ai').length },
-    { id: 'trading', name: 'Trading Tools', count: allProjects.filter(p => p.category === 'trading').length },
-    { id: 'automation', name: 'Automation', count: allProjects.filter(p => p.category === 'automation').length },
-    { id: 'mobile', name: 'Mobile Apps', count: allProjects.filter(p => p.category === 'mobile').length },
-    { id: 'web', name: 'Web Apps', count: allProjects.filter(p => p.category === 'web').length }
-  ];
+  // Category filter and categories - reserved for future filtering feature
+  // const filteredProjects = selectedCategory === 'all'
+  //   ? allProjects
+  //   : allProjects.filter(p => p.category === selectedCategory);
+  // const categories = [
+  //   { id: 'all', name: 'All Projects', count: allProjects.length },
+  //   { id: 'fullstack', name: 'Full Stack', count: allProjects.filter(p => p.category === 'fullstack').length },
+  //   { id: 'bot', name: 'Telegram Bots', count: allProjects.filter(p => p.category === 'bot').length },
+  //   { id: 'ai', name: 'AI Tools', count: allProjects.filter(p => p.category === 'ai').length },
+  //   { id: 'trading', name: 'Trading Tools', count: allProjects.filter(p => p.category === 'trading').length },
+  //   { id: 'automation', name: 'Automation', count: allProjects.filter(p => p.category === 'automation').length },
+  //   { id: 'mobile', name: 'Mobile Apps', count: allProjects.filter(p => p.category === 'mobile').length },
+  //   { id: 'web', name: 'Web Apps', count: allProjects.filter(p => p.category === 'web').length }
+  // ];
 
   return (
     <div className="min-h-screen bg-background">

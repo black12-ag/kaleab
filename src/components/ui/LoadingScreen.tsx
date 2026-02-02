@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
+
+const LOADING_WORDS = ["INITIALIZING", "LOADING ASSETS", "COMPILING DATA", "PREPARING INTERFACE", "WELCOME"];
 
 const LoadingScreen = () => {
     const [loadingText, setLoadingText] = useState("INITIALIZING");
-    const words = ["INITIALIZING", "LOADING ASSETS", "COMPILING DATA", "PREPARING INTERFACE", "WELCOME"];
 
     useEffect(() => {
         let currentIndex = 0;
         const interval = setInterval(() => {
-            currentIndex = (currentIndex + 1) % words.length;
-            setLoadingText(words[currentIndex]);
+            currentIndex = (currentIndex + 1) % LOADING_WORDS.length;
+            setLoadingText(LOADING_WORDS[currentIndex]);
         }, 800);
         return () => clearInterval(interval);
     }, []);

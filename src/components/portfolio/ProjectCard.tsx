@@ -3,23 +3,17 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { EnhancedVideoPlayer } from '@/components/ui/enhanced-video-player';
-import { motion } from 'framer-motion';
 import {
-  ExternalLink,
-  Github,
   Star,
   Calendar,
   Code,
   Smartphone,
   Globe,
-  Eye,
   Heart,
   Zap,
   Bot,
   TrendingUp,
   Cpu,
-  MessageCircle,
-  BarChart3,
   Play,
   Video
 } from 'lucide-react';
@@ -108,7 +102,6 @@ const categoryColors = {
 
 export default function ProjectCard({ project, className = '', showFullDetails = false }: ProjectCardProps) {
   const [imageLoaded, setImageLoaded] = useState(false);
-  const [isLiked, setIsLiked] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
 
   const CategoryIcon = categoryIcons[project.category];
