@@ -8,6 +8,13 @@ export default function PortfolioVideoShowcase() {
   // Real project videos - Your actual project demonstrations
   const rawProjectVideos = [
     {
+      title: "ShegerPay - Live Production Platform",
+      description: "Ethiopia's leading payment gateway enabling businesses to accept payments via CBE Birr, Telebirr, Dashen Bank, PayPal, and Cryptocurrency. A modern, secure payment solution designed specifically for the Ethiopian market.",
+      videoUrl: "https://youtu.be/6Gr_YJy7yek",
+      tags: ["React", "FastAPI", "Fintech", "Payment Gateway"],
+      thumbnailUrl: "https://res.cloudinary.com/dnmolkncw/image/upload/v1770037157/portfolio_assets/wsd652g87vixajsl6moj.png"
+    },
+    {
       title: "FINDY Navigation - Live Demo",
       description: "Experience the Netflix-inspired navigation platform with real-time GPS tracking, AI-powered route planning, and beautiful dark UI. See the PWA in action with offline capabilities.",
       videoUrl: "https://youtu.be/RxOCL3Utcsk",
@@ -51,7 +58,8 @@ export default function PortfolioVideoShowcase() {
     return {
       ...video,
       videoUrl: videoInfo.embedUrl,
-      thumbnailUrl: videoInfo.thumbnailUrl || "/images/projects/portfolio.png"
+      // Use manual thumbnail if provided, otherwise fallback to parsed thumbnail or default
+      thumbnailUrl: (video as any).thumbnailUrl || videoInfo.thumbnailUrl || "/images/projects/portfolio.png"
     };
   });
 

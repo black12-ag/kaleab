@@ -58,6 +58,8 @@ interface HeroSettings {
 }
 
 const ADMIN_PASSWORD = '2580';
+const CLOUDINARY_CLOUD_NAME = 'dnmolkncw';
+const CLOUDINARY_UPLOAD_PRESET = 'portfolio_upload';
 const STORAGE_KEY = 'portfolio_projects';
 const AUTH_KEY = 'admin_authenticated';
 const CV_KEY = 'portfolio_cv';
@@ -274,8 +276,28 @@ export default function AdminPanel() {
     });
   };
 
+  // generic upload function
+  const uploadToCloudinary = async (file: File, resourceType: 'image' | 'video' = 'image') => {
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET); 
+
+    const response = await fetch(
+      `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/${resourceType}/upload`,
+      { method: 'POST', body: formData }
+    );
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error?.message || 'Upload failed');
+    }
+
+    const data = await response.json();
+    return data.secure_url;
+  };
+
   // Handle profile photo upload
-  const handleProfilePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleProfilePhotoUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       if (!file.type.startsWith('image/')) {
@@ -287,22 +309,27 @@ export default function AdminPanel() {
         return;
       }
       
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        const dataUrl = reader.result as string;
-        saveProfilePhoto(dataUrl);
-        
+      try {
+        toast({ title: 'Uploading Profile Photo...', description: 'Please wait...' });
+        const url = await uploadToCloudinary(file, 'image');
+        saveProfilePhoto(url);
         toast({
           title: 'Profile Photo Updated',
           description: 'Your profile photo has been updated successfully.',
         });
-      };
-      reader.readAsDataURL(file);
+      } catch (error) {
+        console.error(error);
+        toast({
+          title: 'Upload Failed',
+          description: 'Could not upload image to cloud.',
+          variant: 'destructive'
+        });
+      }
     }
   };
 
   // Handle hero image file upload
-  const handleHeroImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleHeroImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       if (!file.type.startsWith('image/')) {
@@ -313,50 +340,84 @@ export default function AdminPanel() {
         });
         return;
       }
-      
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        const dataUrl = reader.result as string;
-        setNewImageUrl(dataUrl);
+
+      try {
+        toast({ title: 'Uploading Hero Image...', description: 'Please wait...' });
+        const url = await uploadToCloudinary(file, 'image');
+        setNewImageUrl(url);
         setNewImageName(file.name.split('.')[0]);
-        
         toast({
-          title: 'Image Loaded',
+          title: 'Image Uploaded',
           description: 'Image is ready to be added to the hero section.',
         });
-      };
-      reader.readAsDataURL(file);
+      } catch (error) {
+        toast({
+          title: 'Upload Failed',
+          description: 'Could not upload image to cloud.',
+          variant: 'destructive'
+        });
+      }
     }
   };
 
-  // Handle CV upload
-  const handleCVUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+  // Handle CV upload with Cloudinary
+  const handleCVUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       if (file.type !== 'application/pdf') {
-        toast({
-          title: 'Invalid File',
-          description: 'Please upload a PDF file.',
-          variant: 'destructive'
-        });
+        toast({ title: 'Invalid File', description: 'Please upload a PDF file.', variant: 'destructive' });
         return;
       }
       
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        const dataUrl = reader.result as string;
-        localStorage.setItem(CV_KEY, dataUrl);
-        setCvUrl(dataUrl);
+      try {
+        toast({ title: 'Uploading CV...', description: 'This may take a moment...' });
+        // Use 'auto' or 'image' (Cloudinary often treats simple PDFs as image-like for delivery, or 'raw' for docs)
+        // For standard PDFs that you want to link to, 'auto' is usually safe, or 'raw'.
+        // 'image' resource type in Cloudinary supports PDF, allowing format conversion. 'raw' is for arbitrary files.
+        // Let's use 'auto' to let Cloudinary decide, or explicitly 'image' if we want preview generation potential.
+        // However, standard docs say use 'auto' or 'raw'. Let's try 'auto'.
+        const url = await uploadToCloudinary(file, 'auto');
         
-        // Update the public CV file
-        window.dispatchEvent(new CustomEvent('cvUpdated', { detail: dataUrl }));
-        
+        handleCVUrlUpdate(url);
         toast({
           title: 'CV Updated',
-          description: 'Your CV has been updated successfully.',
+          description: 'Your CV has been uploaded to the cloud successfully.',
         });
-      };
-      reader.readAsDataURL(file);
+      } catch (error) {
+        console.error(error);
+        toast({
+          title: 'Upload Failed',
+          description: 'Could not upload CV to cloud.',
+          variant: 'destructive'
+        });
+      }
+    }
+  };
+
+  // Handle Project Image Upload
+  const handleProjectImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      if (!file.type.startsWith('image/')) {
+        toast({ title: 'Invalid File', description: 'Please upload an image file.', variant: 'destructive' });
+        return;
+      }
+
+      try {
+        toast({ title: 'Uploading Project Image...', description: 'Please wait...' });
+        const url = await uploadToCloudinary(file, 'image');
+        setFormData(prev => ({ ...prev, image: url }));
+        toast({
+          title: 'Image Uploaded',
+          description: 'Project image is ready.',
+        });
+      } catch (error) {
+        toast({
+          title: 'Upload Failed',
+          description: 'Could not upload image.',
+          variant: 'destructive'
+        });
+      }
     }
   };
 
@@ -463,105 +524,29 @@ export default function AdminPanel() {
     setIsCreating(false);
   };
 
-  // Handle video file upload - convert to base64 for storage
-  const handleVideoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+  // Handle video file upload
+  const handleVideoUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      // Check file type
       if (!file.type.startsWith('video/')) {
-        toast({
-          title: 'Invalid File',
-          description: 'Please upload a video file.',
-          variant: 'destructive'
-        });
+        toast({ title: 'Invalid File', description: 'Please upload a video file.', variant: 'destructive' });
         return;
       }
 
-      // Size warnings and limits
-      if (file.size > 600 * 1024 * 1024) { // 600MB hard limit
-        toast({
-          title: 'File Too Large',
-          description: 'Video files must be under 600MB. For better performance, consider using YouTube or Vimeo for very large files.',
-          variant: 'destructive'
-        });
-        return;
-      }
-
-      if (file.size > 100 * 1024 * 1024) { // 100MB warning for very large files
-        toast({
-          title: 'Very Large Video File',
-          description: 'This file is quite large and may take several minutes to upload and process. Please be patient.',
-        });
-      } else if (file.size > 50 * 1024 * 1024) { // 50MB warning
-        toast({
-          title: 'Large Video File',
-          description: 'This may take a moment to upload. Consider using YouTube or Vimeo for better performance.',
-        });
-      }
-      
-      // Show loading state
       setIsVideoUploading(true);
-      setVideoUploadProgress(0);
-      
-      const isLargeFile = file.size > 50 * 1024 * 1024; // 50MB+
-      
-      if (isLargeFile) {
-        toast({
-          title: 'Uploading Large Video...',
-          description: 'This may take several minutes. Please keep this tab open and avoid refreshing.',
-        });
-      } else {
-        toast({
-          title: 'Uploading Video...',
-          description: 'Please wait while your video is being processed.',
-        });
-      }
-      
-      // Convert to base64 for storage
-      const reader = new FileReader();
-      
-      // Simulate progress for large files (FileReader doesn't provide real progress)
-      let progressInterval: NodeJS.Timeout | null = null;
-      if (isLargeFile) {
-        let progress = 0;
-        progressInterval = setInterval(() => {
-          progress += Math.random() * 10;
-          if (progress > 90) progress = 90; // Don't reach 100% until actually done
-          setVideoUploadProgress(progress);
-        }, 1000);
-      }
-      
-      reader.onloadend = () => {
-        if (progressInterval) clearInterval(progressInterval);
+      setVideoUploadProgress(10); // Start progress
+
+      try {
+        const url = await uploadToCloudinary(file, 'video');
         setVideoUploadProgress(100);
-        
-        const dataUrl = reader.result as string;
-        setFormData(prev => ({ ...prev, videoUrl: dataUrl }));
-        
-        setTimeout(() => {
-          setIsVideoUploading(false);
-          setVideoUploadProgress(0);
-        }, 1000);
-        
-        toast({
-          title: 'Video Uploaded Successfully!',
-          description: `${file.name} (${(file.size / 1024 / 1024).toFixed(1)}MB) has been uploaded and is ready to use.`,
-        });
-      };
-      
-      reader.onerror = () => {
-        if (progressInterval) clearInterval(progressInterval);
+        setFormData(prev => ({ ...prev, videoUrl: url }));
+        toast({ title: 'Video Uploaded', description: 'Video has been successfully stored in the cloud.' });
+      } catch (error) {
+        console.error(error);
+        toast({ title: 'Upload Failed', description: 'Failed to upload video.', variant: 'destructive' });
+      } finally {
         setIsVideoUploading(false);
-        setVideoUploadProgress(0);
-        
-        toast({
-          title: 'Upload Failed',
-          description: 'There was an error uploading your video. Please try again.',
-          variant: 'destructive'
-        });
-      };
-      
-      reader.readAsDataURL(file);
+      }
     }
   };
 
@@ -1113,13 +1098,28 @@ export default function AdminPanel() {
 
                 {/* Image URL */}
                 <div>
-                  <Label htmlFor="image">Image URL</Label>
-                  <Input
-                    id="image"
-                    value={formData.image}
-                    onChange={(e) => setFormData(prev => ({ ...prev, image: e.target.value }))}
-                    placeholder="https://example.com/image.jpg"
-                  />
+                  <Label htmlFor="image">Project Image</Label>
+                  <div className="space-y-2 mt-2">
+                    <Input
+                      id="image"
+                      value={formData.image}
+                      onChange={(e) => setFormData(prev => ({ ...prev, image: e.target.value }))}
+                      placeholder="https://example.com/image.jpg"
+                    />
+                    
+                     <div className="flex items-center gap-2">
+                      <div className="flex-1 border-t border-gray-200"></div>
+                      <span className="text-xs text-gray-500 px-2">OR UPLOAD</span>
+                      <div className="flex-1 border-t border-gray-200"></div>
+                    </div>
+
+                    <Input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleProjectImageUpload}
+                      className="cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-primary-foreground hover:file:bg-primary/90"
+                    />
+                  </div>
                 </div>
 
                 {/* Video - Unified Input */}

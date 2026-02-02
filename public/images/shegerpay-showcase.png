@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>ShegerPay - Ethiopia's #1 Payment Gateway | CBE, Telebirr, Crypto & PayPal</title>
+    <meta name="title" content="ShegerPay - Ethiopia's #1 Payment Gateway | CBE, Telebirr, Crypto & PayPal" />
+    <meta name="description" content="Accept payments in Ethiopia instantly with ShegerPay. Support for CBE, Telebirr, Dashen, Awash, PayPal, and Cryptocurrency. Zero setup fees, 10+ SDK languages, real-time verification." />
+    <meta name="keywords" content="Ethiopia payment gateway, African payment gateway, Africa fintech, CBE payment, Telebirr integration, Ethiopian fintech, crypto payments Ethiopia, PayPal Ethiopia, mobile money Africa, payment API, Dashen Bank, Awash Bank, Ethiopian payment processor, best payment gateway Africa, African payment processor, East Africa payments, Sub-Saharan Africa fintech, global payment gateway, international payment gateway, Ethiopian bank integration, CBE API, Telebirr API, accept payments Ethiopia, accept payments Africa, payment gateway for Africa, African e-commerce payments, Ethiopian online payments, Africa crypto payments, blockchain payments Africa, USDT payments Ethiopia, Bitcoin Ethiopia, payment solutions Africa, merchant services Ethiopia, POS Ethiopia, mobile wallet Africa, digital payments Ethiopia, fintech Ethiopia, payment platform Africa, African payment solutions, Ethiopia merchant account, cross-border payments Africa, remittance Ethiopia, money transfer Ethiopia, LakiPay alternative, Chapa alternative, Santimpay alternative, YenePay alternative, Arifpay alternative, Kifiya alternative, CashGo alternative, HelloCash alternative, EthSwitch payment, PawaPay Ethiopia, Paykassma alternative, Flutterwave Ethiopia, Paystack Ethiopia, M-Pesa Ethiopia" />
+    <meta name="author" content="ShegerPay" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="3 days" />
+    <meta name="theme-color" content="#7C3AED" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://shegerpay.com/" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://shegerpay.com/" />
+    <meta property="og:title" content="ShegerPay - Ethiopia's #1 Payment Gateway" />
+    <meta property="og:description" content="Accept CBE, Telebirr, PayPal, and Crypto payments instantly. Ethiopia's most trusted payment gateway with 10+ SDK languages and real-time verification." />
+    <meta property="og:image" content="https://shegerpay.com/assets/shegerpay-og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="ShegerPay" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://shegerpay.com/" />
+    <meta name="twitter:title" content="ShegerPay - Ethiopia's #1 Payment Gateway" />
+    <meta name="twitter:description" content="Accept CBE, Telebirr, PayPal, and Crypto payments instantly. Ethiopia's trusted payment solution." />
+    <meta name="twitter:image" content="https://shegerpay.com/assets/shegerpay-og.png" />
+    <meta name="twitter:creator" content="@shegerpay" />
+    
+    <!-- Geo Tags for Ethiopian market -->
+    <meta name="geo.region" content="ET" />
+    <meta name="geo.placename" content="Addis Ababa" />
+    <meta name="geo.position" content="9.0247;38.7468" />
+    <meta name="ICBM" content="9.0247, 38.7468" />
+    
+    <!-- Bing Specific -->
+    <meta name="msvalidate.01" content="" />
+    <meta name="bingbot" content="index, follow" />
+    
+    <!-- Schema.org JSON-LD for Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "ShegerPay",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "1250"
+      },
+      "description": "Ethiopia's leading payment gateway for CBE, Telebirr, Dashen, PayPal and Cryptocurrency payments.",
+      "url": "https://shegerpay.com",
+      "logo": "https://shegerpay.com/assets/shegerpay-icon1.png",
+      "screenshot": "https://shegerpay.com/assets/shegerpay-dashboard.png"
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ShegerPay",
+      "url": "https://shegerpay.com",
+      "logo": "https://shegerpay.com/assets/shegerpay-icon1.png",
+      "description": "Ethiopia's modern payment gateway for businesses",
+      "foundingDate": "2024",
+      "foundingLocation": "Addis Ababa, Ethiopia",
+      "sameAs": [
+        "https://t.me/shegerpay0",
+        "https://github.com/black12-ag/ShegerPay"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "support@shegerpay.com",
+        "availableLanguage": ["English", "Amharic"]
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Ethiopia"
+      }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "ShegerPay",
+      "url": "https://shegerpay.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://shegerpay.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/png" href="/assets/shegerpay-icon1.png" />
+    <link rel="apple-touch-icon" href="/assets/shegerpay-icon1.png" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- iOS PWA Support -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="ShegerPay" />
+    <link rel="apple-touch-startup-image" href="/assets/shegerpay-icon1.png" />
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://api.shegerpay.com" />
+    <link rel="dns-prefetch" href="https://api.shegerpay.com" />
+    
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com https://www.gstatic.com https://apis.google.com https://esm.sh https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://r2cdn.perplexity.ai; img-src 'self' data: https: blob:; connect-src 'self' https://api.shegerpay.com https://*.firebaseio.com https://*.googleapis.com https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://firestore.googleapis.com wss://*.firebaseio.com https://esm.sh https://www.google.com https://api.binance.com https://data-api.binance.vision https://api.coingecko.com; frame-src https://www.google.com https://*.firebaseapp.com https://apis.google.com;" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- reCAPTCHA v3 is loaded dynamically by AuthPage.tsx with render parameter -->
+
+    <script type="importmap">
+      {
+        "imports": {
+          "recharts": "https://esm.sh/recharts@^3.6.0",
+          "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+          "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0",
+          "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+          "react/": "https://esm.sh/react@^19.2.3/",
+          "react": "https://esm.sh/react@^19.2.3"
+        }
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-B-_iTwNY.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-ypKhxrnR.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

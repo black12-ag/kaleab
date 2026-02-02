@@ -1,6 +1,31 @@
 // Portfolio projects data
 export const munirProjects = [
   {
+    id: '20',
+    title: 'ShegerPay',
+    description: "Ethiopia's #1 Payment Gateway for businesses",
+    longDescription: "Ethiopia's leading payment gateway enabling businesses to accept payments via CBE Birr, Telebirr, Dashen Bank, PayPal, and Cryptocurrency. A modern, secure payment solution designed specifically for the Ethiopian market with multi-language support (English and Amharic).",
+    image: 'https://res.cloudinary.com/dnmolkncw/image/upload/v1770037157/portfolio_assets/wsd652g87vixajsl6moj.png',
+    videoUrl: 'https://youtu.be/6Gr_YJy7yek',
+    technologies: ['React', 'React Router', 'Recharts', 'Payment Gateway API', 'TypeScript'],
+    category: 'Full Stack Development',
+    githubUrl: 'https://github.com/black12-ag/shegerpay-sdk',
+    liveUrl: 'https://shegerpay.com/',
+    featured: true,
+    status: 'completed',
+    completionDate: '2025-01-20',
+    features: [
+      'CBE Birr integration',
+      'Telebirr payment support',
+      'Dashen Bank payments',
+      'PayPal integration',
+      'Cryptocurrency payments',
+      'Bilingual support (English/Amharic)',
+      'Real-time transaction dashboard',
+      'Secure payment processing'
+    ]
+  },
+  {
     id: '8',
     title: 'Ethio Viral',
     description: 'All-in-one SMM services platform',
@@ -298,8 +323,7 @@ export const munirProjects = [
     videoUrl: 'https://youtu.be/eSOB2tai8hc',
     technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Authentication'],
     category: 'Web Development',
-    githubUrl: 'https://github.com/black12-ag/wholecase',
-    liveUrl: 'https://wholecase.pages.dev/',
+    liveUrl: 'https://whole-case.com/',
     featured: true,
     status: 'completed',
     completionDate: '2024-12-18',
