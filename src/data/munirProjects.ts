@@ -161,6 +161,48 @@ export const munirProjects = [
     ]
   },
   {
+    id: '21',
+    title: 'Wings Reflexology',
+    description: 'Modern Luxury Wellness Website',
+    longDescription: 'A sophisticated, nature-integrated wellness website featuring a minimalist luxury layout, botanical elements, and a serene user experience. Designed to reflect balance and modern relaxation.',
+    image: 'https://res.cloudinary.com/dnmolkncw/image/upload/v1770302722/portfolio_assets/lirsbhervqmjfug5fozd.jpg',
+    technologies: ['React', 'Tailwind CSS', 'Framer Motion', 'Vite'],
+    category: 'Web Development',
+    liveUrl: 'https://wings-reflexology-modern-luxury.netlify.app/',
+    featured: true,
+    status: 'completed',
+    completionDate: '2025-02-05',
+    features: [
+      'Modern luxury aesthetic',
+      'Botanical design elements',
+      'Responsive mobile-first layout',
+      'Smooth scroll animations',
+      'Service booking integration',
+      'Performance optimized'
+    ]
+  },
+  {
+    id: '22',
+    title: 'Bliss Reflexology',
+    description: 'Premium One-Page Wellness Site',
+    longDescription: 'A high-end one-page wellness site focused on reflexology and holistic health. Features a clean, single-page architecture with smooth navigation and an immersive visual hierarchy.',
+    image: 'https://res.cloudinary.com/dnmolkncw/image/upload/v1770302723/portfolio_assets/zq2mq5dkruc8bpxpcnxg.jpg',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Cloudflare Pages'],
+    category: 'Web Development',
+    liveUrl: 'https://one-page-wellness-site.pages.dev/',
+    featured: true,
+    status: 'completed',
+    completionDate: '2025-02-05',
+    features: [
+      'Single-page application (SPA)',
+      'High-performance loading',
+      'Interactive service menu',
+      'Contact form integration',
+      'SEO optimized structure',
+      'Cross-browser compatibility'
+    ]
+  },
+  {
     id: '1',
     title: 'E-Commerce Platform',
     description: 'Full-stack e-commerce solution with payment integration',
