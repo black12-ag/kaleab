@@ -103,6 +103,11 @@ const categoryColors = {
 export default function ProjectCard({ project, className = '', showFullDetails = false }: ProjectCardProps) {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const allImages = project.images && project.images.length > 0 ? project.images : [project.image];
+  const hasMultipleImages = allImages.length > 1;
+  const currentImage = allImages[currentImageIndex];
 
   const CategoryIcon = categoryIcons[project.category];
   const categoryColor = categoryColors[project.category];
@@ -164,13 +169,36 @@ export default function ProjectCard({ project, className = '', showFullDetails =
               />
             </div>
           ) : (
-            <div className={`aspect-video bg-gray-100 ${!imageLoaded ? 'animate-pulse' : ''}`}>
+            <div className={`aspect-video bg-gray-100 relative ${!imageLoaded ? 'animate-pulse' : ''}`}>
               <img
-                src={project.image}
+                src={currentImage}
                 alt={project.title}
                 className="w-full h-full object-cover transition-transform duration-400 ease-out group-hover:scale-110"
                 onLoad={handleImageLoad}
               />
+
+              {/* Image Gallery Navigation */}
+              {hasMultipleImages && (
+                <>
+                  <button
+                    onClick={(e) => { e.stopPropagation(); setCurrentImageIndex((prev) => (prev - 1 + allImages.length) % allImages.length); }}
+                    className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full w-7 h-7 flex items-center justify-center text-sm transition-all z-10"
+                  >‹</button>
+                  <button
+                    onClick={(e) => { e.stopPropagation(); setCurrentImageIndex((prev) => (prev + 1) % allImages.length); }}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full w-7 h-7 flex items-center justify-center text-sm transition-all z-10"
+                  >›</button>
+                  <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1 z-10">
+                    {allImages.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={(e) => { e.stopPropagation(); setCurrentImageIndex(i); }}
+                        className={`w-1.5 h-1.5 rounded-full transition-all ${i === currentImageIndex ? 'bg-white scale-125' : 'bg-white/50'}`}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
 
               {/* Video Play Button Overlay */}
               {hasVideo && (

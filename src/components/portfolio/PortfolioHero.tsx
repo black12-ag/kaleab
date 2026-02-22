@@ -185,7 +185,7 @@ export default function PortfolioHero({ imageUrls }: PortfolioHeroProps) {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.2, duration: 0.8 }}
                 >
-                  Hey, I'm{' '}
+                  <span className="text-red-500">Hey, I'm</span>{' '}
                   <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                     Munir
                   </span>
