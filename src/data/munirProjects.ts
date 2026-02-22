@@ -1,6 +1,28 @@
 // Portfolio projects data
 export const munirProjects = [
   {
+    id: '28',
+    title: '3D Interactive Portfolio',
+    description: 'Immersive 3D portfolio experience built with Three.js and React',
+    longDescription: 'A stunning 3D interactive portfolio website featuring immersive Three.js scenes, animated 3D models, smooth camera transitions, and a fully interactive environment. Built to showcase projects and skills in a unique, memorable way that stands out from traditional portfolios.',
+    image: '/images/portfolio-3d-showcase.png',
+    technologies: ['React', 'Three.js', 'TypeScript', 'Framer Motion', 'WebGL', 'GSAP'],
+    category: 'Web Development',
+    githubUrl: 'https://github.com/black12-ag/porfolio-3d.git',
+    liveUrl: 'https://munir-3d-portfolio.netlify.app/',
+    featured: true,
+    status: 'completed',
+    completionDate: '2025-02-22',
+    features: [
+      'Immersive 3D scene with Three.js & WebGL',
+      'Interactive 3D models and animations',
+      'Smooth camera transitions between sections',
+      'Fully responsive across all devices',
+      'GSAP-powered scroll animations',
+      'Optimized performance with lazy loading'
+    ]
+  },
+  {
     id: '20',
     title: 'ShegerPay',
     description: "Ethiopia's #1 Payment Gateway for businesses",
