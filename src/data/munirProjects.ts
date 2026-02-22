@@ -92,6 +92,31 @@ export const munirProjects = [
     ]
   },
   {
+    id: '27',
+    title: 'Restaurant Menu 3D Builder',
+    description: 'Interactive 3D restaurant menu builder with live preview and QR code generation',
+    longDescription: 'A powerful web-based restaurant menu builder that lets restaurant owners create stunning 3D-style digital menus in minutes. Features a drag-and-drop interface, real-time 3D card previews, category management, dish customization with images and pricing, and instant QR code generation for table-side scanning. Customers can browse the menu on any device with a rich, immersive visual experience.',
+    image: '/images/restaurant-menu-3d-builder.png',
+    videoUrl: 'https://youtube.com/shorts/af5BqjEJLPM?feature=share',
+    technologies: ['React', 'TypeScript', 'Three.js', 'Tailwind CSS', 'Framer Motion', 'QR Code API'],
+    category: 'Web Development',
+    githubUrl: 'https://github.com/black12-ag/3dmenu.git',
+    liveUrl: 'https://restaurant-menu-3d-builder.netlify.app/menu',
+    featured: true,
+    status: 'completed',
+    completionDate: '2025-02-22',
+    features: [
+      'Drag-and-drop menu builder interface',
+      'Real-time 3D dish card previews',
+      'Category & item management',
+      'Custom dish images, prices & descriptions',
+      'Instant QR code generation for tables',
+      'Mobile-responsive customer menu view',
+      'Dark/light theme support',
+      'One-click publish & share'
+    ]
+  },
+  {
     id: '15',
     title: 'Apple.com High-Fidelity Clone',
     description: 'Pixel-perfect Apple.com clone with 60+ pages and responsive design',
@@ -200,6 +225,102 @@ export const munirProjects = [
       'Contact form integration',
       'SEO optimized structure',
       'Cross-browser compatibility'
+    ]
+  },
+  {
+    id: '23',
+    title: 'EllaTech Inventory',
+    description: 'Modern inventory management system for tracking stock and sales',
+    longDescription: 'A comprehensive inventory management system designed for businesses to track stock levels, manage sales, and generate reports. Features real-time updates, barcode scanning support, and an intuitive dashboard for efficient warehouse management.',
+    image: '/images/ellatech-inventory.png',
+    videoUrl: 'https://youtube.com/shorts/XcciGPpc63s',
+    technologies: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'Tailwind CSS'],
+    category: 'Full Stack Development',
+    githubUrl: 'https://github.com/black12-ag/ellatech.git',
+    liveUrl: 'https://ellatech-inventory-munir.netlify.app/',
+    featured: true,
+    status: 'completed',
+    completionDate: '2025-02-20',
+    features: [
+      'Real-time inventory tracking',
+      'Stock level alerts',
+      'Sales reporting dashboard',
+      'Barcode scanning support',
+      'Multi-user access control',
+      'Export to PDF/Excel'
+    ]
+  },
+  {
+    id: '24',
+    title: 'Coffee Shop Mobile App UI/UX',
+    description: 'Modern coffee ordering app with intuitive user experience and beautiful visual design',
+    longDescription: 'A comprehensive UI/UX design for a coffee shop mobile application featuring user research, wireframing, high-fidelity mockups, and an interactive prototype. The design focuses on seamless ordering experience, personalized recommendations, and a warm, inviting aesthetic that reflects the coffee shop brand.',
+    image: '/images/coffee-shop-ui/Rectangle 13.png',
+    images: [
+      '/images/coffee-shop-ui/Rectangle 13.png',
+      '/images/coffee-shop-ui/Group 33.png',
+      '/images/coffee-shop-ui/image 1.png',
+      '/images/coffee-shop-ui/image 2.png',
+      '/images/coffee-shop-ui/image 3.png'
+    ],
+    technologies: ['Figma', 'UI Design', 'UX Research', 'Prototyping', 'Mobile Design'],
+    category: 'UI/UX Design',
+    featured: true,
+    status: 'completed',
+    completionDate: '2025-02-20',
+    features: [
+      'User research & personas',
+      'Wireframes & user flows',
+      'High-fidelity mockups',
+      'Interactive prototype',
+      'Design system & components',
+      'Mobile-first responsive design'
+    ]
+  },
+  {
+    id: '25',
+    title: 'Vybe - AI App Builder',
+    description: 'AI-powered platform that generates production-ready React Native and Next.js apps from plain English',
+    longDescription: 'An innovative AI-powered app builder that transforms natural language descriptions into production-ready mobile and web applications. Features real-time cost tracking, multiple Claude AI models, 20+ MCP integrations, and one-click deployment to Netlify or Cloudflare. Supports React Native with Expo for mobile and Next.js 14 for web.',
+    image: '/images/vybe-showcase.png',
+    technologies: ['React', 'TypeScript', 'AI/ML', 'Claude API', 'Next.js 14', 'React Native', 'Expo', 'Supabase'],
+    category: 'AI/ML',
+    liveUrl: 'https://vybe-ute.pages.dev/',
+    featured: true,
+    status: 'completed',
+    completionDate: '2025-02-21',
+    features: [
+      'AI code generation with Claude models',
+      'Real-time cost tracking with token counts',
+      '20+ MCP integrations (Supabase, GitHub, Netlify, Figma)',
+      'One-click deploy to Netlify/Cloudflare',
+      'React Native + Expo for mobile',
+      'Next.js 14 with TypeScript for web',
+      'Supabase integration with auth & RLS'
+    ]
+  },
+  {
+    id: '26',
+    title: 'LakiRemit UI Clone',
+    description: 'UI/UX clone of Ethiopian remittance and influencer gifting mobile app (UI Only)',
+    longDescription: 'A pixel-perfect UI clone of the LakiRemit mobile application, an Ethiopian remittance and influencer gifting platform. This project replicates the visual design, layout, and user interface elements including the home screen with bank rates, influencer discovery, and gifting features. Note: This is a UI demonstration only - not functional code.',
+    image: '/images/lakiremit-showcase.png',
+    videoUrl: 'https://youtube.com/shorts/OUUt90s0yqo',
+    technologies: ['React Native', 'Expo', 'TypeScript', 'UI Clone', 'Mobile Design'],
+    category: 'Mobile Development',
+    githubUrl: 'https://github.com/black12-ag/laki.git',
+    liveUrl: 'https://expo.dev/@yourusername/lakiremit-clone',
+    featured: true,
+    status: 'completed',
+    completionDate: '2025-02-21',
+    features: [
+      'Pixel-perfect UI replication',
+      'Home screen with bank rates display',
+      'Influencer discovery interface',
+      'Gifting feature UI',
+      'Bottom navigation bar',
+      'QR code for Expo Go preview',
+      'Responsive mobile layouts'
     ]
   },
   {

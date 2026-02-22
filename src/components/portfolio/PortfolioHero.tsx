@@ -185,9 +185,9 @@ export default function PortfolioHero({ imageUrls }: PortfolioHeroProps) {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.2, duration: 0.8 }}
                 >
-                  Hi, I'm{' '}
+                  Hey, I'm{' '}
                   <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                    Munir Ayub
+                    Munir
                   </span>
                 </motion.h1>
                 <motion.h2
@@ -196,7 +196,7 @@ export default function PortfolioHero({ imageUrls }: PortfolioHeroProps) {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.4, duration: 0.8 }}
                 >
-                  Full Stack Developer | Apps, Web & Automation
+                  I build apps, websites & automation tools
                 </motion.h2>
                 <motion.p
                   className="text-lg sm:text-xl text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
@@ -204,8 +204,8 @@ export default function PortfolioHero({ imageUrls }: PortfolioHeroProps) {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.6, duration: 0.8 }}
                 >
-                  I build scalable applications that solve real-world problems. From e-commerce platforms to mobile apps,
-                  I transform your ideas into powerful digital solutions.
+                  Been shipping code for 3+ years. From payment gateways like ShegerPay to AI tools like Vybe, 
+                  I turn complex problems into clean, working products. Based in Ethiopia, working worldwide.
                 </motion.p>
               </motion.div>
 

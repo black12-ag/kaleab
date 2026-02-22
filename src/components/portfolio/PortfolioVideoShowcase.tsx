@@ -8,6 +8,13 @@ export default function PortfolioVideoShowcase() {
   // Real project videos - Your actual project demonstrations
   const rawProjectVideos = [
     {
+      title: "EllaTech Inventory - Modern Stock Management",
+      description: "Comprehensive inventory management system with real-time stock tracking, barcode scanning, and sales reporting. Built with React, TypeScript, and Node.js for efficient warehouse management.",
+      videoUrl: "https://youtube.com/shorts/XcciGPpc63s",
+      tags: ["React", "TypeScript", "Node.js", "MongoDB", "Inventory"],
+      thumbnailUrl: "/images/ellatech-inventory.png"
+    },
+    {
       title: "ShegerPay - Live Production Platform",
       description: "Ethiopia's leading payment gateway enabling businesses to accept payments via CBE Birr, Telebirr, Dashen Bank, PayPal, and Cryptocurrency. A modern, secure payment solution designed specifically for the Ethiopian market.",
       videoUrl: "https://youtu.be/6Gr_YJy7yek",
