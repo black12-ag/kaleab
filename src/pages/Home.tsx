@@ -340,18 +340,15 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-slate-700 text-white">
+      <section className="py-16 bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Start Your Project?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Let's discuss your ideas and create something amazing together.
-          </p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3 text-gray-900 dark:text-white">Ready to Start Your Project?</h2>
+          <p className="text-gray-500 dark:text-gray-400 mb-6">Let's discuss your ideas and build something great.</p>
           <Button
             size="lg"
-            className="bg-white text-blue-600 hover:bg-gray-100"
+            className="bg-blue-600 hover:bg-blue-700 text-white"
             onClick={() => navigate('/contact')}
           >
-            <Heart className="w-5 h-5 mr-2" />
             Let's Work Together
           </Button>
         </div>
