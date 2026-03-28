@@ -1,6 +1,31 @@
 // Portfolio projects data
 export const munirProjects = [
   {
+    id: '29',
+    title: 'FESAJ Tracker',
+    description: 'Flutter business management app for tracking inventory, sales, and revenue',
+    longDescription: 'A professional Flutter + Supabase business management system designed for small-scale liquid soap producers and similar businesses. Tracks inventory, sales, purchases, accounts, loans, reports, revenue, and profit with a premium animated UI. Features image upload for inventory items, partner/employee/expense management, and detailed overseas/revenue reports.',
+    image: '/images/fesaj-tracker-showcase.png',
+    // videoUrl: '', // Add video URL here when ready
+    technologies: ['Flutter', 'Dart', 'Supabase', 'Riverpod', 'PostgreSQL', 'Flutter Secure Storage'],
+    category: 'Mobile Development',
+    githubUrl: 'https://github.com/black12-ag/Tracker.git',
+    apkUrl: 'https://github.com/black12-ag/Tracker/blob/main/apk/tracker-v1.0.0+10.apk',
+    featured: true,
+    status: 'completed',
+    completionDate: '2025-03-01',
+    features: [
+      'Premium animated splash screen',
+      'Inventory tracking with image upload',
+      'Sales & purchase order management',
+      'Partner, employee & expense management',
+      'Account balance monitoring',
+      'Revenue, profit & overseas reports',
+      'Supabase Auth & Postgres backend',
+      'APK available for download'
+    ]
+  },
+  {
     id: '28',
     title: '3D Interactive Portfolio',
     description: 'Immersive 3D portfolio experience built with Three.js and React',

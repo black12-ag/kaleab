@@ -33,6 +33,7 @@ export interface Project {
   category: 'web' | 'mobile' | 'fullstack' | 'design' | 'bot' | 'ai' | 'trading' | 'automation' | 'other';
   liveUrl?: string;
   githubUrl?: string;
+  apkUrl?: string;
   featured?: boolean;
   completedDate: string;
   client?: string;
@@ -246,6 +247,15 @@ export default function ProjectCard({ project, className = '', showFullDetails =
                 💻 <span className="ml-2">GitHub Repo</span>
               </Button>
             )}
+            {project.apkUrl && (
+              <Button
+                size="sm"
+                className="bg-gradient-to-r from-green-600 to-emerald-600 text-white hover:from-green-700 hover:to-emerald-700 shadow-lg hover:shadow-xl border-0 px-4 py-2 hover:scale-110 active:scale-95 transition-transform"
+                onClick={() => window.open(project.apkUrl, '_blank')}
+              >
+                📥 <span className="ml-2">Download APK</span>
+              </Button>
+            )}
           </div>
 
           {/* Status Badge Removed */}
@@ -387,6 +397,17 @@ export default function ProjectCard({ project, className = '', showFullDetails =
                   onClick={() => window.open(project.githubUrl, '_blank')}
                 >
                   💻 <span className="ml-2">GitHub Repo</span>
+                </Button>
+              </div>
+            )}
+            {project.apkUrl && (
+              <div className="flex-1">
+                <Button
+                  variant="outline"
+                  className="w-full border-2 border-green-400 dark:border-green-600 hover:border-green-500 dark:hover:border-green-500 text-green-700 dark:text-green-400 hover:bg-green-50 dark:hover:bg-green-900/20 font-semibold transition-all duration-300 h-10 sm:h-11 hover:scale-[1.02] active:scale-[0.98]"
+                  onClick={() => window.open(project.apkUrl, '_blank')}
+                >
+                  📥 <span className="ml-2">Download APK</span>
                 </Button>
               </div>
             )}
