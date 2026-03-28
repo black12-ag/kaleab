@@ -28,7 +28,7 @@ export default function PortfolioVideoShowcase() {
       tags: ["React", "TypeScript", "Google Maps", "PWA", "Navigation"]
     },
     {
-      title: "Munir Demo Chat - Short Demo",
+      title: "Kaleab Demo Chat - Short Demo",
       description: "Quick showcase of cross-platform chat app built with React Native and Expo. Features modern UI, media sharing demos, and responsive design.",
       videoUrl: "https://youtube.com/shorts/C48THcA7eXY?si=1NiAibFxLW0Gfz1V",
       tags: ["React Native", "Expo", "TypeScript", "PWA"]
@@ -47,7 +47,7 @@ export default function PortfolioVideoShowcase() {
     },
     {
       title: "Flutter Movies App - Full Demo",
-      description: "Complete walkthrough of Munir Movies Flutter app featuring movie discovery, clean architecture with BLoC, beautiful Material Design UI, and smooth animations. Built with Flutter 3.0+ and modern development practices.",
+      description: "Complete walkthrough of Kaleab Movies Flutter app featuring movie discovery, clean architecture with BLoC, beautiful Material Design UI, and smooth animations. Built with Flutter 3.0+ and modern development practices.",
       videoUrl: "https://www.youtube.com/watch?v=JlsN8xb195A",
       tags: ["Flutter", "Dart", "BLoC", "Material Design", "Clean Architecture", "Mobile"]
     },

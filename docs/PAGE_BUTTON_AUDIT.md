@@ -37,8 +37,8 @@
 
 ### 2. About.tsx
 **Buttons Found:**
-- ✅ "Download Resume" (Desktop) → Downloads `/Munir_Ayub_CV.pdf`
-- ✅ "Download Resume" (Mobile) → Downloads `/Munir_Ayub_CV.pdf`
+- ✅ "Download Resume" (Desktop) → Downloads `/Kaleab_Ayub_CV.pdf`
+- ✅ "Download Resume" (Mobile) → Downloads `/Kaleab_Ayub_CV.pdf`
 - ✅ "Let's Work Together" → `navigate('/contact')`
 - ✅ Social media links → `window.open(url, '_blank')`
 
@@ -48,7 +48,7 @@
 
 ### 3. Portfolio.tsx
 **Buttons Found:**
-- ✅ "Download Resume" → Downloads `/Munir_Ayub_CV.pdf`
+- ✅ "Download Resume" → Downloads `/Kaleab_Ayub_CV.pdf`
 - ✅ "View All Projects" → `navigate('/projects')`
 - ✅ "Get Started" → `navigate('/contact')`
 - ✅ Category filter buttons → `setSelectedCategory(id)`
@@ -214,7 +214,7 @@ All hooks and utilities are properly imported:
 **Status:** ✅ Successful  
 **Git:** Pushed to `main` branch  
 **Netlify:** Auto-deploying  
-**Live URL:** https://munir-dev-portfolio-2024.netlify.app
+**Live URL:** https://kaleab-dev-portfolio-2024.netlify.app
 
 ---
 

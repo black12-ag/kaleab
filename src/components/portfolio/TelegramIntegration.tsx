@@ -72,7 +72,7 @@ export const TelegramIntegration: React.FC<TelegramIntegrationProps> = ({
     window.open(url, '_blank');
   };
 
-  if (projectId === 'munirchat-bot' && telegramAccess) {
+  if (projectId === 'kaleabchat-bot' && telegramAccess) {
     return (
       <Card className="w-full mt-6 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 border-blue-200 dark:border-blue-800">
         <CardHeader>
@@ -178,8 +178,8 @@ export const TelegramIntegration: React.FC<TelegramIntegrationProps> = ({
     );
   }
 
-  if ((projectId === 'munirchat-android' || projectId === 'munirchat-portfolio-android' || projectId === 'munirchat-ios') && downloadOptions) {
-    const isIOS = downloadOptions.platform === 'iOS' || projectId === 'munirchat-ios';
+  if ((projectId === 'kaleabchat-android' || projectId === 'kaleabchat-portfolio-android' || projectId === 'kaleabchat-ios') && downloadOptions) {
+    const isIOS = downloadOptions.platform === 'iOS' || projectId === 'kaleabchat-ios';
     const platformName = isIOS ? 'iOS' : 'Android';
     const colorScheme = isIOS 
       ? 'from-purple-50 to-indigo-50 dark:from-purple-950/20 dark:to-indigo-950/20 border-purple-200 dark:border-purple-800'

@@ -44,8 +44,8 @@ const videoProjects: VideoProject[] = [
     liveUrl: 'https://findy-navigation-app.netlify.app/'
   },
   {
-    id: 'munir-demo-chat-short',
-    title: 'Munir Demo Chat - Short Demo',
+    id: 'kaleab-demo-chat-short',
+    title: 'Kaleab Demo Chat - Short Demo',
     description: 'Quick showcase of cross-platform chat app built with React Native and Expo. Features modern UI, media sharing demos, and responsive design that works across web, iOS, and Android.',
     videoUrl: parseVideoUrl('https://youtube.com/shorts/C48THcA7eXY?si=1NiAibFxLW0Gfz1V').embedUrl,
     thumbnailUrl: parseVideoUrl('https://youtube.com/shorts/C48THcA7eXY?si=1NiAibFxLW0Gfz1V').thumbnailUrl,
@@ -55,7 +55,7 @@ const videoProjects: VideoProject[] = [
     fileSize: 'YouTube Short',
     completedDate: 'Sep 2025',
     featured: true,
-    githubUrl: 'https://github.com/black12-ag/munir-demo-chat'
+    githubUrl: 'https://github.com/black12-ag/kaleab-demo-chat'
   },
   {
     id: 'project-full-demo',
@@ -88,7 +88,7 @@ const videoProjects: VideoProject[] = [
   {
     id: 'flutter-movies-app-demo',
     title: 'Flutter Movies App - Full Demo',
-    description: 'Complete walkthrough of Munir Movies Flutter app featuring movie discovery, clean architecture with BLoC, beautiful Material Design UI, and smooth animations. Built with Flutter 3.0+ and modern development practices.',
+    description: 'Complete walkthrough of Kaleab Movies Flutter app featuring movie discovery, clean architecture with BLoC, beautiful Material Design UI, and smooth animations. Built with Flutter 3.0+ and modern development practices.',
     videoUrl: parseVideoUrl('https://www.youtube.com/watch?v=JlsN8xb195A').embedUrl,
     thumbnailUrl: parseVideoUrl('https://www.youtube.com/watch?v=JlsN8xb195A').thumbnailUrl,
     category: 'Flutter Mobile Demo',
@@ -255,12 +255,12 @@ const sampleProjects: Project[] = [
   },
   {
     id: 'flutter-movies-app',
-    title: 'Munir Movies - Flutter App',
+    title: 'Kaleab Movies - Flutter App',
     description: 'Modern Flutter app for discovering movies and TV shows with clean architecture, beautiful UI, and smooth animations using Material Design.',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
     technologies: ['Flutter', 'Dart', 'BLoC', 'GetIt', 'Dio', 'Hive', 'Material Design'],
     category: 'mobile',
-    liveUrl: 'https://movies-app-munir.netlify.app/',
+    liveUrl: 'https://movies-app-kaleab.netlify.app/',
     githubUrl: 'https://github.com/black12-ag/movies-app',
     videoUrl: 'https://www.youtube.com/watch?v=JlsN8xb195A',
     featured: true,
@@ -581,7 +581,7 @@ export default function Portfolio() {
               <Mail className="w-5 h-5 mr-2" />
               Get In Touch
             </Button>
-            <Button size="lg" className="bg-white/10 backdrop-blur-sm border-2 border-white/50 text-white hover:bg-white hover:text-blue-600 transition-all duration-300" onClick={() => window.open('/Munir_Ayub_CV.pdf', '_blank')}>
+            <Button size="lg" className="bg-white/10 backdrop-blur-sm border-2 border-white/50 text-white hover:bg-white hover:text-blue-600 transition-all duration-300" onClick={() => window.open('/Kaleab_Ayub_CV.pdf', '_blank')}>
               <ExternalLink className="w-5 h-5 mr-2" />
               Download Resume
             </Button>

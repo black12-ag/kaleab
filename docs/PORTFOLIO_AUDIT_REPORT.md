@@ -22,7 +22,7 @@
 | **NotFound.tsx** | 32 → 48 | ✅ **UPGRADED** | ✅ Good | **COMPLETED** |
 | **PrivacyPolicy.tsx** | ~200 | ❌ None | ✅ Light | Needs animations |
 | **TermsOfService.tsx** | ~200 | ❌ None | ✅ Light | Needs animations |
-| **MunirPortfolio.tsx** | ~500 | ⚠️ Unknown | ⚠️ Unknown | **Duplicate?** |
+| **KaleabPortfolio.tsx** | ~500 | ⚠️ Unknown | ⚠️ Unknown | **Duplicate?** |
 
 ---
 
@@ -42,8 +42,8 @@
 - ❌ No page transition animations
 
 ### 3. **Code Quality Issues**
-- ⚠️ **Duplicate page**: `MunirPortfolio.tsx` vs `Portfolio.tsx`
-- ⚠️ **Hardcoded data** in Projects.tsx (should use munirProjects.ts)
+- ⚠️ **Duplicate page**: `KaleabPortfolio.tsx` vs `Portfolio.tsx`
+- ⚠️ **Hardcoded data** in Projects.tsx (should use kaleabProjects.ts)
 - ⚠️ **No error boundaries** on individual pages
 - ⚠️ **Unused imports** (useTranslation removed but still imported)
 
@@ -204,12 +204,12 @@ const VideoShowcase = lazy(() => import('./VideoShowcase'));
 **Files:** New component
 
 #### 10. **Remove Duplicate Page**
-- Delete `MunirPortfolio.tsx` (duplicate of Portfolio.tsx)
+- Delete `KaleabPortfolio.tsx` (duplicate of Portfolio.tsx)
 - Update any references
 
 **Impact:** Cleaner codebase  
 **Effort:** 15 minutes  
-**Files:** MunirPortfolio.tsx
+**Files:** KaleabPortfolio.tsx
 
 ---
 
@@ -281,8 +281,8 @@ const VideoShowcase = lazy(() => import('./VideoShowcase'));
 ## 🔧 Technical Debt to Address
 
 ### **Code Quality**
-1. Remove `MunirPortfolio.tsx` duplicate
-2. Fix hardcoded projects in Projects.tsx (use munirProjects.ts)
+1. Remove `KaleabPortfolio.tsx` duplicate
+2. Fix hardcoded projects in Projects.tsx (use kaleabProjects.ts)
 3. Remove all `useTranslation` imports
 4. Add error boundaries to pages
 5. Add PropTypes/TypeScript interfaces
@@ -334,7 +334,7 @@ const VideoShowcase = lazy(() => import('./VideoShowcase'));
 ## 🎯 Quick Wins (Can Do Now)
 
 1. ✅ **NotFound page** - COMPLETED (upgraded with animations)
-2. ⏳ **Remove MunirPortfolio.tsx** - 15 minutes
+2. ⏳ **Remove KaleabPortfolio.tsx** - 15 minutes
 3. ⏳ **Fix Projects.tsx data** - 30 minutes
 4. ⏳ **Add scroll-to-top button** - 30 minutes
 5. ⏳ **Add page transition animations** - 1 hour
@@ -360,8 +360,8 @@ const VideoShowcase = lazy(() => import('./VideoShowcase'));
 ## 🚀 Next Steps
 
 1. **Immediate** (Today):
-   - Remove MunirPortfolio.tsx duplicate
-   - Fix Projects.tsx to use munirProjects.ts
+   - Remove KaleabPortfolio.tsx duplicate
+   - Fix Projects.tsx to use kaleabProjects.ts
    - Add scroll-to-top button
 
 2. **This Week**:

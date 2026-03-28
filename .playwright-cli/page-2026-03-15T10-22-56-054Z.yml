@@ -1,0 +1,416 @@
+- generic [ref=e13]:
+  - button [ref=e14] [cursor=pointer]
+  - button [ref=e18] [cursor=pointer]:
+    - img [ref=e19]
+  - generic:
+    - generic:
+      - img
+    - generic [ref=e26]:
+      - button "About" [ref=e27] [cursor=pointer]
+      - button "Skills" [ref=e28] [cursor=pointer]
+      - button "Projects" [ref=e29] [cursor=pointer]
+      - button "Resume Game" [ref=e30] [cursor=pointer]
+      - link "Download CV" [ref=e31] [cursor=pointer]:
+        - /url: /Munir_Ayub_CV.pdf
+      - button "Quick look" [ref=e32] [cursor=pointer]
+    - generic [ref=e33]:
+      - link "LinkedIn" [ref=e34] [cursor=pointer]:
+        - /url: https://linkedin.com/in/munir-ayub
+        - img "LinkedIn" [ref=e35]
+      - link "GitHub" [ref=e40] [cursor=pointer]:
+        - /url: https://github.com/black12-ag
+        - img "GitHub" [ref=e41]
+      - link "Twitter" [ref=e44] [cursor=pointer]:
+        - /url: https://x.com/muay01111
+        - img "Twitter" [ref=e45]
+      - link "Telegram" [ref=e48] [cursor=pointer]:
+        - /url: https://t.me/muay011
+        - img "Telegram" [ref=e49]
+  - generic [ref=e52]:
+    - generic [ref=e54]:
+      - heading "Hi, I'm Munir Ayub" [level=1] [ref=e55]:
+        - generic [ref=e56]:
+          - strong [ref=e57]: Hi
+          - text: ", I'm"
+        - generic [ref=e58]: Munir Ayub
+      - paragraph [ref=e59]:
+        - text: A fullstack developer & entrepreneur,
+        - text: passionate about crafting modern web & mobile apps,
+        - text: and turning ideas into impactful digital products.
+      - button "Up for a magical twist?" [ref=e60] [cursor=pointer]: Up for a magical twist?
+    - generic [ref=e68]:
+      - generic [ref=e69]:
+        - paragraph [ref=e70]:
+          - button "Frontend and Mobile development" [ref=e71] [cursor=pointer]
+          - button "Backend Development" [ref=e72] [cursor=pointer]
+          - button "Infrastructure" [ref=e73] [cursor=pointer]
+          - button "AI" [ref=e74] [cursor=pointer]
+        - generic [ref=e75]:
+          - button "JavaScript" [ref=e76] [cursor=pointer]
+          - button "React" [ref=e77] [cursor=pointer]
+          - button "WebLLM" [ref=e78] [cursor=pointer]
+          - button "Three.js" [ref=e79] [cursor=pointer]
+          - button "CMS" [ref=e80] [cursor=pointer]
+          - button "i18n [Enterprise]" [ref=e81] [cursor=pointer]
+          - button "Next.JS" [ref=e82] [cursor=pointer]
+          - button "React Native" [ref=e83] [cursor=pointer]
+          - button "Expo" [ref=e84] [cursor=pointer]
+          - button "Node.JS" [ref=e85] [cursor=pointer]
+          - button "Vue.JS" [ref=e86] [cursor=pointer]
+          - button "Nuxt" [ref=e87] [cursor=pointer]
+          - button "Typescript" [ref=e88] [cursor=pointer]
+          - button "Published 3 Books" [ref=e89] [cursor=pointer]
+        - generic [ref=e90]:
+          - button "PHP" [ref=e91] [cursor=pointer]
+          - button "GoLang" [ref=e92] [cursor=pointer]
+          - button "Python" [ref=e93] [cursor=pointer]
+          - button "Laravel" [ref=e94] [cursor=pointer]
+          - button "Django" [ref=e95] [cursor=pointer]
+          - button "FastAPI" [ref=e96] [cursor=pointer]
+          - button "MySql" [ref=e97] [cursor=pointer]
+          - button "MongoDB" [ref=e98] [cursor=pointer]
+          - button "Redis" [ref=e99] [cursor=pointer]
+          - button "PostgreSQL" [ref=e100] [cursor=pointer]
+        - generic [ref=e101]:
+          - button "Terraform" [ref=e102] [cursor=pointer]
+          - button "Kubernetes" [ref=e103] [cursor=pointer]
+          - button "Docker" [ref=e104] [cursor=pointer]
+          - button "Rancher" [ref=e105] [cursor=pointer]
+          - button "Jenkins" [ref=e106] [cursor=pointer]
+          - button "Github Actions" [ref=e107] [cursor=pointer]
+          - button "Amazon Web Services" [ref=e108] [cursor=pointer]
+          - button "Google Cloud" [ref=e109] [cursor=pointer]
+          - button "ArgoCD" [ref=e110] [cursor=pointer]
+      - img [ref=e112]
+      - img [ref=e115]
+      - img [ref=e118]
+    - generic [ref=e120]:
+      - heading "Projects" [level=3] [ref=e121]
+      - generic [ref=e122]:
+        - generic [ref=e124] [cursor=pointer]:
+          - generic [ref=e125]:
+            - img "ShegerPay" [ref=e127]
+            - img [ref=e130]
+            - generic [ref=e134]:
+              - generic [ref=e135]: React
+              - generic [ref=e136]: Recharts
+              - generic [ref=e137]: Payment API
+          - generic [ref=e138]:
+            - heading "ShegerPay" [level=4] [ref=e139]
+            - paragraph [ref=e140]: Payment Gateway
+        - generic [ref=e142] [cursor=pointer]:
+          - generic [ref=e143]:
+            - img "Ethio Viral" [ref=e145]
+            - img [ref=e148]
+            - generic [ref=e152]:
+              - generic [ref=e153]: React
+              - generic [ref=e154]: Node.js
+              - generic [ref=e155]: Payment Integration
+          - generic [ref=e156]:
+            - heading "Ethio Viral" [level=4] [ref=e157]
+            - paragraph [ref=e158]: SMM Platform
+        - link "Ethio Viral Bot Telegram API Node.js Redis Ethio Viral Bot Telegram Bot" [ref=e160] [cursor=pointer]:
+          - /url: https://t.me/Ethio_viral_bot
+          - generic [ref=e161]:
+            - img "Ethio Viral Bot" [ref=e163]
+            - generic [ref=e166]:
+              - generic [ref=e167]: Telegram API
+              - generic [ref=e168]: Node.js
+              - generic [ref=e169]: Redis
+          - generic [ref=e170]:
+            - heading "Ethio Viral Bot" [level=4] [ref=e171]
+            - paragraph [ref=e172]: Telegram Bot
+        - generic [ref=e174] [cursor=pointer]:
+          - generic [ref=e175]:
+            - img "Findy" [ref=e177]
+            - img [ref=e180]
+            - generic [ref=e184]:
+              - generic [ref=e185]: React
+              - generic [ref=e186]: Leaflet
+              - generic [ref=e187]: Geolocation API
+          - generic [ref=e188]:
+            - heading "Findy" [level=4] [ref=e189]
+            - paragraph [ref=e190]: Navigation App
+        - link "Apple.com Clone React CSS UI/UX Apple.com Clone High-Fidelity" [ref=e192] [cursor=pointer]:
+          - /url: https://apple-com-clw.pages.dev
+          - generic [ref=e193]:
+            - img "Apple.com Clone" [ref=e195]
+            - generic [ref=e198]:
+              - generic [ref=e199]: React
+              - generic [ref=e200]: CSS
+              - generic [ref=e201]: UI/UX
+          - generic [ref=e202]:
+            - heading "Apple.com Clone" [level=4] [ref=e203]
+            - paragraph [ref=e204]: High-Fidelity
+        - link "Abstract Web Design UI/UX React Abstract Culinary Excellence" [ref=e206] [cursor=pointer]:
+          - /url: https://abstract-82t.pages.dev
+          - generic [ref=e207]:
+            - img "Abstract" [ref=e209]
+            - generic [ref=e212]:
+              - generic [ref=e213]: Web Design
+              - generic [ref=e214]: UI/UX
+              - generic [ref=e215]: React
+          - generic [ref=e216]:
+            - heading "Abstract" [level=4] [ref=e217]
+            - paragraph [ref=e218]: Culinary Excellence
+        - link "NaturaSkin AI AI React Flux.1 Model NaturaSkin AI AI Skincare" [ref=e220] [cursor=pointer]:
+          - /url: https://naturaskin-ai.pages.dev
+          - generic [ref=e221]:
+            - img "NaturaSkin AI" [ref=e223]
+            - generic [ref=e226]:
+              - generic [ref=e227]: AI
+              - generic [ref=e228]: React
+              - generic [ref=e229]: Flux.1 Model
+          - generic [ref=e230]:
+            - heading "NaturaSkin AI" [level=4] [ref=e231]
+            - paragraph [ref=e232]: AI Skincare
+        - link "Wings Reflexology React Tailwind Framer Motion Wings Reflexology Luxury Wellness" [ref=e234] [cursor=pointer]:
+          - /url: https://wings-reflexology-modern-luxury.netlify.app
+          - generic [ref=e235]:
+            - img "Wings Reflexology" [ref=e237]
+            - generic [ref=e240]:
+              - generic [ref=e241]: React
+              - generic [ref=e242]: Tailwind
+              - generic [ref=e243]: Framer Motion
+          - generic [ref=e244]:
+            - heading "Wings Reflexology" [level=4] [ref=e245]
+            - paragraph [ref=e246]: Luxury Wellness
+        - link "Bliss Reflexology React Tailwind Framer Motion Bliss Reflexology One-Page Wellness" [ref=e248] [cursor=pointer]:
+          - /url: https://one-page-wellness-site.pages.dev
+          - generic [ref=e249]:
+            - img "Bliss Reflexology" [ref=e251]
+            - generic [ref=e254]:
+              - generic [ref=e255]: React
+              - generic [ref=e256]: Tailwind
+              - generic [ref=e257]: Framer Motion
+          - generic [ref=e258]:
+            - heading "Bliss Reflexology" [level=4] [ref=e259]
+            - paragraph [ref=e260]: One-Page Wellness
+        - link "Android Chat App Kotlin Jetpack Compose Android Android Chat App Mobile App" [ref=e262] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e263]:
+            - img "Android Chat App" [ref=e265]
+            - generic [ref=e268]:
+              - generic [ref=e269]: Kotlin
+              - generic [ref=e270]: Jetpack Compose
+              - generic [ref=e271]: Android
+          - generic [ref=e272]:
+            - heading "Android Chat App" [level=4] [ref=e273]
+            - paragraph [ref=e274]: Mobile App
+        - link "iOS Chat App SwiftUI Swift iOS iOS Chat App Mobile App" [ref=e276] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e277]:
+            - img "iOS Chat App" [ref=e279]
+            - generic [ref=e282]:
+              - generic [ref=e283]: SwiftUI
+              - generic [ref=e284]: Swift
+              - generic [ref=e285]: iOS
+          - generic [ref=e286]:
+            - heading "iOS Chat App" [level=4] [ref=e287]
+            - paragraph [ref=e288]: Mobile App
+        - link "Warp Bypass Python Shell Automation Warp Bypass Automation Tool" [ref=e290] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e291]:
+            - img "Warp Bypass" [ref=e293]
+            - generic [ref=e296]:
+              - generic [ref=e297]: Python
+              - generic [ref=e298]: Shell
+              - generic [ref=e299]: Automation
+          - generic [ref=e300]:
+            - heading "Warp Bypass" [level=4] [ref=e301]
+            - paragraph [ref=e302]: Automation Tool
+        - link "Cursor Bypass Python Shell Automation Cursor Bypass Automation Tool" [ref=e304] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e305]:
+            - img "Cursor Bypass" [ref=e307]
+            - generic [ref=e310]:
+              - generic [ref=e311]: Python
+              - generic [ref=e312]: Shell
+              - generic [ref=e313]: Automation
+          - generic [ref=e314]:
+            - heading "Cursor Bypass" [level=4] [ref=e315]
+            - paragraph [ref=e316]: Automation Tool
+        - link "Metah React Node.js Web App Metah Hotel Booking" [ref=e318] [cursor=pointer]:
+          - /url: https://book-8rv.pages.dev
+          - generic [ref=e319]:
+            - img "Metah" [ref=e321]
+            - generic [ref=e324]:
+              - generic [ref=e325]: React
+              - generic [ref=e326]: Node.js
+              - generic [ref=e327]: Web App
+          - generic [ref=e328]:
+            - heading "Metah" [level=4] [ref=e329]
+            - paragraph [ref=e330]: Hotel Booking
+        - link "WholeCase Document processing React Web App WholeCase Document Verification" [ref=e332] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e333]:
+            - img "WholeCase" [ref=e335]
+            - generic [ref=e338]:
+              - generic [ref=e339]: Document processing
+              - generic [ref=e340]: React
+              - generic [ref=e341]: Web App
+          - generic [ref=e342]:
+            - heading "WholeCase" [level=4] [ref=e343]
+            - paragraph [ref=e344]: Document Verification
+        - link "Portfolio Website React TypeScript Tailwind Portfolio Website Admin Panel" [ref=e346] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e347]:
+            - img "Portfolio Website" [ref=e349]
+            - generic [ref=e352]:
+              - generic [ref=e353]: React
+              - generic [ref=e354]: TypeScript
+              - generic [ref=e355]: Tailwind
+          - generic [ref=e356]:
+            - heading "Portfolio Website" [level=4] [ref=e357]
+            - paragraph [ref=e358]: Admin Panel
+        - link "Mobile Fitness App React Native Firebase TypeScript Mobile Fitness App Cross-platform" [ref=e360] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e361]:
+            - img "Mobile Fitness App" [ref=e363]
+            - generic [ref=e366]:
+              - generic [ref=e367]: React Native
+              - generic [ref=e368]: Firebase
+              - generic [ref=e369]: TypeScript
+          - generic [ref=e370]:
+            - heading "Mobile Fitness App" [level=4] [ref=e371]
+            - paragraph [ref=e372]: Cross-platform
+        - link "E-Commerce Platform React Node.js MongoDB E-Commerce Platform Full-stack Solution" [ref=e374] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e375]:
+            - img "E-Commerce Platform" [ref=e377]
+            - generic [ref=e380]:
+              - generic [ref=e381]: React
+              - generic [ref=e382]: Node.js
+              - generic [ref=e383]: MongoDB
+          - generic [ref=e384]:
+            - heading "E-Commerce Platform" [level=4] [ref=e385]
+            - paragraph [ref=e386]: Full-stack Solution
+        - link "Task Mastery Next.js PostgreSQL Prisma Task Mastery Project Management" [ref=e388] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e389]:
+            - img "Task Mastery" [ref=e391]
+            - generic [ref=e394]:
+              - generic [ref=e395]: Next.js
+              - generic [ref=e396]: PostgreSQL
+              - generic [ref=e397]: Prisma
+          - generic [ref=e398]:
+            - heading "Task Mastery" [level=4] [ref=e399]
+            - paragraph [ref=e400]: Project Management
+        - link "Weather Wise React OpenWeather API Chart.js Weather Wise Real-time Forecast" [ref=e402] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e403]:
+            - img "Weather Wise" [ref=e405]
+            - generic [ref=e408]:
+              - generic [ref=e409]: React
+              - generic [ref=e410]: OpenWeather API
+              - generic [ref=e411]: Chart.js
+          - generic [ref=e412]:
+            - heading "Weather Wise" [level=4] [ref=e413]
+            - paragraph [ref=e414]: Real-time Forecast
+        - link "Social Pulse Vue.js D3.js Node.js Social Pulse Analytics Dashboard" [ref=e416] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e417]:
+            - img "Social Pulse" [ref=e419]
+            - generic [ref=e422]:
+              - generic [ref=e423]: Vue.js
+              - generic [ref=e424]: D3.js
+              - generic [ref=e425]: Node.js
+          - generic [ref=e426]:
+            - heading "Social Pulse" [level=4] [ref=e427]
+            - paragraph [ref=e428]: Analytics Dashboard
+        - link "Snapp Market Flutter Node.js MongoDB Snapp Market E-Grocery App" [ref=e430] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e431]:
+            - img "Snapp Market" [ref=e433]
+            - generic [ref=e436]:
+              - generic [ref=e437]: Flutter
+              - generic [ref=e438]: Node.js
+              - generic [ref=e439]: MongoDB
+          - generic [ref=e440]:
+            - heading "Snapp Market" [level=4] [ref=e441]
+            - paragraph [ref=e442]: E-Grocery App
+        - generic [ref=e444] [cursor=pointer]:
+          - generic [ref=e445]:
+            - img "EllaTech Inventory" [ref=e447]
+            - img [ref=e450]
+            - generic [ref=e454]:
+              - generic [ref=e455]: React
+              - generic [ref=e456]: Node.js
+              - generic [ref=e457]: PostgreSQL
+          - generic [ref=e458]:
+            - heading "EllaTech Inventory" [level=4] [ref=e459]
+            - paragraph [ref=e460]: Management System
+        - generic [ref=e462] [cursor=pointer]:
+          - generic [ref=e463]:
+            - img "Windsurf Bypass" [ref=e465]
+            - img [ref=e468]
+            - generic [ref=e472]:
+              - generic [ref=e473]: Python
+              - generic [ref=e474]: Automation
+          - generic [ref=e475]:
+            - heading "Windsurf Bypass" [level=4] [ref=e476]
+            - paragraph [ref=e477]: Automation
+        - link "Looks interesting? Github" [ref=e479] [cursor=pointer]:
+          - /url: https://github.com/black12-ag
+          - generic [ref=e480]:
+            - paragraph [ref=e481]: Looks interesting?
+            - generic [ref=e482]:
+              - button "Github" [ref=e483]:
+                - img [ref=e484]
+                - text: Github
+              - img [ref=e486]
+              - img [ref=e488]
+      - generic [ref=e491]:
+        - generic [ref=e492]:
+          - generic [ref=e493]: 67+
+          - generic [ref=e494]: Projects Delivered
+        - generic [ref=e496]:
+          - generic [ref=e497]: 34+
+          - generic [ref=e498]: Happy Clients
+        - generic [ref=e500]:
+          - generic [ref=e501]: 95%
+          - generic [ref=e502]: Client Satisfaction
+        - link "View GitHub" [ref=e504] [cursor=pointer]:
+          - /url: https://github.com/black12-ag
+          - img [ref=e505]
+          - text: View GitHub
+    - generic [ref=e507]:
+      - heading "Let's Connect" [level=3] [ref=e508]
+      - link "munirayub011@gmail.com" [ref=e509] [cursor=pointer]:
+        - /url: mailto:munirayub011@gmail.com
+      - generic [ref=e510]:
+        - button "LinkedIn" [ref=e511] [cursor=pointer]:
+          - button [ref=e512]:
+            - img [ref=e513]
+        - button "GitHub" [ref=e515] [cursor=pointer]:
+          - button [ref=e516]:
+            - img [ref=e517]
+        - button "Telegram" [ref=e519] [cursor=pointer]:
+          - button [ref=e520]:
+            - img [ref=e521]
+        - button "WhatsApp" [ref=e523] [cursor=pointer]:
+          - button [ref=e524]:
+            - img [ref=e525]
+        - button "Email" [ref=e527] [cursor=pointer]:
+          - button [ref=e528]:
+            - img [ref=e529]
+      - generic [ref=e531]:
+        - generic [ref=e532]:
+          - text: "3D Models:"
+          - link "IconScout" [ref=e533] [cursor=pointer]:
+            - /url: https://iconscout.com
+          - text: and
+          - link "Igor Yeram" [ref=e534] [cursor=pointer]:
+            - /url: https://sketchfab.com/IgorYerm
+          - text: "SVG icons:"
+          - link "icones.js" [ref=e535] [cursor=pointer]:
+            - /url: https://icones.js.org/
+          - text: And Sound effects by
+          - link "Pixabay" [ref=e536] [cursor=pointer]:
+            - /url: https://pixabay.com/service/license-summary/
+        - generic [ref=e537]:
+          - text: Designed and developed by
+          - strong [ref=e538]: Munir Ayub
+          - text: • © 2026
+    - generic:
+      - img

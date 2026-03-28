@@ -1,4 +1,4 @@
-# 🎨 Munir Ayub - Portfolio Website
+# 🎨 Kaleab M - Portfolio Website
 
 A modern, professional portfolio website built with React, TypeScript, and Tailwind CSS. Features a powerful admin panel for content management, video support, dark mode, and responsive design.
 

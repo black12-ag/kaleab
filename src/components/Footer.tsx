@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 export default function Footer() {
   const { toast } = useToast();
   const [email, setEmail] = useState('');
-  const [profilePhoto, setProfilePhoto] = useState<string>('/images/munir-profile.jpg');
+  const [profilePhoto, setProfilePhoto] = useState<string>('/images/kaleab-profile.jpg');
 
   // Load profile photo from localStorage
   useEffect(() => {
@@ -55,7 +55,7 @@ export default function Footer() {
     { icon: FaWhatsapp, href: 'https://wa.me/251907806267', label: 'WhatsApp', isComponent: true },
     { icon: FaTelegram, href: 'https://t.me/muay011', label: 'Telegram', isComponent: true },
     { icon: FaXTwitter, href: 'https://x.com/muay01111', label: 'X (Twitter)', isComponent: true },
-    { icon: Mail, href: 'mailto:munir.ayub@example.com', label: 'Email' },
+    { icon: Mail, href: 'mailto:kaleab.ayub@example.com', label: 'Email' },
   ];
 
   return (
@@ -70,10 +70,10 @@ export default function Footer() {
                 <div className="flex items-center space-x-3 mb-6">
                   <img
                     src="/images/logo.jpeg"
-                    alt="Munir Ayub Logo"
+                    alt="Kaleab M Logo"
                     className="w-12 h-12 rounded-lg object-cover"
                   />
-                  <span className="text-2xl font-bold text-foreground dark:text-white">Munir Ayub</span>
+                  <span className="text-2xl font-bold text-foreground dark:text-white">Kaleab M</span>
                 </div>
                 <p className="text-card-foreground/80 dark:text-gray-300 text-lg leading-relaxed">
                   Full Stack Developer passionate about creating beautiful, functional web and mobile applications.
@@ -87,11 +87,11 @@ export default function Footer() {
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full animate-pulse opacity-75 group-hover:opacity-100 transition-opacity"></div>
                   <img
                     src={profilePhoto}
-                    alt="Munir Ayub"
+                    alt="Kaleab M"
                     className="relative w-full h-full rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-xl transform transition-transform group-hover:scale-105"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
-                      target.src = 'https://ui-avatars.com/api/?name=Munir+Ayub&size=200&background=3b82f6&color=ffffff&format=svg';
+                      target.src = 'https://ui-avatars.com/api/?name=Kaleab+Ayub&size=200&background=3b82f6&color=ffffff&format=svg';
                     }}
                   />
                 </div>
@@ -241,10 +241,10 @@ export default function Footer() {
         <div className="border-t border-border py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-card-foreground/80 dark:text-gray-400 text-sm">
-              &copy; {new Date().getFullYear()} Munir Ayub. All rights reserved.
+              &copy; {new Date().getFullYear()} Kaleab M. All rights reserved.
               <span className="hidden md:inline mx-2">•</span>
-              <a href="https://munir-dev-portfolio-2024.netlify.app/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-                munir-dev-portfolio-2024.netlify.app
+              <a href="https://kaleab-dev-portfolio-2024.netlify.app/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                kaleab-dev-portfolio-2024.netlify.app
               </a>
             </div>
           </div>

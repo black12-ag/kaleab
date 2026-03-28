@@ -50,11 +50,11 @@ export default function Navbar({ className }: NavbarProps) {
           <Link to="/" className="flex items-center space-x-2 group">
             <img 
               src="/images/logo.jpeg" 
-              alt="Munir Ayub Logo" 
+              alt="Kaleab M Logo" 
               className="w-10 h-10 rounded-lg object-cover transition-transform group-hover:scale-110"
             />
             <span className="text-xl font-bold text-foreground dark:text-white group-hover:text-primary transition-colors">
-              Munir Ayub
+              Kaleab M
             </span>
           </Link>
 
@@ -132,7 +132,7 @@ export default function Navbar({ className }: NavbarProps) {
                     // Create download link for base64 CV
                     const link = document.createElement('a');
                     link.href = storedCV;
-                    link.download = 'Munir_Ayub_CV.pdf';
+                    link.download = 'Kaleab_Ayub_CV.pdf';
                     link.click();
                   } else {
                     // Open external CV URL
@@ -141,8 +141,8 @@ export default function Navbar({ className }: NavbarProps) {
                 } else {
                   // Fallback to default CV - download directly
                   const link = document.createElement('a');
-                  link.href = '/Munir_Ayub_CV.pdf';
-                  link.download = 'Munir_Ayub_CV.pdf';
+                  link.href = '/Kaleab_Ayub_CV.pdf';
+                  link.download = 'Kaleab_Ayub_CV.pdf';
                   link.click();
                 }
               }}
@@ -176,11 +176,11 @@ export default function Navbar({ className }: NavbarProps) {
                   <div className="flex items-center space-x-3 p-4 bg-muted rounded-lg">
                     <img 
                       src="/images/logo.jpeg" 
-                      alt="Munir Ayub Logo" 
+                      alt="Kaleab M Logo" 
                       className="w-12 h-12 rounded-lg object-cover"
                     />
                     <div>
-                      <p className="font-bold text-lg text-foreground">Munir Ayub</p>
+                      <p className="font-bold text-lg text-foreground">Kaleab M</p>
                       <p className="text-sm text-muted-foreground">Full Stack Developer</p>
                     </div>
                   </div>
@@ -248,15 +248,15 @@ export default function Navbar({ className }: NavbarProps) {
                           if (storedCV.startsWith('data:')) {
                             const link = document.createElement('a');
                             link.href = storedCV;
-                            link.download = 'Munir_Ayub_CV.pdf';
+                            link.download = 'Kaleab_Ayub_CV.pdf';
                             link.click();
                           } else {
                             window.open(storedCV, '_blank');
                           }
                         } else {
                           const link = document.createElement('a');
-                          link.href = '/Munir_Ayub_CV.pdf';
-                          link.download = 'Munir_Ayub_CV.pdf';
+                          link.href = '/Kaleab_Ayub_CV.pdf';
+                          link.download = 'Kaleab_Ayub_CV.pdf';
                           link.click();
                         }
                         setIsOpen(false);

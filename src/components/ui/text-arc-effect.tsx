@@ -13,8 +13,8 @@ interface CentralLogoProps {
 }
 
 const CentralLogo: React.FC<CentralLogoProps> = ({ 
-  imageUrl = "/images/munir-profile.jpg",
-  alt = "Munir Ayub"
+  imageUrl = "/images/kaleab-profile.jpg",
+  alt = "Kaleab M"
 }) => (
   <img
     src={imageUrl}
@@ -23,7 +23,7 @@ const CentralLogo: React.FC<CentralLogoProps> = ({
     onError={(e) => { 
       const target = e.target as HTMLImageElement;
       target.onerror = null; 
-      target.src = '/images/munir-profile.jpg';
+      target.src = '/images/kaleab-profile.jpg';
     }}
   />
 );
@@ -82,9 +82,9 @@ interface TextArcEffectProps {
 }
 
 export function TextArcEffect({ 
-  text = " THANK YOU • FOR VISITING • MUNIR AYUB •",
+  text = " THANK YOU • FOR VISITING • KALEAB M •",
   logoUrl,
-  logoAlt = "Munir Ayub",
+  logoAlt = "Kaleab M",
   className = ""
 }: TextArcEffectProps) {
     // Diameter is adjusted to be smaller

@@ -205,7 +205,7 @@ const LoadingScreen = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3, duration: 0.8 }}
                 >
-                    Munir{' '}
+                    Kaleab{' '}
                     <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                         Ayub
                     </span>

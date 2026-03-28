@@ -75,7 +75,7 @@ export const InteractivePortfolio: React.FC = () => {
   };
 
   const demoPrompts = [
-    'Tell me about MunirChat',
+    'Tell me about KaleabChat',
     'What projects are in your portfolio?',
     'How can I download the Android app?',
     'Show me your technical skills',
@@ -112,7 +112,7 @@ export const InteractivePortfolio: React.FC = () => {
                   <Bot className="w-8 h-8" />
                 </div>
                 <div>
-                  <CardTitle className="text-2xl">MunirChat AI Bot</CardTitle>
+                  <CardTitle className="text-2xl">KaleabChat AI Bot</CardTitle>
                   <CardDescription className="text-blue-100">
                     Powered by Google Gemini Pro
                   </CardDescription>
@@ -512,7 +512,7 @@ export const InteractivePortfolio: React.FC = () => {
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Chat with AI Bot</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Message @MunirChatBot on Telegram. Ask about my projects, skills,
+                  Message @KaleabChatBot on Telegram. Ask about my projects, skills,
                   or request the Android app download link.
                 </p>
                 <Button

@@ -24,10 +24,10 @@ import {
   Clock,
   User
 } from 'lucide-react';
-import { munirProjects } from '@/data/munirProjects';
+import { kaleabProjects } from '@/data/kaleabProjects';
 
-// Map munirProjects to Project interface format if necessary, or use directly
-const allProjects: Project[] = munirProjects.map(project => ({
+// Map kaleabProjects to Project interface format if necessary, or use directly
+const allProjects: Project[] = kaleabProjects.map(project => ({
   ...project,
   // Ensure category matches the UI filter keys if simpler mapping is needed,
   // but existing keys like 'mobile', 'web', 'bot' seem compatible.

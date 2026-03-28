@@ -1,0 +1,12 @@
+- generic [active]:
+  - generic:
+    - region "Notifications (F8)":
+      - list
+    - region "Notifications alt+T"
+    - generic [ref=e37]:
+      - generic [ref=e54]: MA
+      - heading "Munir Ayub" [level=1] [ref=e55]
+      - paragraph [ref=e56]: Full Stack Developer
+      - generic [ref=e57]:
+        - paragraph [ref=e58]: Setting up...
+        - paragraph [ref=e60]: 0%

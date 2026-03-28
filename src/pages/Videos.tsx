@@ -1,7 +1,7 @@
 import { VideoPlayer } from '@/components/ui/video-thumbnail-player';
 import { motion } from 'framer-motion';
 import { parseVideoUrl } from '@/utils/videoUtils';
-import { munirProjects } from '@/data/munirProjects';
+import { kaleabProjects } from '@/data/kaleabProjects';
 import { Play, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -18,7 +18,7 @@ export default function Videos() {
       videoUrl: "https://youtube.com/shorts/XcciGPpc63s",
       tags: ["React", "TypeScript", "Node.js", "MongoDB", "Inventory"],
       thumbnailUrl: "/images/ellatech-inventory.png",
-      liveUrl: "https://ellatech-inventory-munir.netlify.app/",
+      liveUrl: "https://ellatech-inventory-kaleab.netlify.app/",
       githubUrl: "https://github.com/black12-ag/ellatech.git"
     },
     {
@@ -37,7 +37,7 @@ export default function Videos() {
       tags: ["React", "TypeScript", "Google Maps", "PWA", "Navigation"]
     },
     {
-      title: "Munir Demo Chat - Short Demo",
+      title: "Kaleab Demo Chat - Short Demo",
       description: "Quick showcase of cross-platform chat app built with React Native and Expo. Features modern UI, media sharing demos, and responsive design.",
       videoUrl: "https://youtube.com/shorts/C48THcA7eXY?si=1NiAibFxLW0Gfz1V",
       tags: ["React Native", "Expo", "TypeScript", "PWA"]
@@ -56,7 +56,7 @@ export default function Videos() {
     },
     {
       title: "Flutter Movies App - Full Demo",
-      description: "Complete walkthrough of Munir Movies Flutter app featuring movie discovery, clean architecture with BLoC, beautiful Material Design UI, and smooth animations. Built with Flutter 3.0+ and modern development practices.",
+      description: "Complete walkthrough of Kaleab Movies Flutter app featuring movie discovery, clean architecture with BLoC, beautiful Material Design UI, and smooth animations. Built with Flutter 3.0+ and modern development practices.",
       videoUrl: "https://www.youtube.com/watch?v=JlsN8xb195A",
       tags: ["Flutter", "Dart", "BLoC", "Material Design", "Clean Architecture", "Mobile"]
     },
@@ -69,7 +69,7 @@ export default function Videos() {
   ];
 
   // Get videos from projects that have videoUrl
-  const projectVideos = munirProjects
+  const projectVideos = kaleabProjects
     .filter(project => project.videoUrl)
     .map(project => ({
       title: project.title,

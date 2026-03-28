@@ -26,7 +26,7 @@ import {
   Heart
 } from 'lucide-react';
 
-import { munirProjects } from '@/data/munirProjects';
+import { kaleabProjects } from '@/data/kaleabProjects';
 
 type ProjectStatus = Project['status'];
 type ProjectCategory = Project['category'];
@@ -62,7 +62,7 @@ function normalizeProjectCategory(rawCategory: string): ProjectCategory {
 }
 
 // All projects for home page - Map to include completedDate for ProjectCard compatibility
-const allHomeProjects = munirProjects
+const allHomeProjects = kaleabProjects
   .map(project => ({
     ...project,
     completedDate: project.completionDate || 'In Progress',
@@ -132,19 +132,19 @@ export default function Home() {
 
   const testimonials = [
     {
-      text: "Munir delivered an exceptional booking system that transformed our business operations. The attention to detail and user experience is outstanding.",
+      text: "Kaleab delivered an exceptional booking system that transformed our business operations. The attention to detail and user experience is outstanding.",
       author: "Sarah Johnson",
       position: "CEO, TravelPro",
       rating: 5
     },
     {
-      text: "Working with Munir was a pleasure. He understood our requirements perfectly and delivered beyond expectations.",
+      text: "Working with Kaleab was a pleasure. He understood our requirements perfectly and delivered beyond expectations.",
       author: "Mike Chen",
       position: "CTO, TechStart",
       rating: 5
     },
     {
-      text: "The mobile app Munir built for us has received amazing feedback from our users. Highly recommended!",
+      text: "The mobile app Kaleab built for us has received amazing feedback from our users. Highly recommended!",
       author: "Lisa Rodriguez",
       position: "Product Manager, FitLife",
       rating: 5
@@ -356,9 +356,9 @@ export default function Home() {
 
       {/* Thank You Arc Effect */}
       <TextArcEffect
-        text=" THANK YOU • FOR VISITING • MUNIR AYUB •"
+        text=" THANK YOU • FOR VISITING • KALEAB M •"
         logoUrl="/images/profile-photo.jpg"
-        logoAlt="Munir Ayub"
+        logoAlt="Kaleab M"
       />
 
       <Footer />

@@ -3,7 +3,7 @@
 **Date:** December 16, 2025  
 **Session:** Portfolio Improvements - Phase 1 & 2 Complete  
 **GitHub:** https://github.com/black12-ag/portfolio  
-**Live:** https://munir-dev-portfolio-2024.netlify.app
+**Live:** https://kaleab-dev-portfolio-2024.netlify.app
 
 ---
 
@@ -15,20 +15,20 @@
 - **Status:** ✅ Fixed
 - **Files Modified:** `src/pages/About.tsx`, `src/pages/Portfolio.tsx`, `src/components/Navbar.tsx`
 - **Changes:**
-  - All CV/Resume buttons now point to `/Munir_Ayub_CV.pdf`
+  - All CV/Resume buttons now point to `/Kaleab_Ayub_CV.pdf`
   - Consistent download experience across all pages
 - **Impact:** No broken download buttons
 
 #### ✅ 1b. GitHub Links Updated (DONE)
 - **Status:** ✅ Fixed
-- **Files Modified:** `src/data/munirProjects.ts`, `src/pages/Projects.tsx`, `src/components/portfolio/PortfolioHero.tsx`
+- **Files Modified:** `src/data/kaleabProjects.ts`, `src/pages/Projects.tsx`, `src/components/portfolio/PortfolioHero.tsx`
 - **Changes:**
   - All GitHub URLs updated to `github.com/black12-ag`
 - **Impact:** Correct GitHub profile links
 
 #### ✅ 1c. React Error #130 Fixed (DONE)
 - **Status:** ✅ Fixed
-- **Files Modified:** `src/data/munirProjects.ts`, `src/pages/Home.tsx`
+- **Files Modified:** `src/data/kaleabProjects.ts`, `src/pages/Home.tsx`
 - **Changes:**
   - Added missing `completionDate` to project 6
   - Fixed project mapping for `ProjectCard` compatibility
@@ -83,7 +83,7 @@
 
 #### ✅ 6. Remove Duplicate Page (DONE)
 - **Status:** ✅ Removed
-- **Files Deleted:** `src/pages/MunirPortfolio.tsx`
+- **Files Deleted:** `src/pages/KaleabPortfolio.tsx`
 - **Impact:** Cleaner codebase
 
 ---
@@ -135,7 +135,7 @@
 #### ❌ 3. Fix Projects.tsx Hardcoded Data
 - **Status:** ❌ Not Started
 - **Issue:** Projects.tsx has hardcoded project data
-- **Required:** Use `munirProjects.ts` instead
+- **Required:** Use `kaleabProjects.ts` instead
 - **Effort:** 30 minutes
 
 ---
@@ -200,7 +200,7 @@
 
 2. **Fix Projects.tsx Data** (30 min)
    - Remove hardcoded projects
-   - Import from munirProjects.ts
+   - Import from kaleabProjects.ts
 
 3. **Split AdminPanel** (3-4 hours)
    - Create AdminProjects.tsx

@@ -105,7 +105,7 @@ const formatWhatsAppMessage = (data: ContactForm) => {
   message += `✨ *Thank you for considering my services!*\n`;
   message += `🚀 I'll review your requirements and get back to you with a detailed proposal.\n\n`;
   message += `Best regards,\n`;
-  message += `*Munir Ayub* - Full Stack Developer`;
+  message += `*Kaleab M* - Full Stack Developer`;
 
   return message;
 };
@@ -164,8 +164,8 @@ export default function Contact() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'munirayub011@gmail.com',
-      href: 'mailto:munirayub011@gmail.com',
+      value: 'kaleabm011@gmail.com',
+      href: 'mailto:kaleabm011@gmail.com',
       description: 'Send me an email anytime'
     },
     {
@@ -188,8 +188,8 @@ export default function Contact() {
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      href: 'https://linkedin.com/in/munir-ayub',
-      username: '/in/munir-ayub',
+      href: 'https://linkedin.com/in/kaleab-ayub',
+      username: '/in/kaleab-ayub',
       description: 'Professional network'
     },
     {
