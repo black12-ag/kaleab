@@ -1,5 +1,5 @@
 // Portfolio projects data
-export const munirProjects = [
+export const kaleabProjects = [
   {
     id: '29',
     title: 'FESAJ Tracker',
@@ -34,7 +34,7 @@ export const munirProjects = [
     technologies: ['React', 'Three.js', 'TypeScript', 'Framer Motion', 'WebGL', 'GSAP'],
     category: 'Web Development',
     githubUrl: 'https://github.com/black12-ag/porfolio-3d.git',
-    liveUrl: 'https://munir-3d-portfolio.netlify.app/',
+    liveUrl: 'https://kaleab-3d-portfolio.netlify.app/',
     featured: true,
     status: 'completed',
     completionDate: '2025-02-22',
@@ -284,7 +284,7 @@ export const munirProjects = [
     technologies: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'Tailwind CSS'],
     category: 'Full Stack Development',
     githubUrl: 'https://github.com/black12-ag/ellatech.git',
-    liveUrl: 'https://ellatech-inventory-munir.netlify.app/',
+    liveUrl: 'https://ellatech-inventory-kaleab.netlify.app/',
     featured: true,
     status: 'completed',
     completionDate: '2025-02-20',
@@ -671,20 +671,20 @@ export const munirProjects = [
 
 // Helper functions
 export const getFeaturedProjects = () => {
-  return munirProjects.filter(project => project.featured);
+  return kaleabProjects.filter(project => project.featured);
 };
 
 export const getProjectsByCategory = (category: string) => {
-  return munirProjects.filter(project => project.category === category);
+  return kaleabProjects.filter(project => project.category === category);
 };
 
 export const getProjectById = (id: string) => {
-  return munirProjects.find(project => project.id === id);
+  return kaleabProjects.find(project => project.id === id);
 };
 
 export const projectStats = {
-  total: munirProjects.length,
-  completed: munirProjects.filter(p => p.status === 'completed').length,
-  inProgress: munirProjects.filter(p => p.status === 'in-progress').length,
-  featured: munirProjects.filter(p => p.featured).length
+  total: kaleabProjects.length,
+  completed: kaleabProjects.filter(p => p.status === 'completed').length,
+  inProgress: kaleabProjects.filter(p => p.status === 'in-progress').length,
+  featured: kaleabProjects.filter(p => p.featured).length
 };
