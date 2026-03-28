@@ -230,7 +230,7 @@ export default function PortfolioHero({ imageUrls }: PortfolioHeroProps) {
                         className="w-full h-full object-cover rounded-full"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
-                          target.src = 'https://ui-avatars.com/api/?name=Kaleab+Ayub&size=400&background=3b82f6&color=ffffff&format=svg';
+                          target.src = 'https://ui-avatars.com/api/?name=Kaleab+M&size=400&background=3b82f6&color=ffffff&format=svg';
                         }}
                       />
                     </div>
@@ -319,7 +319,7 @@ export default function PortfolioHero({ imageUrls }: PortfolioHeroProps) {
                 <Button
                   size="lg"
                   className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 border-0"
-                  onClick={() => window.open('/Kaleab_Ayub_CV.pdf', '_blank')}
+                  onClick={() => window.open('/Kaleab_M_CV.pdf', '_blank')}
                 >
                   <Download className="w-5 h-5 mr-2" />
                   Download CV
@@ -360,7 +360,7 @@ export default function PortfolioHero({ imageUrls }: PortfolioHeroProps) {
                 },
                 {
                   icon: Mail,
-                  url: 'mailto:kaleab.ayub@example.com',
+                  url: 'mailto:kaleab.m@example.com',
                   brandClass: 'email-hover',
                   label: 'Email'
                 },

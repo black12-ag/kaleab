@@ -132,7 +132,7 @@ export default function Navbar({ className }: NavbarProps) {
                     // Create download link for base64 CV
                     const link = document.createElement('a');
                     link.href = storedCV;
-                    link.download = 'Kaleab_Ayub_CV.pdf';
+                    link.download = 'Kaleab_M_CV.pdf';
                     link.click();
                   } else {
                     // Open external CV URL
@@ -141,8 +141,8 @@ export default function Navbar({ className }: NavbarProps) {
                 } else {
                   // Fallback to default CV - download directly
                   const link = document.createElement('a');
-                  link.href = '/Kaleab_Ayub_CV.pdf';
-                  link.download = 'Kaleab_Ayub_CV.pdf';
+                  link.href = '/Kaleab_M_CV.pdf';
+                  link.download = 'Kaleab_M_CV.pdf';
                   link.click();
                 }
               }}
@@ -248,15 +248,15 @@ export default function Navbar({ className }: NavbarProps) {
                           if (storedCV.startsWith('data:')) {
                             const link = document.createElement('a');
                             link.href = storedCV;
-                            link.download = 'Kaleab_Ayub_CV.pdf';
+                            link.download = 'Kaleab_M_CV.pdf';
                             link.click();
                           } else {
                             window.open(storedCV, '_blank');
                           }
                         } else {
                           const link = document.createElement('a');
-                          link.href = '/Kaleab_Ayub_CV.pdf';
-                          link.download = 'Kaleab_Ayub_CV.pdf';
+                          link.href = '/Kaleab_M_CV.pdf';
+                          link.download = 'Kaleab_M_CV.pdf';
                           link.click();
                         }
                         setIsOpen(false);

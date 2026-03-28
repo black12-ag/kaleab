@@ -432,7 +432,7 @@ export default function About() {
               <Button
                 size="lg"
                 variant="outline"
-                onClick={() => window.open('/Kaleab_Ayub_CV.pdf', '_blank')}
+                onClick={() => window.open('/Kaleab_M_CV.pdf', '_blank')}
                 className="border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
               >
                 <Download className="w-5 h-5 mr-2" />

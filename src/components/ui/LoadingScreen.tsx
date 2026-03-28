@@ -207,7 +207,7 @@ const LoadingScreen = () => {
                 >
                     Kaleab{' '}
                     <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                        Ayub
+                        M
                     </span>
                 </motion.h1>
 

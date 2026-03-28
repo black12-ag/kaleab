@@ -55,7 +55,7 @@ export default function Footer() {
     { icon: FaWhatsapp, href: 'https://wa.me/251907806267', label: 'WhatsApp', isComponent: true },
     { icon: FaTelegram, href: 'https://t.me/muay011', label: 'Telegram', isComponent: true },
     { icon: FaXTwitter, href: 'https://x.com/muay01111', label: 'X (Twitter)', isComponent: true },
-    { icon: Mail, href: 'mailto:kaleab.ayub@example.com', label: 'Email' },
+    { icon: Mail, href: 'mailto:kaleab.m@example.com', label: 'Email' },
   ];
 
   return (
@@ -91,7 +91,7 @@ export default function Footer() {
                     className="relative w-full h-full rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-xl transform transition-transform group-hover:scale-105"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
-                      target.src = 'https://ui-avatars.com/api/?name=Kaleab+Ayub&size=200&background=3b82f6&color=ffffff&format=svg';
+                      target.src = 'https://ui-avatars.com/api/?name=Kaleab+M&size=200&background=3b82f6&color=ffffff&format=svg';
                     }}
                   />
                 </div>

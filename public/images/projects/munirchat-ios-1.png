@@ -7,7 +7,7 @@
   <circle cx="270" cy="40" r="8" fill="#34C759"/>
   <!-- Navigation bar -->
   <rect x="20" y="70" width="280" height="50" fill="#007AFF"/>
-  <text x="160" y="100" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="18" font-weight="bold">MunirChat</text>
+  <text x="160" y="100" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="18" font-weight="bold">KaleabChat</text>
   <!-- Chat list -->
   <g>
     <rect x="30" y="140" width="260" height="60" fill="#FFFFFF" rx="10"/>
